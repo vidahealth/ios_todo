@@ -8,6 +8,11 @@
 
 import Foundation
 
+public enum Result<T> {
+    case error(Error)
+    case value(T)
+}
+
 enum UrlRequestMethod: String {
     case post   = "POST"
     case get    = "GET"

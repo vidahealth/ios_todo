@@ -9,41 +9,6 @@
 import Foundation
 import RxSwift
 
-// TODO: Think about creating a Service
-//GET /todos?group=[groupname]
-//[
-//    {
-//    group: String
-//    title: String
-//    description: String
-//    priority: String ['low', 'med', 'high']
-//    done: Boolean
-//    }
-//    ...
-//]
-//
-//POST /todos { :group (optional), :title (required), :description (optional), :priority (optional), :done (optional) }
-//
-//{
-//    group: String
-//    title: String
-//    description: String
-//    priority: String ['low', 'med', 'high']
-//    done: Boolean
-//}
-//
-//PUT DELETE follows standard CRUD
-
-public enum Result<T> {
-    case error(Error)
-    case value(T)
-}
-
-public struct ToDoTaskResponse: Codable {
-    let objects: [ToDoTask]
-}
-//public typealias ToDoTaskResponse = [ToDoTask]
-
 public struct TaskToDoService {
     private let networkManager = NetworkManager()
 
