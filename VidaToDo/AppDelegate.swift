@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         registerModuleURLs()
 
-        let viewController = TodoListTableViewController()
+        let viewController = AppViewController()
         self.window?.rootViewController = viewController
         return true
     }

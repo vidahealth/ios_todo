@@ -11,8 +11,14 @@ import VidaFoundation
 
 class AppViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
+        guard let initialViewController = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.toDoList.routingPath) else {
+            errorLog("Could not load initial view controller.")
+            return
+        }
+
+        self.present(initialViewController, animated: false, completion: nil)
     }
 }
