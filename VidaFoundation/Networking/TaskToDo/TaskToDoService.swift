@@ -40,7 +40,7 @@ public enum Result<T> {
 }
 
 public struct ToDoTaskResponse: Codable {
-    let objects: [ToDoTask]
+    public let objects: [ToDoTask]
 }
 //public typealias ToDoTaskResponse = [ToDoTask]
 

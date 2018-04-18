@@ -15,13 +15,13 @@ public struct LocalToDoTask: Codable {
 }
 
 public struct ToDoTask: Codable {
-    let group: String?
-    let title: String
-    let description: String?
-    let priority: Priority
-    let done: Bool
+    public let group: String?
+    public let title: String
+    public let description: String?
+    public let priority: Priority
+    public let done: Bool
 
-    enum Priority: String, Codable {
+    public enum Priority: String, Codable {
         case low = "low"
         case medium = "med"
         case high = "high"

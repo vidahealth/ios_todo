@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import VidaUIKit
+import VidaFoundation
 
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
@@ -33,15 +34,6 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let sampleViewData: Variable<[TodoCardViewData]> = Variable([
-        TodoCardViewData(taskTitle: "Task 1", dueDate: Date(year: 2018, month: 04, day: 1)!, priority: .low, isComplete: true),
-        TodoCardViewData(taskTitle: "Task 2", dueDate: Date(year: 2018, month: 04, day: 2)!, priority: .high, isComplete: false),
-        TodoCardViewData(taskTitle: "Task 3", dueDate: Date(year: 2018, month: 04, day: 3)!, priority: .medium, isComplete: true),
-        TodoCardViewData(taskTitle: "Task 4", dueDate: Date(year: 2018, month: 04, day: 4)!, priority: .medium, isComplete: false),
-        TodoCardViewData(taskTitle: "Task 5", dueDate: Date(year: 2018, month: 04, day: 5)!, priority: .high, isComplete: false),
-        TodoCardViewData(taskTitle: "Task 6", dueDate: Date(year: 2018, month: 04, day: 6)!, priority: .low, isComplete: true),
-    ])
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -51,6 +43,7 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     private func setupView() {
         view.addSubview(tableView)
         tableView.fillSuperview()
+        tableView.rowHeight = 44;
 
         tableView.register(TodoCardTableViewCell.self, forCellReuseIdentifier: "todoCard")
 
@@ -61,8 +54,13 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
     private func setupSubscriptions() {
         // cellForRow
-        sampleViewData
-            .asObservable()
+        //sampleViewData
+        TaskToDoService().tasks()
+            .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
+                guard case .value(let tasks) = result else { return [] }
+
+                return tasks.objects
+        })
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)

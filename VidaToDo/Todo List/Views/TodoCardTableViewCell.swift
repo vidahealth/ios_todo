@@ -9,6 +9,7 @@
 import RxSwift
 import RxCocoa
 import VidaUIKit
+import VidaFoundation
 
 class TodoCardTableViewCell: UITableViewCell {
 
@@ -56,10 +57,10 @@ class TodoCardTableViewCell: UITableViewCell {
         priority.text = ""
     }
 
-    func configure(with viewData: TodoCardViewData) {
+    func configure(with viewData: ToDoTask) {
         clearConfiguration()
 
-        switchView.isOn = viewData.isComplete
+        switchView.isOn = viewData.done
 
         switch viewData.priority {
         case .high:
@@ -70,15 +71,15 @@ class TodoCardTableViewCell: UITableViewCell {
             priority.text = "Low:"
         }
 
-        taskTitle.text = viewData.taskTitle
+        taskTitle.text = viewData.title
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: viewData.dueDate)
-        let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM-yyyy"
-        let myStringaFD = formatter.string(from: yourDate!)
-        dueDate.text = myStringaFD
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        let myString = formatter.string(from: viewData.dueDate)
+//        let yourDate = formatter.date(from: myString)
+//        formatter.dateFormat = "dd-MMM-yyyy"
+//        let myStringaFD = formatter.string(from: yourDate!)
+//        dueDate.text = myStringaFD
     }
 
     var switchPressedStream = PublishSubject<CellSwitchPressedType>()
