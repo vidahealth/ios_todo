@@ -16,8 +16,8 @@ class TestGlobalRouter: XCTestCase {
     override func setUp() {
         super.setUp()
         globalRouter = GlobalRouter()
-        globalRouter.registerRendererClass(UIViewController.self, URLPath: "foo")
-        globalRouter.registerRendererClass(UIView.self, URLPath: "snaf")
+        globalRouter.registerViewControllerClass(UIViewController.self, URLPath: "foo")
+        globalRouter.registerViewControllerClass(UIView.self, URLPath: "snaf")
 
     }
 
@@ -27,15 +27,15 @@ class TestGlobalRouter: XCTestCase {
     }
     
     func testRendererForURLPath_doesNotExist() {
-        XCTAssertNil(globalRouter.rendererForURLPath("bar"))
+        XCTAssertNil(globalRouter.viewControllerForURLPath("bar"))
     }
 
     func testRendererForURLPath_notAViewController() {
-        XCTAssertNil(globalRouter.rendererForURLPath("snaf"))
+        XCTAssertNil(globalRouter.viewControllerForURLPath("snaf"))
     }
 
     func testRendererForURLPath_exists() {
-        XCTAssertNotNil(globalRouter.rendererForURLPath("foo"))
+        XCTAssertNotNil(globalRouter.viewControllerForURLPath("foo"))
     }
     
 }

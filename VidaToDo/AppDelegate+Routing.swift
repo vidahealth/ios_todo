@@ -14,7 +14,7 @@ import VidaFoundation
 extension AppDelegate {
 
     func registerModuleURLs() {
-        SharedGlobalRouter.registerRendererClass(TodoListTableViewController.self, URLPath: GlobalURL.homeURL.routingPath)
+        SharedGlobalRouter.registerViewControllerClass(TodoListTableViewController.self, URLPath: GlobalURL.homeURL.routingPath)
 //        SharedGlobalRouter.registerModuleClass(newFeatureViewController.self, URLPath: GlobalURL.newFeature.routingPath)
     }
     
