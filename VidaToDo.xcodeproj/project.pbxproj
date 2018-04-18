@@ -11,7 +11,6 @@
 		3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3598D15653B915BC044D4D /* EarlGrey.swift */; };
 		401A4C022086FC1C009158B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C012086FC1C009158B4 /* AppDelegate.swift */; };
 		401A4C042086FC1C009158B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C032086FC1C009158B4 /* ViewController.swift */; };
-		401A4C072086FC1C009158B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C052086FC1C009158B4 /* Main.storyboard */; };
 		401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C082086FC1E009158B4 /* Assets.xcassets */; };
 		401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */; };
 		401A4C172086FC1E009158B4 /* VidaToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C162086FC1E009158B4 /* VidaToDoTests.swift */; };
@@ -47,6 +46,8 @@
 		85464B1D2087C72100A2C34D /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1C2087C72100A2C34D /* GlobalRouter.swift */; };
 		85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */; };
 		85CF7E4E2087D7EC0035FB9F /* AppDelegate+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */; };
+		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
+		977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D62087E44700135EC8 /* SettingsViewController.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
 		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
@@ -163,7 +164,6 @@
 		401A4BFE2086FC1C009158B4 /* VidaToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidaToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A4C012086FC1C009158B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		401A4C032086FC1C009158B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		401A4C062086FC1C009158B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		401A4C082086FC1E009158B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		401A4C0B2086FC1E009158B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		401A4C0D2086FC1E009158B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -214,6 +214,8 @@
 		85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGlobalRouter.swift; sourceTree = "<group>"; };
 		85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Routing.swift"; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		977D71D42087E09B00135EC8 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		977D71D62087E44700135EC8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
 		BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoEGTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,7 +351,6 @@
 				401A4C012086FC1C009158B4 /* AppDelegate.swift */,
 				85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */,
 				401A4C032086FC1C009158B4 /* ViewController.swift */,
-				401A4C052086FC1C009158B4 /* Main.storyboard */,
 				401A4C082086FC1E009158B4 /* Assets.xcassets */,
 				401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */,
 				401A4C0D2086FC1E009158B4 /* Info.plist */,
@@ -549,6 +550,8 @@
 			children = (
 				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
 				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
+				977D71D62087E44700135EC8 /* SettingsViewController.swift */,
+				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -794,7 +797,6 @@
 			files = (
 				401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */,
 				401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */,
-				401A4C072086FC1C009158B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,9 +1083,11 @@
 				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
 				85CF7E4E2087D7EC0035FB9F /* AppDelegate+Routing.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
+				977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */,
 				ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */,
 				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
 				401A4C022086FC1C009158B4 /* AppDelegate.swift in Sources */,
+				977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,14 +1208,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		401A4C052086FC1C009158B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				401A4C062086FC1C009158B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
