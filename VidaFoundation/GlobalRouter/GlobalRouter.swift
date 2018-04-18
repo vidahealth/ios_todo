@@ -7,8 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
-class GlobalRouter {
+public var SharedGlobalRouter: Router {
+    struct Singleton {
+        static let instance = GlobalRouter()
+    }
+    return Singleton.instance
+}
+
+public protocol Router {
+
+    // Register consumers for URLs
+    func registerRendererClass(_ consumer: AnyClass, URLPath: String)
+
+    func rendererForURLPath(_ URLPath: String) -> UIViewController?
+
+}
+
+class GlobalRouter: Router {
 
     fileprivate var rendererURLMap = [String: AnyClass]() // URL -> rendererClass
 

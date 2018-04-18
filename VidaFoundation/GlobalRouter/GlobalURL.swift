@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum ModuleURL: CustomStringConvertible {
-    case homeModuleURL
+public enum GlobalURL: CustomStringConvertible {
+    case homeURL
 //    case plainOldFeatureModuleURL(featureUUID: String)
 
     public func moduleURL() -> URL? {
@@ -27,10 +27,10 @@ public protocol Path {
     var path : String { get }
 }
 
-extension ModuleURL: Path {
+extension GlobalURL: Path {
     public var path: String {
         switch self {
-        case .homeModuleURL: return "/home"
+        case .homeURL: return "/home"
 //        case .plainOldFeatureModuleURL(let featureUUID): return "/plainOldFeature/\(featureUUID)"
         }
     }
@@ -38,7 +38,7 @@ extension ModuleURL: Path {
 
 // MARK: Routing
 
-extension ModuleURL {
+extension GlobalURL {
     public var routingPath: String {
         switch self {
 //        case .plainOldFeatureModuleURL(_): return "/plainOldFeature/:featureUUID"

@@ -46,11 +46,10 @@
 		85464B1A2087C58B00A2C34D /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B192087C58B00A2C34D /* GlobalURL.swift */; };
 		85464B1D2087C72100A2C34D /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1C2087C72100A2C34D /* GlobalRouter.swift */; };
 		85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */; };
+		85CF7E4E2087D7EC0035FB9F /* AppDelegate+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
-		A4C41E1AB201A6834E08E5D9 /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419237F77E78F1896C83C0D3 /* EarlGrey.swift */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
 		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
-		D4681A7D5BCF40C387D3A1FE /* EarlGrey.framework in EarlGrey Copy Files */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DBD2CC39AEDC957121D36FAD /* Pods_VidaToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */; };
 		ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */; };
 		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
@@ -133,7 +132,6 @@
 			dstPath = "$(TEST_HOST)/../";
 			dstSubfolderSpec = 0;
 			files = (
-				C6165D99FCEDB6FAF3321068 /* EarlGrey.framework in EarlGrey Copy Files */,
 			);
 			name = "EarlGrey Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,17 +146,6 @@
 				4032C18B2087B71500355B04 /* VidaUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B41EB3CAE308CA9214168FDE /* EarlGrey Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(TEST_HOST)/../";
-			dstSubfolderSpec = 0;
-			files = (
-				D4681A7D5BCF40C387D3A1FE /* EarlGrey.framework in EarlGrey Copy Files */,
-			);
-			name = "EarlGrey Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -225,6 +212,7 @@
 		85464B192087C58B00A2C34D /* GlobalURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalURL.swift; sourceTree = "<group>"; };
 		85464B1C2087C72100A2C34D /* GlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
 		85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGlobalRouter.swift; sourceTree = "<group>"; };
+		85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Routing.swift"; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
@@ -336,6 +324,7 @@
 				401A4BFF2086FC1C009158B4 /* Products */,
 				5415F975DFAC364776B87EFF /* Pods */,
 				22D2C52848A0139BCC0CCBB9 /* Frameworks */,
+				85CF7E472087D0F10035FB9F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,6 +347,7 @@
 			children = (
 				ECD145D22087B9D1007E8239 /* Todo List */,
 				401A4C012086FC1C009158B4 /* AppDelegate.swift */,
+				85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */,
 				401A4C032086FC1C009158B4 /* ViewController.swift */,
 				401A4C052086FC1C009158B4 /* Main.storyboard */,
 				401A4C082086FC1E009158B4 /* Assets.xcassets */,
@@ -527,6 +517,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		85464B1B2087C59000A2C34D /* GlobalRouter */ = {
+			isa = PBXGroup;
+			children = (
+				85464B192087C58B00A2C34D /* GlobalURL.swift */,
+				85464B1C2087C72100A2C34D /* GlobalRouter.swift */,
+			);
+			path = GlobalRouter;
+			sourceTree = "<group>";
+		};
+		85CF7E472087D0F10035FB9F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				1C3598D15653B915BC044D4D /* EarlGrey.swift */,
+				BDA472DAC047A07352406992 /* EarlGrey.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		ECD145D22087B9D1007E8239 /* Todo List */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,15 +559,6 @@
 				ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */,
 			);
 			path = ViewData;
-			sourceTree = "<group>";
-		};
-		85464B1B2087C59000A2C34D /* GlobalRouter */ = {
-			isa = PBXGroup;
-			children = (
-				85464B192087C58B00A2C34D /* GlobalURL.swift */,
-				85464B1C2087C72100A2C34D /* GlobalRouter.swift */,
-			);
-			path = GlobalRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,7 +633,6 @@
 				401A4C302086FDAC009158B4 /* Frameworks */,
 				401A4C312086FDAC009158B4 /* Resources */,
 				AB6BFF8FCE0534571F2633D7 /* [CP] Embed Pods Frameworks */,
-				5D79DC8DE494A879FE916956 /* [CP] Copy Pods Resources */,
 				11D37B96E93DBCEA56EBDB64 /* EarlGrey Copy Files */,
 			);
 			buildRules = (
@@ -1081,6 +1079,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
+				85CF7E4E2087D7EC0035FB9F /* AppDelegate+Routing.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
 				ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */,
 				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
