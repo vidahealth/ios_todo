@@ -11,6 +11,7 @@ import Foundation
 
 public enum GlobalURL: CustomStringConvertible {
     case homeURL
+    case settings
 //    case newFeature
 
     public func moduleURL() -> URL? {
@@ -33,6 +34,7 @@ extension GlobalURL: Path {
     public var path: String {
         switch self {
         case .homeURL: return "/home"
+        case .settings: return "/settings"
 //        case .newFeature: return "/newFeature"
         }
     }

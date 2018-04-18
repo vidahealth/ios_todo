@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         registerModuleURLs()
-
-        let viewController = TodoListTableViewController()
-        self.window?.rootViewController = viewController
+        setMainTabViewController()
         return true
+    }
+    
+    func setMainTabViewController() {
+        let mainTabViewController = MainTabViewController()
+        self.window?.rootViewController = mainTabViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
