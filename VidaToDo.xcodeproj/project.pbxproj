@@ -345,7 +345,7 @@
 		401A4C002086FC1C009158B4 /* VidaToDo */ = {
 			isa = PBXGroup;
 			children = (
-				ECD145D22087B9D1007E8239 /* Todo List */,
+				ECD145D22087B9D1007E8239 /* ToDoList */,
 				401A4C012086FC1C009158B4 /* AppDelegate.swift */,
 				85CF7E4D2087D7EC0035FB9F /* AppDelegate+Routing.swift */,
 				401A4C032086FC1C009158B4 /* ViewController.swift */,
@@ -535,13 +535,13 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		ECD145D22087B9D1007E8239 /* Todo List */ = {
+		ECD145D22087B9D1007E8239 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
 				ECD145D92087BD19007E8239 /* ViewData */,
 				ECD145D42087B9FA007E8239 /* Views */,
 			);
-			path = "Todo List";
+			path = ToDoList;
 			sourceTree = "<group>";
 		};
 		ECD145D42087B9FA007E8239 /* Views */ = {
