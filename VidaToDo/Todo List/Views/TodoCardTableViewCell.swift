@@ -33,7 +33,7 @@ class TodoCardTableViewCell: UITableViewCell {
         viewDataStream.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (viewData: TodoCardViewData) in
             guard let strongSelf = self else { return }
             strongSelf.configure(with: viewData)
-        })
+        }).dispose()
     }
 
     private func setupView() {

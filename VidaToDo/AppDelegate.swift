@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print(tasks)
         }, onError: nil, onCompleted: nil, onDisposed: nil)
+        .dispose()
         
         return true
     }
