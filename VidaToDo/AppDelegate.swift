@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         registerModuleURLs()
-        setMainTabViewController()
+        setAppViewController()
 
         TaskToDoService().tasks().subscribe(onNext: { (result) in
             guard case .value(let tasks) = result else {
@@ -26,19 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print(tasks)
         }, onError: nil, onCompleted: nil, onDisposed: nil)
-        // Override point for customization after application launch.
-
-        //let viewModel = TodoListTableViewModel()
-        //let viewController = TodoListTableViewController(viewModel: viewModel)
-        //self.window?.rootViewController = viewController
-
+        .dispose()
+        
         return true
     }
     
-    func setMainTabViewController() {
+    func setAppViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainTabViewController = MainTabViewController()
-        window?.rootViewController = mainTabViewController
+        let appViewController = AppViewController()
+        window?.rootViewController = appViewController
         window?.makeKeyAndVisible()
     }
 

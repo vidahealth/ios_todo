@@ -14,12 +14,12 @@ class MainTabViewController: UITabBarController {
         
         var tabViewControllers: [UIViewController] = []
         
-        if let todoListVC = SharedGlobalRouter.rendererForURLPath(GlobalURL.homeURL.routingPath) {
+        if let todoListVC = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.toDoList.routingPath) {
             todoListVC.tabBarItem = UITabBarItem(title: "Todo", image: #imageLiteral(resourceName: "placeholder"), selectedImage: #imageLiteral(resourceName: "placeholderSelected"))
             tabViewControllers.append(todoListVC)
         }
         
-        if let settingsVC = SharedGlobalRouter.rendererForURLPath(GlobalURL.settings.routingPath) {
+        if let settingsVC = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.settings.routingPath) {
             settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "placeholder"), selectedImage: #imageLiteral(resourceName: "placeholderSelected"))
             tabViewControllers.append(settingsVC)
         }

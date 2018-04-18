@@ -29,7 +29,7 @@ struct NetworkDecoder {
         switch result {
         case .error(let error):
             return Result.error(error)
-        case .value(let json):
+        case .value(_):
             return Result.value(true)
         }
     }
