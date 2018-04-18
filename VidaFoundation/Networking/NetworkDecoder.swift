@@ -23,4 +23,14 @@ struct NetworkDecoder {
             }
         }
     }
+
+    // Decodes a result into a boolean success response
+    static func decodeBoolResult(_ result: Result<[AnyHashable: Any]>) -> Result<Bool> {
+        switch result {
+        case .error(let error):
+            return Result.error(error)
+        case .value(let json):
+            return Result.value(true)
+        }
+    }
 }

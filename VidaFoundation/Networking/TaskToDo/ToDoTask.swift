@@ -9,9 +9,9 @@
 import Foundation
 
 public struct LocalToDoTask: Codable {
-    let group: String
+    let group: String?
     let title: String
-    let description: String
+    let description: String?
 }
 
 public struct ToDoTask: Codable {

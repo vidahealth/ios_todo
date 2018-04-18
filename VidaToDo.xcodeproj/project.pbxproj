@@ -41,6 +41,7 @@
 		4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1A22087BBBE00355B04 /* NetworkManager.swift */; };
 		4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042F16B2087C259003EA408 /* ToDoTask.swift */; };
 		40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134C2087D7D200633E0C /* NetworkDecoder.swift */; };
+		40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */; };
 		602461B0159AC2FC050DF7C6 /* Pods_VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */; };
 		7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */; };
 		7E8B9FB044C7177E1981C087 /* Pods_VidaUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */; };
@@ -58,7 +59,7 @@
 		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
 		ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */; };
 		ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */; };
-		F1DE9EA70721B9DADA28F015 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		F1DE9EA70721B9DADA28F015 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +204,7 @@
 		4032C1A22087BBBE00355B04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4042F16B2087C259003EA408 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
 		40B0134C2087D7D200633E0C /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
+		40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoManager.swift; sourceTree = "<group>"; };
 		419237F77E78F1896C83C0D3 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +399,7 @@
 				40B0134C2087D7D200633E0C /* NetworkDecoder.swift */,
 				4032C1A22087BBBE00355B04 /* NetworkManager.swift */,
 				4032C13F2087014800355B04 /* NetworkError.swift */,
+				40B0134E2087EC2900633E0C /* TaskToDo */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -435,14 +438,6 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		4032C134208700C500355B04 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4042F16B2087C259003EA408 /* ToDoTask.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		4032C1412087016F00355B04 /* VidaAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,8 +462,6 @@
 				4032C12F2087008800355B04 /* Logging */,
 				4032C132208700B300355B04 /* Persistence */,
 				4032C12B2087005F00355B04 /* Networking */,
-				4042F16A2087C23F003EA408 /* Services */,
-				4032C134208700C500355B04 /* Models */,
 				4032C14A208701CD00355B04 /* Globals */,
 				4032C12A2087005900355B04 /* Extensions */,
 				4032C1542087B70400355B04 /* VidaFoundation.h */,
@@ -507,12 +500,14 @@
 			path = VidaUIKitTests;
 			sourceTree = "<group>";
 		};
-		4042F16A2087C23F003EA408 /* Services */ = {
+		40B0134E2087EC2900633E0C /* TaskToDo */ = {
 			isa = PBXGroup;
 			children = (
+				40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */,
 				4032C1A02087B9A600355B04 /* TaskToDoService.swift */,
+				4042F16B2087C259003EA408 /* ToDoTask.swift */,
 			);
-			path = Services;
+			path = TaskToDo;
 			sourceTree = "<group>";
 		};
 		5415F975DFAC364776B87EFF /* Pods */ = {
@@ -1252,7 +1247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */,
-				F1DE9EA70721B9DADA28F015 /* BuildFile in Sources */,
+				F1DE9EA70721B9DADA28F015 /* (null) in Sources */,
 				3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1271,6 +1266,7 @@
 				85464B1A2087C58B00A2C34D /* GlobalURL.swift in Sources */,
 				4032C1972087B76700355B04 /* Storing.swift in Sources */,
 				4032C1962087B76300355B04 /* VidaLogger.swift in Sources */,
+				40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */,
 				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,
 				4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */,
 				4032C19A2087B77300355B04 /* Constants+Debug.swift in Sources */,
@@ -1491,7 +1487,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1507,7 +1506,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1523,7 +1525,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1540,7 +1546,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1557,7 +1567,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDoEGTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1574,7 +1588,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaToDoEGTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1597,7 +1615,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VidaFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1622,7 +1644,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VidaFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1640,7 +1666,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1656,7 +1686,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1679,7 +1713,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VidaUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1704,7 +1742,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VidaUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1722,7 +1764,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaUIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1738,7 +1784,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VUAD6Y56;
 				INFOPLIST_FILE = VidaUIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
