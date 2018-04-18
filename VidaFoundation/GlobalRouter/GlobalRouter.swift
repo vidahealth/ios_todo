@@ -6,7 +6,6 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public var SharedGlobalRouter: Router {
