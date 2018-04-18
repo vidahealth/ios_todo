@@ -59,6 +59,7 @@
 		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
 		ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */; };
 		ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */; };
+		ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E42087CCE5007E8239 /* Date+Utility.swift */; };
 		F1DE9EA70721B9DADA28F015 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */; };
 /* End PBXBuildFile section */
@@ -233,6 +234,7 @@
 		ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCardViewData.swift; sourceTree = "<group>"; };
 		ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NSLayoutConstraints.swift"; sourceTree = "<group>"; };
 		ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
+		ECD145E42087CCE5007E8239 /* Date+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
 		F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -388,6 +390,7 @@
 				4032C137208700F500355B04 /* URL+endpoint.swift */,
 				4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */,
 				4032C13B2087011500355B04 /* Enum+Collection.swift */,
+				ECD145E42087CCE5007E8239 /* Date+Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1265,6 +1268,7 @@
 				4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */,
 				85464B1A2087C58B00A2C34D /* GlobalURL.swift in Sources */,
 				4032C1972087B76700355B04 /* Storing.swift in Sources */,
+				ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */,
 				4032C1962087B76300355B04 /* VidaLogger.swift in Sources */,
 				40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */,
 				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,

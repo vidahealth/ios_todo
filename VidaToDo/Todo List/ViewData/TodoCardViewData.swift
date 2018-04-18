@@ -8,10 +8,16 @@
 
 import RxSwift
 
+enum Priority: Int {
+    case low = 0
+    case medium
+    case high
+}
+
 struct TodoCardViewData {
-    let title: String
+    let taskTitle: String
     let dueDate: Date
-    let priority: Int
+    let priority: Priority
 }
 
 class TodoCardViewDataFactory {
