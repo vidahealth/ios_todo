@@ -18,6 +18,7 @@ struct TodoCardViewData {
     let taskTitle: String
     let dueDate: Date
     let priority: Priority
+    let isComplete: Bool
 }
 
 class TodoCardViewDataFactory {

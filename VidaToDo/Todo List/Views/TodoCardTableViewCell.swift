@@ -7,10 +7,12 @@
 //
 
 import RxSwift
+import RxCocoa
 import VidaUIKit
 
 class TodoCardTableViewCell: UITableViewCell {
 
+    let switchView = UISwitch(frame: .zero)
     let taskTitle = UILabel()
     let dueDate = UILabel()
     let priority = UILabel()
@@ -26,18 +28,9 @@ class TodoCardTableViewCell: UITableViewCell {
         setupView()
     }
 
-
-    /*func configure(with viewDataStream: Observable<TodoCardViewData>) {
-        bag = DisposeBag() // Dispose of previous subscriptions since Cell is not de-initialized
-
-        viewDataStream.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (viewData: TodoCardViewData) in
-            guard let strongSelf = self else { return }
-            strongSelf.configure(with: viewData)
-        })
-    }*/
-
     private func setupView() {
-        accessoryType = .checkmark
+        switchView.setOn(false, animated: true)
+        accessoryView = switchView
 
         priority.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         contentView.addSubview(priority)
@@ -66,6 +59,8 @@ class TodoCardTableViewCell: UITableViewCell {
     func configure(with viewData: TodoCardViewData) {
         clearConfiguration()
 
+        switchView.isOn = viewData.isComplete
+
         switch viewData.priority {
         case .high:
             priority.text = "High:"
@@ -82,13 +77,27 @@ class TodoCardTableViewCell: UITableViewCell {
         let myString = formatter.string(from: viewData.dueDate)
         let yourDate = formatter.date(from: myString)
         formatter.dateFormat = "dd-MMM-yyyy"
-        let myStringafd = formatter.string(from: yourDate!)
-        dueDate.text = myStringafd
+        let myStringaFD = formatter.string(from: yourDate!)
+        dueDate.text = myStringaFD
     }
 
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
+    var switchPressedStream = PublishSubject<CellSwitchPressedType>()
+}
+
+extension TodoCardTableViewCell: TodoCardTableViewCellPresentable {
+    
+    var cellSwitchPressed: ControlEvent<CellSwitchPressedType> {
+        let source = switchView.rx.value
+            .map { [weak self] (isOn: Bool) -> CellSwitchPressedType in
+            return CellSwitchPressedType(index: self?.tag ?? -1, isOn: isOn)
+        }
+            .filter { (cellSwitch: CellSwitchPressedType) -> Bool in
+                cellSwitch.index != -1
+        }
+            .skip(1)
+        
+        return ControlEvent(events: source)
+    }
+
+
 }

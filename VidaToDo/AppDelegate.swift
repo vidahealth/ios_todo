@@ -26,7 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print(tasks)
         }, onError: nil, onCompleted: nil, onDisposed: nil)
-        
+        // Override point for customization after application launch.
+
+        //let viewModel = TodoListTableViewModel()
+        //let viewController = TodoListTableViewController(viewModel: viewModel)
+        //self.window?.rootViewController = viewController
+
         return true
     }
     
@@ -58,7 +63,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

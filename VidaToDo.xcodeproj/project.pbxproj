@@ -60,6 +60,7 @@
 		ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */; };
 		ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */; };
 		ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E42087CCE5007E8239 /* Date+Utility.swift */; };
+		ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */; };
 		F1DE9EA70721B9DADA28F015 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */; };
 /* End PBXBuildFile section */
@@ -235,6 +236,7 @@
 		ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NSLayoutConstraints.swift"; sourceTree = "<group>"; };
 		ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
 		ECD145E42087CCE5007E8239 /* Date+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
+		ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewModel.swift; sourceTree = "<group>"; };
 		F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -557,7 +559,8 @@
 		ECD145D22087B9D1007E8239 /* Todo List */ = {
 			isa = PBXGroup;
 			children = (
-				ECD145D92087BD19007E8239 /* ViewData */,
+				ECD145E62087E7D5007E8239 /* ViewModels */,
+				ECD145D92087BD19007E8239 /* ViewDatas */,
 				ECD145D42087B9FA007E8239 /* Views */,
 			);
 			path = "Todo List";
@@ -574,12 +577,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		ECD145D92087BD19007E8239 /* ViewData */ = {
+		ECD145D92087BD19007E8239 /* ViewDatas */ = {
 			isa = PBXGroup;
 			children = (
 				ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */,
 			);
-			path = ViewData;
+			path = ViewDatas;
+			sourceTree = "<group>";
+		};
+		ECD145E62087E7D5007E8239 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1234,6 +1245,7 @@
 				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
 				401A4C022086FC1C009158B4 /* AppDelegate.swift in Sources */,
 				977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */,
+				ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
