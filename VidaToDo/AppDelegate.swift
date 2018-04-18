@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         registerModuleURLs()
-        setMainTabViewController()
+        setAppViewController()
 
         TaskToDoService().tasks().subscribe(onNext: { (result) in
             guard case .value(let tasks) = result else {
@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func setMainTabViewController() {
+    func setAppViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainTabViewController = MainTabViewController()
-        window?.rootViewController = mainTabViewController
+        let appViewController = AppViewController()
+        window?.rootViewController = appViewController
         window?.makeKeyAndVisible()
     }
 

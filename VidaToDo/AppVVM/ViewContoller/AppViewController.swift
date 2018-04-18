@@ -14,7 +14,7 @@ class AppViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        guard let initialViewController = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.toDoList.routingPath) else {
+        guard let initialViewController = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.tab.routingPath) else {
             errorLog("Could not load initial view controller.")
             return
         }
