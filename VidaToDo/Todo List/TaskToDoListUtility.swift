@@ -19,5 +19,5 @@ struct TaskToDoListUtility {
     func filterByDone(tasks: [ToDoTask], priority: ToDoTask.Priority) -> [ToDoTask] {
         return tasks.filter { $0.done }
     }
-}
+} 
 

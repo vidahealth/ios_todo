@@ -42,6 +42,10 @@
 		40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */; };
 		40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013512087EF6500633E0C /* TaskToDoListUtility.swift */; };
 		40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013552087F18800633E0C /* ToDoTaskTests.swift */; };
+		40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01358208803B100633E0C /* SettingsViewModel.swift */; };
+		40B0135B2088044100633E0C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0135A2088044100633E0C /* SettingsViewController.storyboard */; };
+		40B0135D2088053A00633E0C /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0135C2088053A00633E0C /* SettingsPageViewController.swift */; };
+		40B0135F2088054500633E0C /* SettingsPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */; };
 		602461B0159AC2FC050DF7C6 /* Pods_VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */; };
 		7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */; };
 		7E8B9FB044C7177E1981C087 /* Pods_VidaUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */; };
@@ -208,6 +212,10 @@
 		40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoManager.swift; sourceTree = "<group>"; };
 		40B013512087EF6500633E0C /* TaskToDoListUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoListUtility.swift; sourceTree = "<group>"; };
 		40B013552087F18800633E0C /* ToDoTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTaskTests.swift; sourceTree = "<group>"; };
+		40B01358208803B100633E0C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		40B0135A2088044100633E0C /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		40B0135C2088053A00633E0C /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsPageViewController.storyboard; sourceTree = "<group>"; };
 		419237F77E78F1896C83C0D3 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,6 +366,8 @@
 		401A4C002086FC1C009158B4 /* VidaToDo */ = {
 			isa = PBXGroup;
 			children = (
+				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
+				40B01357208802A100633E0C /* Settings */,
 				ECD145D22087B9D1007E8239 /* Todo List */,
 				85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */,
 				85CF7E652087F9D90035FB9F /* AppViewController.swift */,
@@ -534,6 +544,26 @@
 			path = TaskToDo;
 			sourceTree = "<group>";
 		};
+		40B01357208802A100633E0C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				40B01358208803B100633E0C /* SettingsViewModel.swift */,
+				977D71D62087E44700135EC8 /* SettingsViewController.swift */,
+				40B0135A2088044100633E0C /* SettingsViewController.storyboard */,
+				40B013602088054B00633E0C /* SettingsPage */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		40B013602088054B00633E0C /* SettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				40B0135C2088053A00633E0C /* SettingsPageViewController.swift */,
+				40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */,
+			);
+			path = SettingsPage;
+			sourceTree = "<group>";
+		};
 		5415F975DFAC364776B87EFF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,8 +620,6 @@
 			children = (
 				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
 				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
-				977D71D62087E44700135EC8 /* SettingsViewController.swift */,
-				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -844,6 +872,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */,
+				40B0135F2088054500633E0C /* SettingsPageViewController.storyboard in Resources */,
+				40B0135B2088044100633E0C /* SettingsViewController.storyboard in Resources */,
 				401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1256,6 +1286,8 @@
 				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
 				ECD145E22087C4E5007E8239 /* TodoCardViewData.swift in Sources */,
 				85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */,
+				40B0135D2088053A00633E0C /* SettingsPageViewController.swift in Sources */,
+				40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */,
 				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
 				977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */,
 				ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */,
