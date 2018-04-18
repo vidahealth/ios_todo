@@ -31,8 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setMainTabViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
         let mainTabViewController = MainTabViewController()
-        self.window?.rootViewController = mainTabViewController
+        window?.rootViewController = mainTabViewController
+        window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
