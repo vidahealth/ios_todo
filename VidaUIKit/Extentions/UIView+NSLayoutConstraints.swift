@@ -4,8 +4,16 @@
 
 import UIKit
 
-protocol LayoutConstraintWrapper {
+public protocol LayoutConstraintWrapper {
 
+}
+
+enum RelativeLayoutConstraintPriority: Float {
+    case lowest  = 1.0
+    case low     = 250.0
+    case medium  = 500.0
+    case high    = 750.0
+    case highest = 1000.0
 }
 
 enum LayoutConstraintIdentifier: String {
@@ -17,7 +25,7 @@ enum LayoutConstraintIdentifier: String {
     case firstElementBottom  = "firstElementBottom"
 }
 
-enum Axis {
+public enum Axis {
     case vertical
     case horizontal
 }
@@ -28,7 +36,7 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    func align(
+    public func align(
         _ ownAttribute: NSLayoutAttribute,
         to otherAttribute: NSLayoutAttribute,
         of other: UIView,
@@ -40,7 +48,7 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    func scale(
+    public func scale(
         _ ownAttribute: NSLayoutAttribute,
         to otherAttribute: NSLayoutAttribute,
         of other: UIView,
@@ -53,20 +61,20 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    func align(below topView: UIView, withPadding constant: Double = 0.0) -> Self {
+    public func align(below topView: UIView, withPadding constant: Double = 0.0) -> Self {
         align(.top, to: .bottom, of: topView, withPadding: constant)
         align(.leading, to: .leading, of: topView)
         return self
     }
 
     @discardableResult
-    func alignWithEqualWidth(below topView: UIView, withPadding constant: Double = 0.0) -> Self {
+    public func alignWithEqualWidth(below topView: UIView, withPadding constant: Double = 0.0) -> Self {
         align(below: topView, withPadding: constant)
         align(.width, to: .width, of: topView)
         return self
     }
 
-    func getConstraintToAlign(
+    public func getConstraintToAlign(
         _ ownAttribute: NSLayoutAttribute,
         to otherAttribute: NSLayoutAttribute,
         of other: UIView,
@@ -84,7 +92,7 @@ extension LayoutConstraintWrapper {
         )
     }
 
-    func getConstraintToScale(
+    public func getConstraintToScale(
         _ ownAttribute: NSLayoutAttribute,
         to otherAttribute: NSLayoutAttribute,
         of other: UIView,
@@ -103,72 +111,72 @@ extension LayoutConstraintWrapper {
         )
     }
 
-    func getConstraintForHeight(_ height: CGFloat) -> NSLayoutConstraint {
+    public func getConstraintForHeight(_ height: CGFloat) -> NSLayoutConstraint {
         view.translatesAutoresizingMaskIntoConstraints = false
         return NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
     }
 
-    func height(_ height: CGFloat) {
+    public func height(_ height: CGFloat) {
         let heightConstraint = getConstraintForHeight(height)
         NSLayoutConstraint.activate([heightConstraint])
     }
 
-    @discardableResult func height(_ height: Double) -> NSLayoutConstraint {
+    @discardableResult public func height(_ height: Double) -> NSLayoutConstraint {
         let heightConstraint = getConstraintForHeight(CGFloat(height))
         NSLayoutConstraint.activate([heightConstraint])
 
         return heightConstraint
     }
 
-    func getConstraintForWidth(_ width: CGFloat) -> NSLayoutConstraint {
+    public func getConstraintForWidth(_ width: CGFloat) -> NSLayoutConstraint {
         view.translatesAutoresizingMaskIntoConstraints = false
         return NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width)
     }
 
     @discardableResult
-    func width(_ width: CGFloat) -> NSLayoutConstraint  {
+    public func width(_ width: CGFloat) -> NSLayoutConstraint  {
         let widthConstraint = getConstraintForWidth(width)
         NSLayoutConstraint.activate([widthConstraint])
         return widthConstraint
     }
 
     @discardableResult
-    func width(_ width: Double) -> NSLayoutConstraint {
+    public func width(_ width: Double) -> NSLayoutConstraint {
         let widthConstraint = getConstraintForWidth(CGFloat(width))
         NSLayoutConstraint.activate([widthConstraint])
         return widthConstraint
     }
 
-    @discardableResult func size(width: Double, height: Double) -> Self {
+    @discardableResult public func size(width: Double, height: Double) -> Self {
         self.width(width)
         self.height(height)
         return self
     }
 
-    @discardableResult func size(width: CGFloat, height: CGFloat) -> Self {
+    @discardableResult public func size(width: CGFloat, height: CGFloat) -> Self {
         self.width(width)
         self.height(height)
         return self
     }
 
-    func top(toBottomOf target: UIView, withPadding constant: Double = 0.0) {
+    public func top(toBottomOf target: UIView, withPadding constant: Double = 0.0) {
         let constraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: target, attribute: .bottom, multiplier: 1.0, constant: CGFloat(constant))
         NSLayoutConstraint.activate([constraint])
     }
 
-    func top(toTopOf target: UIView, withPadding constant: Double = 0.0) {
+    public func top(toTopOf target: UIView, withPadding constant: Double = 0.0) {
         let constraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: target, attribute: .top, multiplier: 1.0, constant: CGFloat(constant))
         NSLayoutConstraint.activate([constraint])
     }
 
-    @discardableResult func left(_ padding: Double = 0) -> Self {
+    @discardableResult public func left(_ padding: Double = 0) -> Self {
         if let superview = view.superview {
             align(.leading, to: .leading, of: superview, withPadding: padding)
         }
         return self
     }
 
-    @discardableResult func right(_ padding: Double = 0) -> Self {
+    @discardableResult public func right(_ padding: Double = 0) -> Self {
         if let superview = view.superview {
             align(.trailing, to: .trailing, of: superview, withPadding: -padding)
         }
@@ -176,10 +184,10 @@ extension LayoutConstraintWrapper {
     }
 
     /**
-     Bottom layout constraint helper function.
+     Bottom layout constraint helper public function.
      - note: If working with safe areas on iPhone X, refer to **bottomSafe()**
      */
-    @discardableResult func bottom(_ padding: Double = 0) -> Self {
+    @discardableResult public func bottom(_ padding: Double = 0) -> Self {
         if let superview = view.superview {
             align(.bottom, to: .bottom, of: superview, withPadding: -padding)
         }
@@ -187,10 +195,10 @@ extension LayoutConstraintWrapper {
     }
 
     /**
-     Top layout constraint helper function.
+     Top layout constraint helper public function.
      - note: If working with safe areas on iPhone X, refer to **topSafe()**
      */
-    @discardableResult func top(_ padding: Double = 0) -> Self {
+    @discardableResult public func top(_ padding: Double = 0) -> Self {
         if let superview = view.superview {
             align(.top, to: .top, of: superview, withPadding: padding)
         }
@@ -199,14 +207,14 @@ extension LayoutConstraintWrapper {
 
 
     /**
-     Top layout constraint helper function that takes safe areas into consideration.
+     Top layout constraint helper public function that takes safe areas into consideration.
      * Use this when you want a top view to appear below the top notch on the iPhone X.
      * If device is not an iPhone X, then whether or not it's at least an iOS 11 device, it will behave the same as `.top(padding)`
      ## Reference
      [Positioning Content Relative to the Safe Area](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area?language=objc)
      */
     @discardableResult
-    func topSafe(_ padding: Double = 0) -> Self {
+    public func topSafe(_ padding: Double = 0) -> Self {
         guard let superview = view.superview else {
             return self
         }
@@ -223,14 +231,14 @@ extension LayoutConstraintWrapper {
     }
 
     /**
-     Bottom layout constraint helper function that takes safe areas into consideration.
+     Bottom layout constraint helper public function that takes safe areas into consideration.
      * Use this when you want a bottom view to appear above the bottom microphone on the iPhone X.
      * If device is not an iPhone X, then whether or not it's at least an iOS 11 device, it will behave the same as `.bottom(padding)`
      ## Reference
      [Positioning Content Relative to the Safe Area](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area?language=objc)
      */
     @discardableResult
-    func bottomSafe(_ padding: Double = 0) -> Self {
+    public func bottomSafe(_ padding: Double = 0) -> Self {
         guard let superview = view.superview else {
             return self
         }
@@ -246,7 +254,7 @@ extension LayoutConstraintWrapper {
         return self
     }
 
-    @discardableResult func center(_ orientation: Axis? = nil) -> Self {
+    @discardableResult public func center(_ orientation: Axis? = nil) -> Self {
         if let superview = view.superview {
             switch orientation {
             case .some(.horizontal): align(.centerX, to: .centerX, of: superview)
@@ -259,7 +267,7 @@ extension LayoutConstraintWrapper {
         return self
     }
 
-    func fillWidthOfSuperview(withPadding padding: Double = 0.0) {
+    public func fillWidthOfSuperview(withPadding padding: Double = 0.0) {
         if let horizontalConstraints = view.superview?.getConstraintsForHorizontalEdges(
             view,
             withPadding: padding
@@ -268,19 +276,19 @@ extension LayoutConstraintWrapper {
         }
     }
 
-    func fillHeightOfSuperview() {
+    public func fillHeightOfSuperview() {
         if let verticalConstraints = view.superview?.getConstraintsForVerticalEdges(view) {
             view.superview?.addConstraints(verticalConstraints)
         }
     }
 
-    func fillSuperview() {
+    public func fillSuperview() {
         view.translatesAutoresizingMaskIntoConstraints = false
         fillWidthOfSuperview()
         fillHeightOfSuperview()
     }
 
-    func fill(superView: UIView) {
+    public func fill(superView: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         let left = NSLayoutConstraint(
             item: self,
@@ -321,7 +329,7 @@ extension LayoutConstraintWrapper {
         superView.addConstraints([left, top, height, width])
     }
 
-    func centerHorizontally() {
+    public func centerHorizontally() {
         view.translatesAutoresizingMaskIntoConstraints = false
         let constraint = NSLayoutConstraint(
             item: self,
@@ -335,7 +343,7 @@ extension LayoutConstraintWrapper {
         NSLayoutConstraint.activate([constraint])
     }
 
-    func centerVertically() {
+    public func centerVertically() {
         view.translatesAutoresizingMaskIntoConstraints = false
         let constraint = NSLayoutConstraint(
             item: self,
@@ -349,7 +357,7 @@ extension LayoutConstraintWrapper {
         NSLayoutConstraint.activate([constraint])
     }
 
-    func centerOrFillHorizontally() {
+    public func centerOrFillHorizontally() {
         for constraint in view.constraints {
             if constraint.firstAttribute == .width {
                 centerHorizontally()
@@ -359,7 +367,7 @@ extension LayoutConstraintWrapper {
         fillWidthOfSuperview()
     }
 
-    func alignSubViewsVertically(_ subViews: [UIView], withPadding constant: Double = 0.0) {
+    public func alignSubViewsVertically(_ subViews: [UIView], withPadding constant: Double = 0.0) {
         var prevSubView = subViews.first!
         prevSubView.centerOrFillHorizontally()
         prevSubView.translatesAutoresizingMaskIntoConstraints = false
@@ -371,7 +379,7 @@ extension LayoutConstraintWrapper {
             let toPrevView = current.layout.getConstraintToAlign(
                 .top, to: .bottom, of: prevSubView, withPadding: constant
             )
-            toPrevView.priority = RelativeLayoutConstraintPriority.highest.rawValue
+            toPrevView.priority = UILayoutPriority(rawValue: RelativeLayoutConstraintPriority.highest.rawValue)
             NSLayoutConstraint.activate([toPrevView])
             current.centerOrFillHorizontally()
             prevSubView = current
@@ -380,16 +388,16 @@ extension LayoutConstraintWrapper {
         NSLayoutConstraint.activate([toTopOvView])
     }
 
-    func alignSubViewsVerticallyFilling(_ subViews: [UIView], withPadding constant: Double = 0.0) {
+    public func alignSubViewsVerticallyFilling(_ subViews: [UIView], withPadding constant: Double = 0.0) {
         alignSubViewsVertically(subViews, withPadding: constant)
         let toBottomOfView = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: subViews.last!, attribute: .bottom, multiplier: 1.0, constant: 0)
         toBottomOfView.identifier = LayoutConstraintIdentifier.toBottomOfSuperview.rawValue
-        toBottomOfView.priority   = RelativeLayoutConstraintPriority.low.rawValue
+        toBottomOfView.priority   = UILayoutPriority(rawValue: RelativeLayoutConstraintPriority.low.rawValue)
         NSLayoutConstraint.activate([toBottomOfView])
     }
 
     @discardableResult
-    static func align(vertically views: [UIView], padding: Double = 0.0) -> [NSLayoutConstraint] {
+    static public func align(vertically views: [UIView], padding: Double = 0.0) -> [NSLayoutConstraint] {
         guard let first = views.first else { return [] }
         var constraints: [NSLayoutConstraint] = []
         var previous = first
@@ -402,12 +410,12 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func align(vertically views: UIView... , withPadding padding: Double = 0.0) -> [NSLayoutConstraint] {
+    static public func align(vertically views: UIView... , withPadding padding: Double = 0.0) -> [NSLayoutConstraint] {
         return align(vertically: views, padding: padding)
     }
 
     @discardableResult
-    static func align(horizontally views: [UIView], padding: Double = 0.0) -> [NSLayoutConstraint] {
+    static public func align(horizontally views: [UIView], padding: Double = 0.0) -> [NSLayoutConstraint] {
         guard let first = views.first else { return [] }
         var constraints: [NSLayoutConstraint] = []
         var previous = first
@@ -420,17 +428,17 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func align(horizontally views: UIView... , withPadding padding: Double = 0.0) -> [NSLayoutConstraint] {
+    static public func align(horizontally views: UIView... , withPadding padding: Double = 0.0) -> [NSLayoutConstraint] {
         return align(horizontally: views, padding: padding)
     }
 
     @discardableResult
-    static func setEqual(layoutAttribute: NSLayoutAttribute, for views: UIView...) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttribute: NSLayoutAttribute, for views: UIView...) -> [NSLayoutConstraint] {
         return setEqual(layoutAttribute: layoutAttribute, for: views)
     }
 
     @discardableResult
-    static func setEqual(layoutAttribute: NSLayoutAttribute, for views: [UIView]) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttribute: NSLayoutAttribute, for views: [UIView]) -> [NSLayoutConstraint] {
         guard let first = views.first else { return [] }
         var constraints: [NSLayoutConstraint] = []
         var previous = first
@@ -443,7 +451,7 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func setEqual(layoutAttributes: [NSLayoutAttribute], for views: [UIView]) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttributes: [NSLayoutAttribute], for views: [UIView]) -> [NSLayoutConstraint] {
         var constraints: [NSLayoutConstraint] = []
         for layoutAttribute in layoutAttributes {
             constraints += setEqual(layoutAttribute: layoutAttribute, for: views)
@@ -452,40 +460,40 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func setEqual(layoutAttributes: [NSLayoutAttribute], for views: UIView...) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttributes: [NSLayoutAttribute], for views: UIView...) -> [NSLayoutConstraint] {
         return setEqual(layoutAttributes: layoutAttributes, for: views)
     }
 
-    func addSubviews(_ views: [UIView]) {
+    public func addSubviews(_ views: [UIView]) {
         for view in views {
             self.view.addSubview(view)
         }
     }
 
-    func addSubviews(_ views: UIView...) {
+    public func addSubviews(_ views: UIView...) {
         addSubviews(views)
     }
 
-    static func apply(constants: [Int: Double], to constraints: [NSLayoutConstraint]) {
+    static public func apply(constants: [Int: Double], to constraints: [NSLayoutConstraint]) {
         for (index, constant) in constants {
             guard index < constraints.count else { continue }
             constraints[index].constant = CGFloat(constant)
         }
     }
 
-    static func apply(constant: Double, at indices: [Int], to constraints: [NSLayoutConstraint]) {
+    static public func apply(constant: Double, at indices: [Int], to constraints: [NSLayoutConstraint]) {
         for index in indices {
             guard index < constraints.count else { continue }
             constraints[index].constant = CGFloat(constant)
         }
     }
 
-    static var layout: UIView.Type {
+    public static var layout: UIView.Type {
         return UIView.self
     }
 
     @discardableResult
-    static func horizontalContainerView(for views: [UIView], spacing: Double = 0.0) -> UIView {
+    static public func horizontalContainerView(for views: [UIView], spacing: Double = 0.0) -> UIView {
         let container = UIView()
         container.addSubviews(views)
         layout.setEqual(layoutAttribute: .centerY, for: views)
@@ -502,12 +510,12 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func horizontalContainerView(for views: UIView... , withSpacing spacing: Double = 0.0) -> UIView {
+    static public func horizontalContainerView(for views: UIView... , withSpacing spacing: Double = 0.0) -> UIView {
         return horizontalContainerView(for: views, spacing: spacing)
     }
 
     @discardableResult
-    static func verticalContainerView(for views: [UIView], spacing: Double = 0.0) -> UIView {
+    static public func verticalContainerView(for views: [UIView], spacing: Double = 0.0) -> UIView {
         let container = UIView()
         container.addSubviews(views)
         layout.setEqual(layoutAttribute: .centerX, for: views)
@@ -524,11 +532,11 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static func verticalContainerView(for views: UIView... , withSpacing spacing: Double = 0.0) -> UIView {
+    static public func verticalContainerView(for views: UIView... , withSpacing spacing: Double = 0.0) -> UIView {
         return verticalContainerView(for: views, spacing: spacing)
     }
 
-    func center(in view: UIView) {
+    public func center(in view: UIView) {
         align(.centerX, to: .centerX, of: view)
         align(.centerY, to: .centerY, of: view)
     }
@@ -536,11 +544,11 @@ extension LayoutConstraintWrapper {
 
 extension UIView: LayoutConstraintWrapper {
 
-    var layout: LayoutConstraintWrapper {
+    public var layout: LayoutConstraintWrapper {
         return self
     }
 
-    func copyConstraintsFrom(_ otherView:UIView, deactivateOriginalConstraints:Bool = true) {
+    public func copyConstraintsFrom(_ otherView:UIView, deactivateOriginalConstraints:Bool = true) {
         frame = otherView.frame
         autoresizingMask = otherView.autoresizingMask
         translatesAutoresizingMaskIntoConstraints = otherView.translatesAutoresizingMaskIntoConstraints
@@ -557,7 +565,7 @@ extension UIView: LayoutConstraintWrapper {
         }
     }
 
-    func getConstraintsForVerticalEdges(_ subview: UIView) -> [NSLayoutConstraint] {
+    public func getConstraintsForVerticalEdges(_ subview: UIView) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         let top = NSLayoutConstraint(
             item: self,
@@ -581,7 +589,7 @@ extension UIView: LayoutConstraintWrapper {
         constraints.append(bottom)
         return constraints
     }
-    func getConstraintsForHorizontalEdges(_ subview: UIView, withPadding padding: Double = 0) -> [NSLayoutConstraint] {
+    public func getConstraintsForHorizontalEdges(_ subview: UIView, withPadding padding: Double = 0) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         let left = NSLayoutConstraint(
             item: self,
@@ -605,7 +613,7 @@ extension UIView: LayoutConstraintWrapper {
         constraints.append(right)
         return constraints
     }
-    func getConstrainsForVerticallyContainedElements(_ elements: [UIView], with spacing: Double = 0.0) -> [NSLayoutConstraint] {
+    public func getConstrainsForVerticallyContainedElements(_ elements: [UIView], with spacing: Double = 0.0) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         guard elements.count > 0 else {
             return constraints
@@ -695,7 +703,7 @@ extension UIView: LayoutConstraintWrapper {
         return constraints
     }
 
-    func getConstrainsForHorizontalyContainedElements(_ elements: [UIView], with spacing: Double = 0.0) -> [NSLayoutConstraint] {
+    public func getConstrainsForHorizontalyContainedElements(_ elements: [UIView], with spacing: Double = 0.0) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         guard elements.count > 0 else {
             return constraints
@@ -792,7 +800,7 @@ extension UIView: LayoutConstraintWrapper {
         return constraints
     }
 
-    func getAspectRatioConstraint(for element: UIView) -> NSLayoutConstraint {
+    public func getAspectRatioConstraint(for element: UIView) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: element,
             attribute: .height,

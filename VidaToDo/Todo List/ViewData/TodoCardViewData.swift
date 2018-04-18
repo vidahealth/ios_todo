@@ -13,3 +13,10 @@ struct TodoCardViewData {
     let dueDate: Date
     let priority: Int
 }
+
+class TodoCardViewDataFactory {
+    // Use this function to assemble your list of TodoCardViewData
+    func createViewDataUsing() -> [TodoCardViewData] {
+
+    }
+}

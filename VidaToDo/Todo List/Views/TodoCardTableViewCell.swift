@@ -7,11 +7,13 @@
 //
 
 import RxSwift
+import VidaUIKit
 
 class TodoCardTableViewCell: UITableViewCell {
 
     let title = UILabel()
     let dueDate = UILabel()
+    let priority = UILabel()
 
     var bag = DisposeBag()
 
@@ -35,18 +37,24 @@ class TodoCardTableViewCell: UITableViewCell {
     }
 
     private func setupView() {
+        priority.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
+        priority.text = "HIGH:"
+        contentView.addSubview(priority)
+        priority.layout.align(.left, to: .left, of: contentView, withPadding: 10.0)
+        priority.centerVertically()
+
         title.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         title.numberOfLines = 0
         title.text = "Do something"
         title.lineBreakMode = .byWordWrapping
         contentView.addSubview(title)
-        title.layout.align(.left, to: .left, of: contentView, withPadding: 5.0)
+        title.layout.align(.left, to: .right, of: priority, withPadding: 5.0)
         title.centerVertically()
 
         dueDate.font = UIFont.systemFont(ofSize: 10, weight: .light)
         dueDate.text = "April 18, 2018"
         contentView.addSubview(dueDate)
-        dueDate.layout.align(.right, to: .right, of: contentView, withPadding: 5.0)
+        dueDate.layout.align(.right, to: .right, of: contentView, withPadding: -10.0)
         dueDate.centerVertically()
     }
 
