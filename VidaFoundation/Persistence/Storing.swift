@@ -36,3 +36,36 @@ extension Storing {
         return object(forKey: key)
     }
 }
+
+class GlobalStorage: Storing {
+
+    static let shared = GlobalStorage()
+
+    private init() {}
+
+    private var filePath: String {
+        let manager = FileManager.default
+        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        return (url!.appendingPathComponent("Data").path)
+    }
+
+    func set<T>(_ object: T, forKey key: String) {
+        NSKeyedArchiver.archiveRootObject(object, toFile: filePath.appending("\\" + key))
+    }
+
+    func object<T>(forKey key: String) -> T? {
+        guard let object = NSKeyedUnarchiver.unarchiveObject(withFile: filePath.appending("\\" + key)) as? T else {
+            errorLog("Could not load data for key \(key)")
+            return nil
+        }
+        return object
+    }
+
+    func removeObject(forKey key: String) {
+        do {
+            try FileManager.default.removeItem(at: URL(fileURLWithPath: filePath.appending("\\" + key)))
+        } catch {
+            errorLog(error)
+        }
+    }
+}
