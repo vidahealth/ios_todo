@@ -28,5 +28,12 @@ class TestStorage: XCTestCase {
         storage.set(foo, forKey: "foo")
         XCTAssertEqual(foo, storage.object(forKey: "foo"))
     }
+
+    func testStorage_remove() {
+        let foo = "bar"
+        storage.set(foo, forKey: "foo")
+        storage.removeObject(forKey: "foo")
+        XCTAssertNil(storage.object(forKey: "foo"))
+    }
     
 }
