@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VidaFoundation
 
 // Addoption of default system `UIAlertController` alert to `VidaAlert` protocol.
 // This allow to hive all `UIAlertController` implementation and minimize possibility of changes after `VidaAlertBuilder` will build it.

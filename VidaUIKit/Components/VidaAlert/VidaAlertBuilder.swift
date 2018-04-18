@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VidaFoundation
 
 fileprivate extension VidaAlertBuilder {
     struct Const {
