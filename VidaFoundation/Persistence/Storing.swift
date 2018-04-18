@@ -39,10 +39,6 @@ extension Storing {
 
 class GlobalStorage: Storing {
 
-    static let shared = GlobalStorage()
-
-    private init() {}
-
     private var filePath: String {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first

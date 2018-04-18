@@ -58,6 +58,7 @@
 		85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */; };
 		85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E622087F8DD0035FB9F /* GlobalURL.swift */; };
 		85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E652087F9D90035FB9F /* AppViewController.swift */; };
+		85CF7E68208802840035FB9F /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E67208802840035FB9F /* TestStorage.swift */; };
 		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
 		977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D82087EF4000135EC8 /* TodoFormViewController.swift */; };
 		977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DA2087F8C400135EC8 /* TodoTextField.swift */; };
@@ -242,6 +243,7 @@
 		85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
 		85CF7E622087F8DD0035FB9F /* GlobalURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURL.swift; sourceTree = "<group>"; };
 		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppViewController.swift; path = AppVVM/ViewContoller/AppViewController.swift; sourceTree = "<group>"; };
+		85CF7E67208802840035FB9F /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		977D71D42087E09B00135EC8 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		977D71D82087EF4000135EC8 /* TodoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFormViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				40B013532087F17300633E0C /* Networking */,
 				4032C1632087B70400355B04 /* Info.plist */,
 				85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */,
+				85CF7E67208802840035FB9F /* TestStorage.swift */,
 			);
 			path = VidaFoundationTests;
 			sourceTree = "<group>";
@@ -1374,6 +1377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4032C1622087B70400355B04 /* VidaFoundationTests.swift in Sources */,
+				85CF7E68208802840035FB9F /* TestStorage.swift in Sources */,
 				85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */,
 				40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */,
 			);
