@@ -10,7 +10,7 @@ import Foundation
 // When creating a new renderer, you have to create a case for it in the GlobalURL, and give it a string URL in the GLobalURL path.
 
 public enum GlobalURL: CustomStringConvertible {
-    case homeURL
+    case toDoList
     case settings
 //    case newFeature
 
@@ -33,7 +33,7 @@ public protocol Path {
 extension GlobalURL: Path {
     public var path: String {
         switch self {
-        case .homeURL: return "/home"
+        case .toDoList: return "/toDoList"
         case .settings: return "/settings"
 //        case .newFeature: return "/newFeature"
         }

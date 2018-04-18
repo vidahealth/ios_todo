@@ -6,7 +6,6 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public var SharedGlobalRouter: Router {
@@ -19,26 +18,26 @@ public var SharedGlobalRouter: Router {
 public protocol Router {
 
     // Register consumers for URLs
-    func registerRendererClass(_ consumer: AnyClass, URLPath: String)
+    func registerViewControllerClass(_ consumer: AnyClass, URLPath: String)
 
-    func rendererForURLPath(_ URLPath: String) -> UIViewController?
+    func viewControllerForURLPath(_ URLPath: String) -> UIViewController?
 
 }
 
 class GlobalRouter: Router {
 
-    fileprivate var rendererURLMap = [String: AnyClass]() // URL -> rendererClass
+    fileprivate var viewControllerURLMap = [String: AnyClass]() // URL -> rendererClass
 
-    func registerRendererClass(_ rendererClass: AnyClass, URLPath: String) {
-        rendererURLMap[URLPath] = rendererClass
+    func registerViewControllerClass(_ viewControllerClass: AnyClass, URLPath: String) {
+        viewControllerURLMap[URLPath] = viewControllerClass
     }
 
-    func rendererForURLPath(_ URLPath: String) -> UIViewController? {
-        guard let rendererClass = rendererURLMap[URLPath] as? UIViewController.Type else {
-            errorLog("Unable find renderer for URL: \(URLPath)")
+    func viewControllerForURLPath(_ URLPath: String) -> UIViewController? {
+        guard let viewControllerClass = viewControllerURLMap[URLPath] as? UIViewController.Type else {
+            errorLog("Unable find view controller for URL: \(URLPath)")
             return nil
         }
 
-        return rendererClass.init()
+        return viewControllerClass.init()
     }
 }
