@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import VidaFoundation
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         registerModuleURLs()
         setMainTabViewController()
+
+        TaskToDoService().tasks().subscribe(onNext: { (result) in
+            guard case .value(let tasks) = result else {
+                return
+            }
+            print(tasks)
+        }, onError: nil, onCompleted: nil, onDisposed: nil)
+        
         return true
     }
     

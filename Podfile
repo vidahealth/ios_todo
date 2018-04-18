@@ -18,15 +18,15 @@ target 'VidaToDo' do
   
   target 'VidaFoundation' do
     inherit! :search_paths
-    # Pods for testing
-	  pod 'Alamofire', '~> 4.6'
+    # Pods
+	  pod 'Alamofire', '= 4.6'
 	  shared_dependencies
   end
   
   target 'VidaFoundationTests' do
     inherit! :search_paths
     # Pods for testing
-	  pod 'Alamofire', '~> 4.6'
+	  pod 'Alamofire', '= 4.6'
 	  shared_dependencies
   end
   

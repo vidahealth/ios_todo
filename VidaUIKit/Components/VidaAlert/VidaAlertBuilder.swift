@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import VidaFoundation
+import VidaFoundation // TODO: It would be helpful to automagically import this everywhere.
 
 fileprivate extension VidaAlertBuilder {
     struct Const {

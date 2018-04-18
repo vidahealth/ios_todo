@@ -13,7 +13,7 @@ enum UrlRequestMethod: String {
     case get    = "GET"
     case patch  = "PATCH"
     case put    = "PUT"
-    case DELETE = "DELETE"
+    case delete = "DELETE"
 }
 
 enum EndpointVersion: Int {
@@ -21,5 +21,5 @@ enum EndpointVersion: Int {
 }
 
 enum VidaEndpoint: String {
-    case metricpoint = "todo"
+    case todos = "todos"
 }

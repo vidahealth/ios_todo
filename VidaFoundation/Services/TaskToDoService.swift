@@ -9,10 +9,6 @@
 import Foundation
 import RxSwift
 
-struct ToDoTask {
-
-}
-
 // TODO: Think about creating a Service
 //GET /todos?group=[groupname]
 //[
@@ -38,17 +34,29 @@ struct ToDoTask {
 //
 //PUT DELETE follows standard CRUD
 
-enum Result<T> {
+public enum Result<T> {
     case error(Error)
     case value(T)
 }
 
-//struct TaskToDoService {
-//
-//    func tasks() -> ToDoTask {
-//
-//    }
-//
+public struct ToDoTaskResponse: Codable {
+    let objects: [ToDoTask]
+}
+//public typealias ToDoTaskResponse = [ToDoTask]
+
+public struct TaskToDoService {
+    private let networkManager = NetworkManager()
+
+    public init() {}
+    public func tasks() -> Observable<Result<ToDoTaskResponse>> {
+        guard let url = NSMutableURLRequest(endpoint: .todos, version: .v1, type: .get) else {
+            return Observable.just(Result.error(NetworkError(type: .invalidUrl, message: "Could not create url")))
+        }
+        return networkManager.request(url).map({ (result) -> Result<ToDoTaskResponse> in
+            return NetworkDecoder.decodeResult(result)
+        })
+    }
+
 //    func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
 //
 //    }
@@ -60,4 +68,4 @@ enum Result<T> {
 //    func deleteTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
 //
 //    }
-//}
+}
