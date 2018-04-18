@@ -18,12 +18,8 @@ enum UrlRequestMethod: String {
 
 enum EndpointVersion: Int {
     case v1 = 1
-    case v2
-    case v3
-    case v4
-    case v5
 }
 
 enum VidaEndpoint: String {
-    case metricpoint = "metricpoint"
+    case metricpoint = "todo"
 }

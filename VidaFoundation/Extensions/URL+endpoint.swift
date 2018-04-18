@@ -9,9 +9,9 @@
 import Foundation
 
 extension URL {
-    static let appDomain = "http://www.vida.com"
     init?(endpoint: VidaEndpoint, version: EndpointVersion) {
-        let baseURL = "\(URL.appDomain)/api/v\(version.rawValue)/\(endpoint.rawValue)/"
+        // For this unique sample App we won't need the endpoint version for our sample endpoint
+        let baseURL = "\(NetworkManager.scheme)://\(NetworkManager.host)/\(endpoint.rawValue)"
         self.init(string: baseURL)
     }
 }
