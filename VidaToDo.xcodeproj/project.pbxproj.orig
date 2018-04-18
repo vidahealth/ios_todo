@@ -265,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */,
-				7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */,
 				D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +317,8 @@
 				5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */,
 				38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */,
 				7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */,
-				B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */,
+
+				BDA472DAC047A07352406992 /* EarlGrey.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -551,8 +551,6 @@
 				ECD145DA2087BD30007E8239 /* TodoCardViewData.swift */,
 			);
 			path = ViewData;
-			sourceTree = "<group>";
-		};
 		85464B1B2087C59000A2C34D /* GlobalRouter */ = {
 			isa = PBXGroup;
 			children = (

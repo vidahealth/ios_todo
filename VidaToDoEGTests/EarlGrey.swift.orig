@@ -97,6 +97,11 @@ private func GREYWaitUntilIdle() {
 }
 
 open class EarlGrey: NSObject {
+<<<<<<< HEAD
+  open class func select(elementWithMatcher matcher:GREYMatcher,
+                           file: StaticString = #file,
+                           line: UInt = #line) -> GREYElementInteraction {
+=======
   public static func selectElement(with matcher: GREYMatcher,
                                    file: StaticString = #file,
                                    line: UInt = #line) -> GREYInteraction {
@@ -108,6 +113,7 @@ open class EarlGrey: NSObject {
   open class func select(elementWithMatcher matcher:GREYMatcher,
                          file: StaticString = #file,
                          line: UInt = #line) -> GREYElementInteraction {
+>>>>>>> tests
     return EarlGreyImpl.invoked(fromFile: file.description, lineNumber: line)
              .selectElement(with: matcher)
   }
@@ -140,11 +146,18 @@ open class EarlGrey: NSObject {
 
 extension GREYInteraction {
   @discardableResult public func assert(_ matcher: @autoclosure () -> GREYMatcher) -> Self {
+<<<<<<< HEAD
+    return self.assert(with:matcher())
+=======
     return self.__assert(with: matcher())
+>>>>>>> tests
   }
 
   @discardableResult public func assert(_ matcher: @autoclosure () -> GREYMatcher,
                                         error:UnsafeMutablePointer<NSError?>!) -> Self {
+<<<<<<< HEAD
+    return self.assert(with: matcher(), error: error)
+=======
     return self.__assert(with: matcher(), error: error)
   }
 
@@ -166,6 +179,7 @@ extension GREYInteraction {
   @discardableResult public func perform(_ action: GREYAction!,
                                          error:UnsafeMutablePointer<NSError?>!) -> Self {
     return self.__perform(action, error: error)
+>>>>>>> tests
   }
 
   @discardableResult public func using(searchAction: GREYAction,
