@@ -17,6 +17,6 @@ struct TodoCardViewData {
 class TodoCardViewDataFactory {
     // Use this function to assemble your list of TodoCardViewData
     func createViewDataUsing() -> [TodoCardViewData] {
-
+        return []
     }
 }
