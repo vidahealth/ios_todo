@@ -13,7 +13,7 @@
         <!--Settings Page View Controller-->
         <scene sceneID="DDx-B3-r5M">
             <objects>
-                <viewController storyboardIdentifier="SettingsPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vCk-7F-DrA" customClass="SettingsPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vCk-7F-DrA" customClass="SettingsPageViewController" customModule="VidaToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xne-yr-F95">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

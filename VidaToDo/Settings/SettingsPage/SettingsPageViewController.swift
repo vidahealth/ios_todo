@@ -16,11 +16,21 @@ struct SettingsPageViewData {
 
 class SettingsPageViewController: UIViewController {
     @IBOutlet weak var mainTextView: UITextView!
+
+    var viewData: SettingsPageViewData?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        guard let data = viewData else {
+            return
+        }
+        configure(data: data)
     }
 
     func configure(data: SettingsPageViewData) {
+        self.viewData = data
+        guard isViewLoaded else { return }
         mainTextView.text = data.text
     }
 }
