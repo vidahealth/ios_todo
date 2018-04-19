@@ -12,12 +12,6 @@ public struct ToDoTaskResponse: Codable {
     public let objects: [ToDoTask]
 }
 
-public struct LocalToDoTask: Codable {
-    let group: String?
-    let title: String
-    let description: String?
-}
-
 public struct ToDoTask: Codable {
     public let group: String?
     public let title: String

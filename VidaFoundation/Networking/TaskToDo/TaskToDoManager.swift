@@ -9,21 +9,24 @@
 import Foundation
 import RxSwift
 
-struct TaskToDoManager {
+public struct TaskToDoManager {
     let service = TaskToDoService()
+
+    public init() { }
+
     public func tasks() -> Observable<Result<ToDoTaskResponse>> {
         return service.tasks()
     }
 
-    func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
+    public func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
         return service.createTask(task)
     }
 
-    func updateTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
+    public func updateTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
         return service.updateTask(task)
     }
 
-    func deleteTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
+    public func deleteTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
         return service.updateTask(task)
     }
 }
