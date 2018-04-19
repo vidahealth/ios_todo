@@ -14,6 +14,7 @@ import VidaFoundation
 
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
+    let taskSelectedSubject = PublishSubject<Int>()
     let viewModel: TodoListTableViewModel
     let bag = DisposeBag()
 
@@ -66,6 +67,8 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupSubscriptions() {
+        viewModel.watchTaskIsSelected(observable: taskSelectedSubject)
+        
         viewModel.tasks
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
@@ -80,7 +83,8 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
         tableView.rx.itemSelected
             .subscribe(onNext: { [tableView] indexPath in
                 tableView.deselectRow(at: indexPath, animated: true)
-                // attach observer
+                //FIXME: need to get taskID and send to view model
+                //taskSelectedSubject.onNext(taskID)
             })
             .disposed(by: bag)
     }

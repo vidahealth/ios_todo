@@ -42,11 +42,18 @@ class FormViewModel {
     }
 
     func submitButtonClicked() {
+        // FIXME: This is not being called
         guard let title = latestValidData?.0, let due = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }
         let todoItem = LocalToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
-        manager.createTask(todoItem) // todo: get result of network call
+        manager.createTask(todoItem).subscribe(onNext:  { (result) in
+            guard case .value(let didSucceed) = result else {
+                errorLog("failed creation")
+                return
+            }
+            return
+        })
         _hasSubmitted.value = true
     }
 }

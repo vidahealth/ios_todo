@@ -50,25 +50,24 @@ class TodoListTableViewModel {
             }).subscribe(onNext: { (result) in
                 guard case .value(_) = result else {
                     errorLog("unable to update task for isDone")
+                    // FIXME: We always fail sending to the server
                     return
                 }
                 return
             }).disposed(by: bag)
     }
 
-    func watchTaskIsSelected(observable: Observable<String>) {
+    func watchTaskIsSelected(observable: Observable<Int>) {
+        observable.withLatestFrom(taskToDoManager.tasks()) { (taskID, tasks) -> ToDoTask? in
+            return tasks.filter({$0.id == taskID}).first
+            }.subscribe(onNext: { (task: ToDoTask?) in
+                guard let task = task else {
+                    errorLog("unable to find task")
+                    return
+                }
+                // TODO: Do something with the task selection
+                return
+            }).disposed(by: bag)
 
     }
-
-//    func bind(todoListTable: TodoListTableViewController) {
-//        todoListTable.cellPressed.bind { indexPath in
-//            print("Cell pressed at index: \(indexPath.row)")
-//        }
-//    }
-//
-//    func bind(cell: TodoCardTableViewCell) {
-//        cell.cellSwitchPressed.bind { cellSwitchEvent in
-//            print("CellSwitch Pressed at index: \(cellSwitchEvent.index) and isOn: \(cellSwitchEvent.isOn)")
-//        }
-//    }
 }
