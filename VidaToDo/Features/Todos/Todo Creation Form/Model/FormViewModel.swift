@@ -6,10 +6,6 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
-import VidaFoundation
-import RxSwift
-
 class FormViewModel {
 
     private let disposeBag = DisposeBag()

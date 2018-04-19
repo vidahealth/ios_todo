@@ -8,9 +8,7 @@
 
 import UIKit
 import RxCocoa
-import RxSwift
 import VidaUIKit
-import VidaFoundation
 
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 

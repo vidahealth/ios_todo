@@ -6,10 +6,7 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
-import RxSwift
 import RxCocoa
-import VidaFoundation
 
 extension ToDoTask.Priority {
     func text() -> String {

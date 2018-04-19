@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import VidaFoundation
-import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

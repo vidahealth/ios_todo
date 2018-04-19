@@ -6,10 +6,8 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
 import VidaUIKit
-import VidaFoundation
 
 struct TodoCardTableViewData {
     let taskID: Int
