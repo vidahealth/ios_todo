@@ -22,7 +22,7 @@ public struct TaskToDoService {
         })
     }
 
-    func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
+    func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
         do {
             let data = try JSONEncoder().encode(task)
             guard let url = NSMutableURLRequest(endpoint: .todos, version: .v1, type: .post, data: data) else {
