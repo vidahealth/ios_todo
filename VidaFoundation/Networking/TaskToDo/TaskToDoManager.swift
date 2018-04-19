@@ -12,13 +12,11 @@ import RxSwift
 public struct TaskToDoManager {
     let service = TaskToDoService()
 
-    public init() { }
-
-    public func tasks() -> Observable<Result<ToDoTaskResponse>> {
+    public func tasks() -> Observable<Result<[ToDoTask]>> {
         return service.tasks()
     }
 
-    public func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
+    func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
         return service.createTask(task)
     }
 
