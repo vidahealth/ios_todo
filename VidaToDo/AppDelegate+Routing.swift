@@ -16,7 +16,8 @@ extension AppDelegate {
     func registerModuleURLs() {
         SharedGlobalRouter.registerViewControllerClass(MainTabViewController.self, URLPath: GlobalURL.tab.routingPath)
         SharedGlobalRouter.registerViewControllerClass(TodoListTableViewController.self, URLPath: GlobalURL.toDoList.routingPath)
-        SharedGlobalRouter.registerViewControllerClass(SettingsViewController.self, URLPath: GlobalURL.settings.routingPath)
+        SharedGlobalRouter.registerViewControllerClass(SettingsPageViewController.self, URLPath: GlobalURL.settings.routingPath)
+        SharedGlobalRouter.registerViewControllerClass(TodoFormViewController.self, URLPath: GlobalURL.todoForm.routingPath)
 //        SharedGlobalRouter.registerModuleClass(newFeatureViewController.self, URLPath: GlobalURL.newFeature.routingPath)
     }
     
