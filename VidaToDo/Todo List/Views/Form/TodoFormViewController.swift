@@ -5,26 +5,7 @@
 import UIKit
 import VidaUIKit
 import VidaFoundation
-import RxCocoa
 import RxSwift
-
-class FormValidator {
-    static func isValid(title: String?, due: Date, priority: ToDoTask.Priority) -> Bool {
-        guard
-            let title = title, title.count > 0,
-            due > Date()
-        else {
-            return false
-        }
-        return true
-    }
-}
-
-func dateToString(_ date: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "dd-MMM-yyyy"
-    return formatter.string(from: date)
-}
 
 class TodoFormViewController: UIViewController {
     
