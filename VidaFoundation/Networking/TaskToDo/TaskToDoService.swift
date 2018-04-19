@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import VidaFoundation
 import RxSwift
 
 internal struct TaskToDoService {
@@ -34,31 +33,43 @@ internal struct TaskToDoService {
         })
     }
 
-    func tasks() -> Observable<Result<[ToDoTask]>> {
-            return cachedTasks
-                .do(onNext: { result in
-                    switch result {
-                    case .value(let list): //update cache
-                        do {
-                            let encodedTasks = try JSONEncoder().encode(list)
-                            self.storage.set(encodedTasks, forKey: GlobalStorage.Keys.tasks)
-                        } catch {
-                            errorLog("Could not encode task list data.")
-                        }
-                    case .error(let error): // log error
-                        errorLog(error)
-                    }
-                },
-                    onSubscribed: refreshTasks)
-                .map {result in
-                    switch result {
-                    case .error(let error):
-                        return Result.error(error)
-                    case .value(let taskList):
-                        return Result.value(taskList)
-                    }
-                }
+    public func tasks() -> Observable<Result<[ToDoTask]>> {
+        return networkTasks().map { (result) -> Result<[ToDoTask]> in
+            switch result {
+            case .error(let error):
+                return Result.error(error)
+            case .value(let response):
+                return Result.value(response.objects)
+            }
+        }
     }
+
+    // FIXME: This was hanging the app
+//    func tasks() -> Observable<Result<[ToDoTask]>> {
+//            return cachedTasks
+//                .do(onNext: { result in
+//                    switch result {
+//                    case .value(let list): //update cache
+//                        do {
+//                            let encodedTasks = try JSONEncoder().encode(list)
+//                            self.storage.set(encodedTasks, forKey: GlobalStorage.Keys.tasks)
+//                        } catch {
+//                            errorLog("Could not encode task list data.")
+//                        }
+//                    case .error(let error): // log error
+//                        errorLog(error)
+//                    }
+//                },
+//                    onSubscribed: refreshTasks)
+//                .map {result in
+//                    switch result {
+//                    case .error(let error):
+//                        return Result.error(error)
+//                    case .value(let taskList):
+//                        return Result.value(taskList)
+//                    }
+//                }
+//    }
 
     func refreshTasks() {
         _ = networkTasks()

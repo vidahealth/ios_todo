@@ -64,8 +64,6 @@ class TodoCardTableViewCell: UITableViewCell {
         contentView.addSubview(dueDate)
         dueDate.layout.align(.right, to: .right, of: contentView, withPadding: -10.0)
         dueDate.centerVertically()
-
-
     }
 
     func setupSubjects() {
