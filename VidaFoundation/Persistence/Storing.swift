@@ -4,6 +4,7 @@
 
 import Foundation
 
+
 protocol Storing {
     func object<T>(forKey key: String) -> T?
     func set<T>(_ object: T, forKey key: String)
@@ -39,6 +40,10 @@ extension Storing {
 
 class GlobalStorage: Storing {
 
+    struct Keys {
+        static let tasks = "tasks"
+    }
+    
     private var filePath: String {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first

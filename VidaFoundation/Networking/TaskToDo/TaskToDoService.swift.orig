@@ -34,6 +34,9 @@ public struct TaskToDoService {
         })
     }
 
+<<<<<<< HEAD
+    func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
+=======
     public func tasks() -> Observable<Result<[ToDoTask]>> {
             return cachedTasks
                 .do(onNext: { result in
@@ -60,6 +63,7 @@ public struct TaskToDoService {
     }
 
     func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
+>>>>>>> some service stuff
         do {
             let data = try JSONEncoder().encode(task)
             guard let url = NSMutableURLRequest(endpoint: .todos, version: .v1, type: .post, data: data) else {

@@ -23,8 +23,14 @@ class TestStorage: XCTestCase {
         super.tearDown()
     }
     
-    func testStorage_create() {
+    func testStorage_createString() {
         let foo = "bar"
+        storage.set(foo, forKey: "foo")
+        XCTAssertEqual(foo, storage.object(forKey: "foo"))
+    }
+
+    func testStorage_createArray() {
+        let foo = ["bar"]
         storage.set(foo, forKey: "foo")
         XCTAssertEqual(foo, storage.object(forKey: "foo"))
     }
