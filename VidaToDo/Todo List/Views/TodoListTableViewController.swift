@@ -68,10 +68,10 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     private func setupSubscriptions() {
         // cellForRow
         TaskToDoService().tasks()
-            .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
+            .map({ (result: Result<[ToDoTask]>) -> [ToDoTask] in
                 guard case .value(let tasks) = result else { return [] }
 
-                return tasks.objects
+                return tasks
         })
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell

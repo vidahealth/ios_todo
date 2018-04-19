@@ -56,7 +56,14 @@ public struct TaskToDoService {
     }
 
     func refreshTasks() {
-
+        networkTasks().subscribe(onNext:{result in
+            switch result {
+            case .error(let error):
+                errorLog(error)
+            case .value(let taskList):
+                self.cachedTasks.onNext(Result.value(taskList.objects))
+            }
+        }).dispose()
     }
 
     func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {

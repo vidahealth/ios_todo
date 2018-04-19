@@ -1,0 +1,1978 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09D41613BF1FE6E01D479BE6 /* Pods_VidaToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AE8871E2953FB3ECEB70A9 /* Pods_VidaToDo.framework */; };
+		3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3598D15653B915BC044D4D /* EarlGrey.swift */; };
+		401A4C042086FC1C009158B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C032086FC1C009158B4 /* ViewController.swift */; };
+		401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C082086FC1E009158B4 /* Assets.xcassets */; };
+		401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */; };
+		401A4C172086FC1E009158B4 /* TaskToDoListUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */; };
+		401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */; };
+		4032C15B2087B70400355B04 /* VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1522087B70300355B04 /* VidaFoundation.framework */; };
+		4032C1642087B70400355B04 /* VidaFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4032C1542087B70400355B04 /* VidaFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4032C1672087B70400355B04 /* VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1522087B70300355B04 /* VidaFoundation.framework */; };
+		4032C1682087B70400355B04 /* VidaFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1522087B70300355B04 /* VidaFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4032C17E2087B71500355B04 /* VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1752087B71500355B04 /* VidaUIKit.framework */; };
+		4032C1852087B71500355B04 /* VidaUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1842087B71500355B04 /* VidaUIKitTests.swift */; };
+		4032C1872087B71500355B04 /* VidaUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4032C1772087B71500355B04 /* VidaUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4032C18A2087B71500355B04 /* VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1752087B71500355B04 /* VidaUIKit.framework */; };
+		4032C18B2087B71500355B04 /* VidaUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1752087B71500355B04 /* VidaUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4032C1922087B75000355B04 /* VidaAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1432087017A00355B04 /* VidaAlert.swift */; };
+		4032C1932087B75000355B04 /* VidaAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1422087017A00355B04 /* VidaAlertBuilder.swift */; };
+		4032C1942087B75700355B04 /* UIViewController+TopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C148208701A000355B04 /* UIViewController+TopController.swift */; };
+		4032C1952087B75700355B04 /* UIAlertController+VidaAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1462087019500355B04 /* UIAlertController+VidaAlert.swift */; };
+		4032C1962087B76300355B04 /* VidaLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1302087009B00355B04 /* VidaLogger.swift */; };
+		4032C1972087B76700355B04 /* Storing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C135208700D200355B04 /* Storing.swift */; };
+		4032C1982087B76E00355B04 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13F2087014800355B04 /* NetworkError.swift */; };
+		4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13D2087013200355B04 /* NetworkURLObjects.swift */; };
+		4032C19A2087B77300355B04 /* Constants+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C14B208701DA00355B04 /* Constants+Debug.swift */; };
+		4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C137208700F500355B04 /* URL+endpoint.swift */; };
+		4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */; };
+		4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13B2087011500355B04 /* Enum+Collection.swift */; };
+		4032C1A12087B9A600355B04 /* TaskToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1A02087B9A600355B04 /* TaskToDoService.swift */; };
+		4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1A22087BBBE00355B04 /* NetworkManager.swift */; };
+		4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042F16B2087C259003EA408 /* ToDoTask.swift */; };
+		40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134C2087D7D200633E0C /* NetworkDecoder.swift */; };
+		40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */; };
+		40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013512087EF6500633E0C /* TaskToDoListUtility.swift */; };
+		40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013552087F18800633E0C /* ToDoTaskTests.swift */; };
+		40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01358208803B100633E0C /* SettingsViewModel.swift */; };
+		40B0135B2088044100633E0C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0135A2088044100633E0C /* SettingsViewController.storyboard */; };
+		40B0135D2088053A00633E0C /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0135C2088053A00633E0C /* SettingsPageViewController.swift */; };
+		40B0135F2088054500633E0C /* SettingsPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */; };
+		40B01365208807BA00633E0C /* UIViewController+create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01363208807BA00633E0C /* UIViewController+create.swift */; };
+		40B01366208807BA00633E0C /* UIView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01364208807BA00633E0C /* UIView+Create.swift */; };
+		40B01368208810A900633E0C /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01367208810A900633E0C /* Collection+safe.swift */; };
+		602461B0159AC2FC050DF7C6 /* Pods_VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */; };
+		7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */; };
+		7E8B9FB044C7177E1981C087 /* Pods_VidaUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */; };
+		85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */; };
+		85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */; };
+		85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */; };
+		85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */; };
+		85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E622087F8DD0035FB9F /* GlobalURL.swift */; };
+		85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E652087F9D90035FB9F /* AppViewController.swift */; };
+		85CF7E68208802840035FB9F /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E67208802840035FB9F /* TestStorage.swift */; };
+		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
+		977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D82087EF4000135EC8 /* TodoFormViewController.swift */; };
+		977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DA2087F8C400135EC8 /* TodoTextField.swift */; };
+		977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DC2088013300135EC8 /* PriorityPicker.swift */; };
+		977D71E02088094800135EC8 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DF2088094800135EC8 /* FormFields.swift */; };
+		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
+		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
+		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
+		DBD2CC39AEDC957121D36FAD /* Pods_VidaToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */; };
+		ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */; };
+		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
+		ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */; };
+		ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E42087CCE5007E8239 /* Date+Utility.swift */; };
+		ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */; };
+		F1DE9EA70721B9DADA28F015 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		401A4C132086FC1E009158B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A4BFD2086FC1C009158B4;
+			remoteInfo = VidaToDo;
+		};
+		401A4C382086FDAC009158B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A4BFD2086FC1C009158B4;
+			remoteInfo = VidaToDo;
+		};
+		4032C15C2087B70400355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4032C1512087B70300355B04;
+			remoteInfo = VidaFoundation;
+		};
+		4032C15E2087B70400355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A4BFD2086FC1C009158B4;
+			remoteInfo = VidaToDo;
+		};
+		4032C1652087B70400355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4032C1512087B70300355B04;
+			remoteInfo = VidaFoundation;
+		};
+		4032C17F2087B71500355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4032C1742087B71500355B04;
+			remoteInfo = VidaUIKit;
+		};
+		4032C1812087B71500355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A4BFD2086FC1C009158B4;
+			remoteInfo = VidaToDo;
+		};
+		4032C1882087B71500355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4032C1742087B71500355B04;
+			remoteInfo = VidaUIKit;
+		};
+		4032C19E2087B7BD00355B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A4BF62086FC1C009158B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4032C1512087B70300355B04;
+			remoteInfo = VidaFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11D37B96E93DBCEA56EBDB64 /* EarlGrey Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(TEST_HOST)/../";
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			name = "EarlGrey Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C16C2087B70400355B04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4032C1682087B70400355B04 /* VidaFoundation.framework in Embed Frameworks */,
+				4032C18B2087B71500355B04 /* VidaUIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0066B3808E97BA98D5D3CD27 /* Pods-VidaFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundation/Pods-VidaFoundation.debug.xcconfig"; sourceTree = "<group>"; };
+		01B30C33F3E213B4E908DAC3 /* Pods-VidaToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo.release.xcconfig"; sourceTree = "<group>"; };
+		06ECCA66EF6C6AF552A00D29 /* Pods-VidaUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		14AE8871E2953FB3ECEB70A9 /* Pods_VidaToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C3598D15653B915BC044D4D /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
+		1D4709410E014DBDCFFD2608 /* Pods_VidaToDoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaToDoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E63FE626ECB7EFE7649E40 /* Pods-VidaUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		401A4BFE2086FC1C009158B4 /* VidaToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidaToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		401A4C032086FC1C009158B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		401A4C082086FC1E009158B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		401A4C0B2086FC1E009158B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		401A4C0D2086FC1E009158B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		401A4C122086FC1E009158B4 /* VidaToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VidaToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoListUtilityTests.swift; sourceTree = "<group>"; };
+		401A4C182086FC1E009158B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		401A4C332086FDAC009158B4 /* VidaToDoEGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VidaToDoEGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidaToDoEGTests.swift; sourceTree = "<group>"; };
+		401A4C372086FDAC009158B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4032C1302087009B00355B04 /* VidaLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaLogger.swift; sourceTree = "<group>"; };
+		4032C135208700D200355B04 /* Storing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storing.swift; sourceTree = "<group>"; };
+		4032C137208700F500355B04 /* URL+endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+endpoint.swift"; sourceTree = "<group>"; };
+		4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+Convenience.swift"; sourceTree = "<group>"; };
+		4032C13B2087011500355B04 /* Enum+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enum+Collection.swift"; sourceTree = "<group>"; };
+		4032C13D2087013200355B04 /* NetworkURLObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURLObjects.swift; sourceTree = "<group>"; };
+		4032C13F2087014800355B04 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		4032C1422087017A00355B04 /* VidaAlertBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaAlertBuilder.swift; sourceTree = "<group>"; };
+		4032C1432087017A00355B04 /* VidaAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaAlert.swift; sourceTree = "<group>"; };
+		4032C1462087019500355B04 /* UIAlertController+VidaAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+VidaAlert.swift"; sourceTree = "<group>"; };
+		4032C148208701A000355B04 /* UIViewController+TopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopController.swift"; sourceTree = "<group>"; };
+		4032C14B208701DA00355B04 /* Constants+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constants+Debug.swift"; sourceTree = "<group>"; };
+		4032C1522087B70300355B04 /* VidaFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VidaFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4032C1542087B70400355B04 /* VidaFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VidaFoundation.h; sourceTree = "<group>"; };
+		4032C1552087B70400355B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4032C15A2087B70400355B04 /* VidaFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VidaFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4032C1632087B70400355B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4032C1752087B71500355B04 /* VidaUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VidaUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4032C1772087B71500355B04 /* VidaUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VidaUIKit.h; sourceTree = "<group>"; };
+		4032C1782087B71500355B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4032C17D2087B71500355B04 /* VidaUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VidaUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4032C1842087B71500355B04 /* VidaUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidaUIKitTests.swift; sourceTree = "<group>"; };
+		4032C1862087B71500355B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4032C1A02087B9A600355B04 /* TaskToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoService.swift; sourceTree = "<group>"; };
+		4032C1A22087BBBE00355B04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4042F16B2087C259003EA408 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
+		40B0134C2087D7D200633E0C /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
+		40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoManager.swift; sourceTree = "<group>"; };
+		40B013512087EF6500633E0C /* TaskToDoListUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoListUtility.swift; sourceTree = "<group>"; };
+		40B013552087F18800633E0C /* ToDoTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTaskTests.swift; sourceTree = "<group>"; };
+		40B01358208803B100633E0C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		40B0135A2088044100633E0C /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		40B0135C2088053A00633E0C /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsPageViewController.storyboard; sourceTree = "<group>"; };
+		40B01363208807BA00633E0C /* UIViewController+create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+create.swift"; sourceTree = "<group>"; };
+		40B01364208807BA00633E0C /* UIView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Create.swift"; sourceTree = "<group>"; };
+		40B01367208810A900633E0C /* Collection+safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
+		419237F77E78F1896C83C0D3 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
+		5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6025C97EC4E51D091F07D14F /* Pods-VidaToDoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoUITests/Pods-VidaToDoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6178DFE370560F288EDA7746 /* Pods-VidaToDoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoUITests/Pods-VidaToDoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C7D4947A08F2A70CB2AE12C /* Pods-VidaUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit.debug.xcconfig"; sourceTree = "<group>"; };
+		7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaToDoEGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80E4AFD3943B1C8A7C077335 /* Pods-VidaToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests.release.xcconfig"; sourceTree = "<group>"; };
+		85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGlobalRouter.swift; sourceTree = "<group>"; };
+		85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Routing.swift"; sourceTree = "<group>"; };
+		85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
+		85CF7E622087F8DD0035FB9F /* GlobalURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURL.swift; sourceTree = "<group>"; };
+		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppViewController.swift; path = AppVVM/ViewContoller/AppViewController.swift; sourceTree = "<group>"; };
+		85CF7E67208802840035FB9F /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
+		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		977D71D42087E09B00135EC8 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		977D71D82087EF4000135EC8 /* TodoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFormViewController.swift; sourceTree = "<group>"; };
+		977D71DA2087F8C400135EC8 /* TodoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTextField.swift; sourceTree = "<group>"; };
+		977D71DC2088013300135EC8 /* PriorityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPicker.swift; sourceTree = "<group>"; };
+		977D71DF2088094800135EC8 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
+		A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
+		BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoEGTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests.release.xcconfig"; sourceTree = "<group>"; };
+		BDA472DAC047A07352406992 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
+		C969E7B7B05A3266B1C2C650 /* Pods-VidaToDoEGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoEGTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D11CADFB0329D3E744985A81 /* Pods-VidaToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo.debug.xcconfig"; sourceTree = "<group>"; };
+		DEEA4EFE3375C0957ED8CB4E /* Pods-VidaFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundation/Pods-VidaFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaToDoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCardTableViewCell.swift; sourceTree = "<group>"; };
+		ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NSLayoutConstraints.swift"; sourceTree = "<group>"; };
+		ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
+		ECD145E42087CCE5007E8239 /* Date+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
+		ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewModel.swift; sourceTree = "<group>"; };
+		F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		401A4BFB2086FC1C009158B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D41613BF1FE6E01D479BE6 /* Pods_VidaToDo.framework in Frameworks */,
+				4032C18A2087B71500355B04 /* VidaUIKit.framework in Frameworks */,
+				4032C1672087B70400355B04 /* VidaFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C0F2086FC1E009158B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD2CC39AEDC957121D36FAD /* Pods_VidaToDoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C302086FDAC009158B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */,
+				7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */,
+				D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C14E2087B70300355B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1572087B70400355B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C15B2087B70400355B04 /* VidaFoundation.framework in Frameworks */,
+				A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1712087B71500355B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602461B0159AC2FC050DF7C6 /* Pods_VidaUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C17A2087B71500355B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C17E2087B71500355B04 /* VidaUIKit.framework in Frameworks */,
+				7E8B9FB044C7177E1981C087 /* Pods_VidaUIKitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22D2C52848A0139BCC0CCBB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14AE8871E2953FB3ECEB70A9 /* Pods_VidaToDo.framework */,
+				E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */,
+				1D4709410E014DBDCFFD2608 /* Pods_VidaToDoUITests.framework */,
+				7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */,
+				23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */,
+				5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */,
+				38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */,
+				7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */,
+				B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		401A4BF52086FC1C009158B4 = {
+			isa = PBXGroup;
+			children = (
+				4032C1532087B70400355B04 /* VidaFoundation */,
+				4032C1602087B70400355B04 /* VidaFoundationTests */,
+				4032C1762087B71500355B04 /* VidaUIKit */,
+				4032C1832087B71500355B04 /* VidaUIKitTests */,
+				401A4C002086FC1C009158B4 /* VidaToDo */,
+				401A4C152086FC1E009158B4 /* VidaToDoTests */,
+				401A4C342086FDAC009158B4 /* VidaToDoEGTests */,
+				401A4BFF2086FC1C009158B4 /* Products */,
+				5415F975DFAC364776B87EFF /* Pods */,
+				22D2C52848A0139BCC0CCBB9 /* Frameworks */,
+				85CF7E472087D0F10035FB9F /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		401A4BFF2086FC1C009158B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				401A4BFE2086FC1C009158B4 /* VidaToDo.app */,
+				401A4C122086FC1E009158B4 /* VidaToDoTests.xctest */,
+				401A4C332086FDAC009158B4 /* VidaToDoEGTests.xctest */,
+				4032C1522087B70300355B04 /* VidaFoundation.framework */,
+				4032C15A2087B70400355B04 /* VidaFoundationTests.xctest */,
+				4032C1752087B71500355B04 /* VidaUIKit.framework */,
+				4032C17D2087B71500355B04 /* VidaUIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		401A4C002086FC1C009158B4 /* VidaToDo */ = {
+			isa = PBXGroup;
+			children = (
+				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
+				40B01357208802A100633E0C /* Settings */,
+				ECD145D22087B9D1007E8239 /* Todo List */,
+				85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */,
+				85CF7E652087F9D90035FB9F /* AppViewController.swift */,
+				85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */,
+				401A4C032086FC1C009158B4 /* ViewController.swift */,
+				401A4C082086FC1E009158B4 /* Assets.xcassets */,
+				401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */,
+				401A4C0D2086FC1E009158B4 /* Info.plist */,
+			);
+			path = VidaToDo;
+			sourceTree = "<group>";
+		};
+		401A4C152086FC1E009158B4 /* VidaToDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */,
+				401A4C182086FC1E009158B4 /* Info.plist */,
+			);
+			path = VidaToDoTests;
+			sourceTree = "<group>";
+		};
+		401A4C342086FDAC009158B4 /* VidaToDoEGTests */ = {
+			isa = PBXGroup;
+			children = (
+				401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */,
+				401A4C372086FDAC009158B4 /* Info.plist */,
+				419237F77E78F1896C83C0D3 /* EarlGrey.swift */,
+			);
+			path = VidaToDoEGTests;
+			sourceTree = "<group>";
+		};
+		4032C12A2087005900355B04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4032C137208700F500355B04 /* URL+endpoint.swift */,
+				4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */,
+				4032C13B2087011500355B04 /* Enum+Collection.swift */,
+				ECD145E42087CCE5007E8239 /* Date+Utility.swift */,
+				40B01367208810A900633E0C /* Collection+safe.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4032C12B2087005F00355B04 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4032C13D2087013200355B04 /* NetworkURLObjects.swift */,
+				40B0134C2087D7D200633E0C /* NetworkDecoder.swift */,
+				4032C1A22087BBBE00355B04 /* NetworkManager.swift */,
+				4032C13F2087014800355B04 /* NetworkError.swift */,
+				40B0134E2087EC2900633E0C /* TaskToDo */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4032C12C2087006500355B04 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				40B01363208807BA00633E0C /* UIViewController+create.swift */,
+				40B01364208807BA00633E0C /* UIView+Create.swift */,
+				4032C148208701A000355B04 /* UIViewController+TopController.swift */,
+				4032C1462087019500355B04 /* UIAlertController+VidaAlert.swift */,
+				ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		4032C12D2087006E00355B04 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4032C1412087016F00355B04 /* VidaAlert */,
+				977D71DA2087F8C400135EC8 /* TodoTextField.swift */,
+				977D71DC2088013300135EC8 /* PriorityPicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4032C12F2087008800355B04 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				4032C1302087009B00355B04 /* VidaLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		4032C132208700B300355B04 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4032C135208700D200355B04 /* Storing.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4032C1412087016F00355B04 /* VidaAlert */ = {
+			isa = PBXGroup;
+			children = (
+				4032C1432087017A00355B04 /* VidaAlert.swift */,
+				4032C1422087017A00355B04 /* VidaAlertBuilder.swift */,
+			);
+			path = VidaAlert;
+			sourceTree = "<group>";
+		};
+		4032C14A208701CD00355B04 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				4032C14B208701DA00355B04 /* Constants+Debug.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		4032C1532087B70400355B04 /* VidaFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				85464B1B2087C59000A2C34D /* GlobalRouter */,
+				4032C12F2087008800355B04 /* Logging */,
+				4032C132208700B300355B04 /* Persistence */,
+				4032C12B2087005F00355B04 /* Networking */,
+				4032C14A208701CD00355B04 /* Globals */,
+				4032C12A2087005900355B04 /* Extensions */,
+				4032C1542087B70400355B04 /* VidaFoundation.h */,
+				4032C1552087B70400355B04 /* Info.plist */,
+			);
+			path = VidaFoundation;
+			sourceTree = "<group>";
+		};
+		4032C1602087B70400355B04 /* VidaFoundationTests */ = {
+			isa = PBXGroup;
+			children = (
+				40B013532087F17300633E0C /* Networking */,
+				4032C1632087B70400355B04 /* Info.plist */,
+				85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */,
+				85CF7E67208802840035FB9F /* TestStorage.swift */,
+			);
+			path = VidaFoundationTests;
+			sourceTree = "<group>";
+		};
+		4032C1762087B71500355B04 /* VidaUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4032C12D2087006E00355B04 /* Components */,
+				4032C12C2087006500355B04 /* Extentions */,
+				4032C1772087B71500355B04 /* VidaUIKit.h */,
+				4032C1782087B71500355B04 /* Info.plist */,
+			);
+			path = VidaUIKit;
+			sourceTree = "<group>";
+		};
+		4032C1832087B71500355B04 /* VidaUIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4032C1842087B71500355B04 /* VidaUIKitTests.swift */,
+				4032C1862087B71500355B04 /* Info.plist */,
+			);
+			path = VidaUIKitTests;
+			sourceTree = "<group>";
+		};
+		40B0134E2087EC2900633E0C /* TaskToDo */ = {
+			isa = PBXGroup;
+			children = (
+				40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */,
+				4032C1A02087B9A600355B04 /* TaskToDoService.swift */,
+				4042F16B2087C259003EA408 /* ToDoTask.swift */,
+			);
+			path = TaskToDo;
+			sourceTree = "<group>";
+		};
+		40B013532087F17300633E0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				40B013542087F17C00633E0C /* TaskToDo */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		40B013542087F17C00633E0C /* TaskToDo */ = {
+			isa = PBXGroup;
+			children = (
+				40B013552087F18800633E0C /* ToDoTaskTests.swift */,
+			);
+			path = TaskToDo;
+			sourceTree = "<group>";
+		};
+		40B01357208802A100633E0C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				40B01358208803B100633E0C /* SettingsViewModel.swift */,
+				40B0135A2088044100633E0C /* SettingsViewController.storyboard */,
+				40B013602088054B00633E0C /* SettingsPage */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		40B013602088054B00633E0C /* SettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				40B0135C2088053A00633E0C /* SettingsPageViewController.swift */,
+				40B0135E2088054500633E0C /* SettingsPageViewController.storyboard */,
+			);
+			path = SettingsPage;
+			sourceTree = "<group>";
+		};
+		5415F975DFAC364776B87EFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D11CADFB0329D3E744985A81 /* Pods-VidaToDo.debug.xcconfig */,
+				01B30C33F3E213B4E908DAC3 /* Pods-VidaToDo.release.xcconfig */,
+				F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */,
+				80E4AFD3943B1C8A7C077335 /* Pods-VidaToDoTests.release.xcconfig */,
+				6178DFE370560F288EDA7746 /* Pods-VidaToDoUITests.debug.xcconfig */,
+				6025C97EC4E51D091F07D14F /* Pods-VidaToDoUITests.release.xcconfig */,
+				C969E7B7B05A3266B1C2C650 /* Pods-VidaToDoEGTests.debug.xcconfig */,
+				BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */,
+				0066B3808E97BA98D5D3CD27 /* Pods-VidaFoundation.debug.xcconfig */,
+				DEEA4EFE3375C0957ED8CB4E /* Pods-VidaFoundation.release.xcconfig */,
+				A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */,
+				5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */,
+				6C7D4947A08F2A70CB2AE12C /* Pods-VidaUIKit.debug.xcconfig */,
+				35E63FE626ECB7EFE7649E40 /* Pods-VidaUIKit.release.xcconfig */,
+				861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */,
+				06ECCA66EF6C6AF552A00D29 /* Pods-VidaUIKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		85464B1B2087C59000A2C34D /* GlobalRouter */ = {
+			isa = PBXGroup;
+			children = (
+				85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */,
+				85CF7E622087F8DD0035FB9F /* GlobalURL.swift */,
+			);
+			path = GlobalRouter;
+			sourceTree = "<group>";
+		};
+		85CF7E472087D0F10035FB9F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				1C3598D15653B915BC044D4D /* EarlGrey.swift */,
+				BDA472DAC047A07352406992 /* EarlGrey.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		977D71DE2088093700135EC8 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				977D71D82087EF4000135EC8 /* TodoFormViewController.swift */,
+				977D71DF2088094800135EC8 /* FormFields.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		ECD145D22087B9D1007E8239 /* Todo List */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145E62087E7D5007E8239 /* ViewModels */,
+				ECD145D42087B9FA007E8239 /* Views */,
+				40B013512087EF6500633E0C /* TaskToDoListUtility.swift */,
+			);
+			path = "Todo List";
+			sourceTree = "<group>";
+		};
+		ECD145D42087B9FA007E8239 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
+				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
+				977D71DE2088093700135EC8 /* Form */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECD145E62087E7D5007E8239 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4032C14F2087B70300355B04 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C1642087B70400355B04 /* VidaFoundation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1722087B71500355B04 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C1872087B71500355B04 /* VidaUIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		401A4BFD2086FC1C009158B4 /* VidaToDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401A4C262086FC1E009158B4 /* Build configuration list for PBXNativeTarget "VidaToDo" */;
+			buildPhases = (
+				2EC80742E7FBFFA210383C8E /* [CP] Check Pods Manifest.lock */,
+				401A4BFA2086FC1C009158B4 /* Sources */,
+				401A4BFB2086FC1C009158B4 /* Frameworks */,
+				401A4BFC2086FC1C009158B4 /* Resources */,
+				706DD4FC154A059E7F2ACF3E /* [CP] Embed Pods Frameworks */,
+				4032C16C2087B70400355B04 /* Embed Frameworks */,
+				FFD237F863843E3FA951629D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4032C1662087B70400355B04 /* PBXTargetDependency */,
+				4032C1892087B71500355B04 /* PBXTargetDependency */,
+			);
+			name = VidaToDo;
+			productName = VidaToDo;
+			productReference = 401A4BFE2086FC1C009158B4 /* VidaToDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		401A4C112086FC1E009158B4 /* VidaToDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401A4C292086FC1E009158B4 /* Build configuration list for PBXNativeTarget "VidaToDoTests" */;
+			buildPhases = (
+				60E0CA3AB72D4F3FE8BD8B6E /* [CP] Check Pods Manifest.lock */,
+				401A4C0E2086FC1E009158B4 /* Sources */,
+				401A4C0F2086FC1E009158B4 /* Frameworks */,
+				401A4C102086FC1E009158B4 /* Resources */,
+				2F1A110ADC7F7734831A9097 /* [CP] Embed Pods Frameworks */,
+				B22C5B4B4B66F29663F0672C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				401A4C142086FC1E009158B4 /* PBXTargetDependency */,
+			);
+			name = VidaToDoTests;
+			productName = VidaToDoTests;
+			productReference = 401A4C122086FC1E009158B4 /* VidaToDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		401A4C322086FDAC009158B4 /* VidaToDoEGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401A4C3C2086FDAC009158B4 /* Build configuration list for PBXNativeTarget "VidaToDoEGTests" */;
+			buildPhases = (
+				B3784609056D0C806D756E2A /* [CP] Check Pods Manifest.lock */,
+				401A4C2F2086FDAC009158B4 /* Sources */,
+				401A4C302086FDAC009158B4 /* Frameworks */,
+				401A4C312086FDAC009158B4 /* Resources */,
+				AB6BFF8FCE0534571F2633D7 /* [CP] Embed Pods Frameworks */,
+				11D37B96E93DBCEA56EBDB64 /* EarlGrey Copy Files */,
+				0483EB33C61D65CBCF319C5D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				401A4C392086FDAC009158B4 /* PBXTargetDependency */,
+			);
+			name = VidaToDoEGTests;
+			productName = VidaToDoEGTests;
+			productReference = 401A4C332086FDAC009158B4 /* VidaToDoEGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4032C1512087B70300355B04 /* VidaFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4032C1692087B70400355B04 /* Build configuration list for PBXNativeTarget "VidaFoundation" */;
+			buildPhases = (
+				4E48C228E1DBC12086F5A385 /* [CP] Check Pods Manifest.lock */,
+				4032C14D2087B70300355B04 /* Sources */,
+				4032C14E2087B70300355B04 /* Frameworks */,
+				4032C14F2087B70300355B04 /* Headers */,
+				4032C1502087B70300355B04 /* Resources */,
+				A8BF52F24AFBB924163C7B34 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VidaFoundation;
+			productName = VidaFoundation;
+			productReference = 4032C1522087B70300355B04 /* VidaFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4032C1592087B70400355B04 /* VidaFoundationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4032C16D2087B70400355B04 /* Build configuration list for PBXNativeTarget "VidaFoundationTests" */;
+			buildPhases = (
+				7B727B734D2C960FC71FE2A7 /* [CP] Check Pods Manifest.lock */,
+				4032C1562087B70400355B04 /* Sources */,
+				4032C1572087B70400355B04 /* Frameworks */,
+				4032C1582087B70400355B04 /* Resources */,
+				14AD763DCBDAF9867F641555 /* [CP] Embed Pods Frameworks */,
+				CA91B38CA518458B8527045A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4032C15D2087B70400355B04 /* PBXTargetDependency */,
+				4032C15F2087B70400355B04 /* PBXTargetDependency */,
+			);
+			name = VidaFoundationTests;
+			productName = VidaFoundationTests;
+			productReference = 4032C15A2087B70400355B04 /* VidaFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4032C1742087B71500355B04 /* VidaUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4032C18C2087B71500355B04 /* Build configuration list for PBXNativeTarget "VidaUIKit" */;
+			buildPhases = (
+				AC7A130226EB580907BA81D6 /* [CP] Check Pods Manifest.lock */,
+				4032C1702087B71500355B04 /* Sources */,
+				4032C1712087B71500355B04 /* Frameworks */,
+				4032C1722087B71500355B04 /* Headers */,
+				4032C1732087B71500355B04 /* Resources */,
+				A319A4E177C9B170444D3067 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4032C19F2087B7BD00355B04 /* PBXTargetDependency */,
+			);
+			name = VidaUIKit;
+			productName = VidaUIKit;
+			productReference = 4032C1752087B71500355B04 /* VidaUIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4032C17C2087B71500355B04 /* VidaUIKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4032C18F2087B71500355B04 /* Build configuration list for PBXNativeTarget "VidaUIKitTests" */;
+			buildPhases = (
+				7B94D9F65E5697CCC4CDD3C5 /* [CP] Check Pods Manifest.lock */,
+				4032C1792087B71500355B04 /* Sources */,
+				4032C17A2087B71500355B04 /* Frameworks */,
+				4032C17B2087B71500355B04 /* Resources */,
+				0E531F9BE7782846B090FD3F /* [CP] Embed Pods Frameworks */,
+				61E0D92761355AA626FB0C6A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4032C1802087B71500355B04 /* PBXTargetDependency */,
+				4032C1822087B71500355B04 /* PBXTargetDependency */,
+			);
+			name = VidaUIKitTests;
+			productName = VidaUIKitTests;
+			productReference = 4032C17D2087B71500355B04 /* VidaUIKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		401A4BF62086FC1C009158B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Vida Health";
+				TargetAttributes = {
+					401A4BFD2086FC1C009158B4 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					401A4C112086FC1E009158B4 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 401A4BFD2086FC1C009158B4;
+					};
+					401A4C322086FDAC009158B4 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 401A4BFD2086FC1C009158B4;
+					};
+					4032C1512087B70300355B04 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					4032C1592087B70400355B04 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 401A4BFD2086FC1C009158B4;
+					};
+					4032C1742087B71500355B04 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					4032C17C2087B71500355B04 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 401A4BFD2086FC1C009158B4;
+					};
+				};
+			};
+			buildConfigurationList = 401A4BF92086FC1C009158B4 /* Build configuration list for PBXProject "VidaToDo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 401A4BF52086FC1C009158B4;
+			productRefGroup = 401A4BFF2086FC1C009158B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				401A4BFD2086FC1C009158B4 /* VidaToDo */,
+				401A4C112086FC1E009158B4 /* VidaToDoTests */,
+				401A4C322086FDAC009158B4 /* VidaToDoEGTests */,
+				4032C1512087B70300355B04 /* VidaFoundation */,
+				4032C1592087B70400355B04 /* VidaFoundationTests */,
+				4032C1742087B71500355B04 /* VidaUIKit */,
+				4032C17C2087B71500355B04 /* VidaUIKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		401A4BFC2086FC1C009158B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */,
+				40B0135F2088054500633E0C /* SettingsPageViewController.storyboard in Resources */,
+				40B0135B2088044100633E0C /* SettingsViewController.storyboard in Resources */,
+				401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C102086FC1E009158B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C312086FDAC009158B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1502087B70300355B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1582087B70400355B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1732087B71500355B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C17B2087B71500355B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0483EB33C61D65CBCF319C5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E531F9BE7782846B090FD3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14AD763DCBDAF9867F641555 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EC80742E7FBFFA210383C8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaToDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F1A110ADC7F7734831A9097 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E48C228E1DBC12086F5A385 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaFoundation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60E0CA3AB72D4F3FE8BD8B6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaToDoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61E0D92761355AA626FB0C6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		706DD4FC154A059E7F2ACF3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B727B734D2C960FC71FE2A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaFoundationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B94D9F65E5697CCC4CDD3C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaUIKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A319A4E177C9B170444D3067 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8BF52F24AFBB924163C7B34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundation/Pods-VidaFoundation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6BFF8FCE0534571F2633D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${PODS_ROOT}/EarlGrey/EarlGrey/EarlGrey.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EarlGrey.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC7A130226EB580907BA81D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaUIKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B22C5B4B4B66F29663F0672C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3784609056D0C806D756E2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VidaToDoEGTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA91B38CA518458B8527045A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD237F863843E3FA951629D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		401A4BFA2086FC1C009158B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */,
+				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
+				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
+				40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */,
+				977D71E02088094800135EC8 /* FormFields.swift in Sources */,
+				85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */,
+				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
+				85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */,
+				40B0135D2088053A00633E0C /* SettingsPageViewController.swift in Sources */,
+				40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */,
+				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
+				977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */,
+				ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C0E2086FC1E009158B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401A4C172086FC1E009158B4 /* TaskToDoListUtilityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401A4C2F2086FDAC009158B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */,
+				F1DE9EA70721B9DADA28F015 /* (null) in Sources */,
+				3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C14D2087B70300355B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C1A12087B9A600355B04 /* TaskToDoService.swift in Sources */,
+				4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */,
+				4032C1982087B76E00355B04 /* NetworkError.swift in Sources */,
+				85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */,
+				40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */,
+				4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */,
+				4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */,
+				4032C1972087B76700355B04 /* Storing.swift in Sources */,
+				ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */,
+				4032C1962087B76300355B04 /* VidaLogger.swift in Sources */,
+				40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */,
+				40B01368208810A900633E0C /* Collection+safe.swift in Sources */,
+				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,
+				85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */,
+				4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */,
+				4032C19A2087B77300355B04 /* Constants+Debug.swift in Sources */,
+				4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1562087B70400355B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+<<<<<<< HEAD
+=======
+				4032C1622087B70400355B04 /* VidaFoundationTests.swift in Sources */,
+				85CF7E68208802840035FB9F /* TestStorage.swift in Sources */,
+>>>>>>> first test, fixed other tests
+				85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */,
+				40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1702087B71500355B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B01365208807BA00633E0C /* UIViewController+create.swift in Sources */,
+				4032C1942087B75700355B04 /* UIViewController+TopController.swift in Sources */,
+				40B01366208807BA00633E0C /* UIView+Create.swift in Sources */,
+				977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */,
+				977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */,
+				4032C1932087B75000355B04 /* VidaAlertBuilder.swift in Sources */,
+				ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */,
+				4032C1922087B75000355B04 /* VidaAlert.swift in Sources */,
+				4032C1952087B75700355B04 /* UIAlertController+VidaAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4032C1792087B71500355B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4032C1852087B71500355B04 /* VidaUIKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		401A4C142086FC1E009158B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A4BFD2086FC1C009158B4 /* VidaToDo */;
+			targetProxy = 401A4C132086FC1E009158B4 /* PBXContainerItemProxy */;
+		};
+		401A4C392086FDAC009158B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A4BFD2086FC1C009158B4 /* VidaToDo */;
+			targetProxy = 401A4C382086FDAC009158B4 /* PBXContainerItemProxy */;
+		};
+		4032C15D2087B70400355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4032C1512087B70300355B04 /* VidaFoundation */;
+			targetProxy = 4032C15C2087B70400355B04 /* PBXContainerItemProxy */;
+		};
+		4032C15F2087B70400355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A4BFD2086FC1C009158B4 /* VidaToDo */;
+			targetProxy = 4032C15E2087B70400355B04 /* PBXContainerItemProxy */;
+		};
+		4032C1662087B70400355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4032C1512087B70300355B04 /* VidaFoundation */;
+			targetProxy = 4032C1652087B70400355B04 /* PBXContainerItemProxy */;
+		};
+		4032C1802087B71500355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4032C1742087B71500355B04 /* VidaUIKit */;
+			targetProxy = 4032C17F2087B71500355B04 /* PBXContainerItemProxy */;
+		};
+		4032C1822087B71500355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A4BFD2086FC1C009158B4 /* VidaToDo */;
+			targetProxy = 4032C1812087B71500355B04 /* PBXContainerItemProxy */;
+		};
+		4032C1892087B71500355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4032C1742087B71500355B04 /* VidaUIKit */;
+			targetProxy = 4032C1882087B71500355B04 /* PBXContainerItemProxy */;
+		};
+		4032C19F2087B7BD00355B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4032C1512087B70300355B04 /* VidaFoundation */;
+			targetProxy = 4032C19E2087B7BD00355B04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				401A4C0B2086FC1E009158B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		401A4C242086FC1E009158B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		401A4C252086FC1E009158B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		401A4C272086FC1E009158B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11CADFB0329D3E744985A81 /* Pods-VidaToDo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		401A4C282086FC1E009158B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B30C33F3E213B4E908DAC3 /* Pods-VidaToDo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		401A4C2A2086FC1E009158B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Debug;
+		};
+		401A4C2B2086FC1E009158B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E4AFD3943B1C8A7C077335 /* Pods-VidaToDoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Release;
+		};
+		401A4C3A2086FDAC009158B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C969E7B7B05A3266B1C2C650 /* Pods-VidaToDoEGTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDoEGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Debug;
+		};
+		401A4C3B2086FDAC009158B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaToDoEGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Release;
+		};
+		4032C16A2087B70400355B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0066B3808E97BA98D5D3CD27 /* Pods-VidaFoundation.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VidaFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4032C16B2087B70400355B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEEA4EFE3375C0957ED8CB4E /* Pods-VidaFoundation.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VidaFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4032C16E2087B70400355B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Debug;
+		};
+		4032C16F2087B70400355B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Release;
+		};
+		4032C18D2087B71500355B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C7D4947A08F2A70CB2AE12C /* Pods-VidaUIKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VidaUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4032C18E2087B71500355B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E63FE626ECB7EFE7649E40 /* Pods-VidaUIKit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VidaUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4032C1902087B71500355B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaUIKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Debug;
+		};
+		4032C1912087B71500355B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06ECCA66EF6C6AF552A00D29 /* Pods-VidaUIKitTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59VUAD6Y56;
+				INFOPLIST_FILE = VidaUIKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		401A4BF92086FC1C009158B4 /* Build configuration list for PBXProject "VidaToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401A4C242086FC1E009158B4 /* Debug */,
+				401A4C252086FC1E009158B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401A4C262086FC1E009158B4 /* Build configuration list for PBXNativeTarget "VidaToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401A4C272086FC1E009158B4 /* Debug */,
+				401A4C282086FC1E009158B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401A4C292086FC1E009158B4 /* Build configuration list for PBXNativeTarget "VidaToDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401A4C2A2086FC1E009158B4 /* Debug */,
+				401A4C2B2086FC1E009158B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401A4C3C2086FDAC009158B4 /* Build configuration list for PBXNativeTarget "VidaToDoEGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401A4C3A2086FDAC009158B4 /* Debug */,
+				401A4C3B2086FDAC009158B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4032C1692087B70400355B04 /* Build configuration list for PBXNativeTarget "VidaFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4032C16A2087B70400355B04 /* Debug */,
+				4032C16B2087B70400355B04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4032C16D2087B70400355B04 /* Build configuration list for PBXNativeTarget "VidaFoundationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4032C16E2087B70400355B04 /* Debug */,
+				4032C16F2087B70400355B04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4032C18C2087B71500355B04 /* Build configuration list for PBXNativeTarget "VidaUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4032C18D2087B71500355B04 /* Debug */,
+				4032C18E2087B71500355B04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4032C18F2087B71500355B04 /* Build configuration list for PBXNativeTarget "VidaUIKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4032C1902087B71500355B04 /* Debug */,
+				4032C1912087B71500355B04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 401A4BF62086FC1C009158B4 /* Project object */;
+}
