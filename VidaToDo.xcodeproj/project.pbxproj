@@ -64,6 +64,7 @@
 		977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DC2088013300135EC8 /* PriorityPicker.swift */; };
 		977D71E02088094800135EC8 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DF2088094800135EC8 /* FormFields.swift */; };
 		977D71E22088296700135EC8 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E12088296700135EC8 /* FormViewModel.swift */; };
+		977D71E420882AA100135EC8 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E320882AA100135EC8 /* FormValidator.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
 		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
@@ -248,6 +249,7 @@
 		977D71DC2088013300135EC8 /* PriorityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPicker.swift; sourceTree = "<group>"; };
 		977D71DF2088094800135EC8 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
 		977D71E12088296700135EC8 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		977D71E320882AA100135EC8 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
 		A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
 		BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoEGTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 			children = (
 				ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */,
 				977D71E12088296700135EC8 /* FormViewModel.swift */,
+				977D71E320882AA100135EC8 /* FormValidator.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1307,6 +1310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977D71E420882AA100135EC8 /* FormValidator.swift in Sources */,
 				977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */,
 				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
