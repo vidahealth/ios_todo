@@ -14,9 +14,11 @@ import VidaFoundation
 
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
-    let bag = DisposeBag()
-    let tableView = UITableView()
     let viewModel: TodoListTableViewModel
+    let bag = DisposeBag()
+
+    let tableView = UITableView()
+    let navbar = UINavigationBar(frame: .zero)
 
     convenience init() {
         let viewModel = TodoListTableViewModel()
@@ -41,6 +43,8 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupView() {
+        setupNavBar()
+
         view.addSubview(tableView)
         tableView.fillSuperview()
         tableView.rowHeight = 44;
@@ -52,9 +56,13 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
             .disposed(by: bag)
     }
 
+    private func setupNavBar() {
+        title = "Todo List"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+    }
+
     private func setupSubscriptions() {
         // cellForRow
-        //sampleViewData
         TaskToDoService().tasks()
             .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
                 guard case .value(let tasks) = result else { return [] }
