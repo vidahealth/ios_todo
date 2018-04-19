@@ -64,6 +64,7 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
     private func setupSubscriptions() {
 
+        // Setup data source
         TaskToDoService().tasks()
             .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
                 guard case .value(let tasks) = result else { return [] }

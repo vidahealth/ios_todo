@@ -5,47 +5,7 @@
 import UIKit
 import VidaUIKit
 import VidaFoundation
-import RxCocoa
 import RxSwift
-
-class FormValidator {
-    static func isValid(title: String?, due: Date, priority: ToDoTask.Priority) -> Bool {
-        guard
-            let title = title, title.count > 0,
-            due > Date()
-        else {
-            return false
-        }
-        return true
-    }
-}
-
-class FormViewModel {
-
-    private let disposeBag = DisposeBag()
-
-    var isValid: Observable<Bool>?
-
-    var latestValidData: (String?, Date, ToDoTask.Priority)?
-
-    init() { }
-
-    func bind(title: Observable<String?>, due: Observable<Date>, priority: Observable<ToDoTask.Priority>) {
-        let combinedFormValues = Observable<(String?, Date, ToDoTask.Priority)>.combineLatest(title, due, priority, resultSelector: { (title: String?, due: Date, priority: ToDoTask.Priority) -> (String?, Date, ToDoTask.Priority) in
-            return (title, due, priority)
-        })
-
-        isValid = combinedFormValues.map { [weak self] values in
-            let isValid = FormValidator.isValid(title: values.0, due: values.1, priority: values.2)
-            if isValid {
-                self?.latestValidData = values
-                return true
-            } else {
-                return false
-            }
-        }
-    }
-}
 
 class TodoFormViewController: UIViewController {
     
@@ -71,6 +31,10 @@ class TodoFormViewController: UIViewController {
             self?.setButton(isEnabled: isValid)
         }).disposed(by: disposeBag)
 
+        viewModel.hasSubmitted?.subscribe(onNext: { [weak self] isValid in
+            self?.dismiss()
+        }).disposed(by: disposeBag)
+
         closeButton.setTitle("X", for: .normal)
         closeButton.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
         closeButton.setTitleColor(.black, for: .normal)
@@ -86,11 +50,11 @@ class TodoFormViewController: UIViewController {
     }
 
     @objc func closeButtonClicked() {
-        dismiss(animated: true, completion: nil)
+        dismiss()
     }
 
     @objc func addButtonClicked() {
-        print("Submitting")
+        viewModel.submitButtonClicked()
     }
 
     func setButton(isEnabled: Bool) {
@@ -103,10 +67,8 @@ class TodoFormViewController: UIViewController {
         }
     }
 
-}
+    func dismiss() {
+        dismiss(animated: true, completion: nil)
+    }
 
-func dateToString(_ date: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "dd-MMM-yyyy"
-    return formatter.string(from: date)
 }
