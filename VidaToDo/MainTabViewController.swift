@@ -16,7 +16,8 @@ class MainTabViewController: UITabBarController {
         
         if let todoListVC = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.toDoList.routingPath) {
             todoListVC.tabBarItem = UITabBarItem(title: "Todo", image: #imageLiteral(resourceName: "placeholder"), selectedImage: #imageLiteral(resourceName: "placeholderSelected"))
-            tabViewControllers.append(todoListVC)
+            let navController = UINavigationController(rootViewController: todoListVC)
+            tabViewControllers.append(navController)
         }
         
         if let settingsVC = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.settings.routingPath) {

@@ -24,15 +24,19 @@ protocol TodoListTableViewPresentable {
 }
 
 class TodoListTableViewModel {
+    let bag = DisposeBag()
+
     func bind(todoListTable: TodoListTableViewController) {
         todoListTable.cellPressed.bind { indexPath in
             print("Cell pressed at index: \(indexPath.row)")
         }
+        .disposed(by: bag)
     }
 
     func bind(cell: TodoCardTableViewCell) {
         cell.cellSwitchPressed.bind { cellSwitchEvent in
             print("CellSwitch Pressed at index: \(cellSwitchEvent.index) and isOn: \(cellSwitchEvent.isOn)")
         }
+        .disposed(by: bag)
     }
 }
