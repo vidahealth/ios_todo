@@ -6,7 +6,7 @@ import Foundation
 
 
 protocol Storing {
-    func object<T>(forKey key: String) -> T?
+    func object<T: Codable>(forKey key: String) -> T?
     func set<T>(_ object: T, forKey key: String)
     func removeObject(forKey key: String)
 }
@@ -29,11 +29,11 @@ extension Storing {
         return object(forKey: key)
     }
 
-    func array<T>(forKey key: String) -> [T]? {
+    func array<T: Codable>(forKey key: String) -> [T]? {
         return object(forKey: key)
     }
 
-    func dict<T>(forKey key: String) -> [String: T]? {
+    func dict<T: Codable>(forKey key: String) -> [String: T]? {
         return object(forKey: key)
     }
 }
@@ -54,12 +54,29 @@ class GlobalStorage: Storing {
         NSKeyedArchiver.archiveRootObject(object, toFile: filePath.appending("\\" + key))
     }
 
-    func object<T>(forKey key: String) -> T? {
-        guard let object = NSKeyedUnarchiver.unarchiveObject(withFile: filePath.appending("\\" + key)) as? T else {
+    func object<T: Codable>(forKey key: String) -> T? {
+
+        guard let object = NSKeyedUnarchiver.unarchiveObject(withFile: filePath.appending("\\" + key)) else {
             errorLog("Could not load data for key \(key)")
             return nil
         }
-        return object
+
+        if let decodedObject = object as? T {
+            return decodedObject
+        }
+
+        guard let dataObject = object as? Data else {
+            errorLog("Could not obtain data for object at key \(key)")
+            return nil
+        }
+
+        do {
+            let decodedObject = try JSONDecoder().decode(T.self, from: dataObject)
+            return decodedObject
+        } catch {
+            errorLog("Could not decode data for key \(key)")
+            return nil
+        }
     }
 
     func removeObject(forKey key: String) {

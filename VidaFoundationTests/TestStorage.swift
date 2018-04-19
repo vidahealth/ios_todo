@@ -35,11 +35,34 @@ class TestStorage: XCTestCase {
         XCTAssertEqual(foo, storage.object(forKey: "foo"))
     }
 
+    func testStorage_createToDoList() {
+        let foo:ToDoTask = ToDoTask(group: "bar",
+                           title: "foo",
+                           description: "poo",
+                           priority: .low,
+                           done: false)
+        do {
+            let encodeFoo = try JSONEncoder().encode(foo)
+            storage.set(encodeFoo, forKey: "foo")
+            let codedTask: Data? = storage.object(forKey: "foo")
+
+            do {
+                let decodedTask: ToDoTask = try JSONDecoder().decode(ToDoTask.self, from: codedTask!)
+                XCTAssertEqual(foo.group, decodedTask.group)
+            } catch {
+                XCTFail()
+            }
+        } catch {
+            XCTFail()
+        }
+    }
+
     func testStorage_remove() {
         let foo = "bar"
         storage.set(foo, forKey: "foo")
         storage.removeObject(forKey: "foo")
-        XCTAssertNil(storage.object(forKey: "foo"))
+        let storedObject: String? = storage.object(forKey: "foo")
+        XCTAssertNil(storedObject)
     }
     
 }

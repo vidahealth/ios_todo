@@ -39,7 +39,12 @@ public struct TaskToDoService {
                 .do(onNext: { result in
                     switch result {
                     case .value(let list): //update cache
-                        self.storage.set(list, forKey: GlobalStorage.Keys.tasks)
+                        do {
+                            let encodedTasks = try JSONEncoder().encode(list)
+                            self.storage.set(encodedTasks, forKey: GlobalStorage.Keys.tasks)
+                        } catch {
+                            errorLog("Could not encode task list data.")
+                        }
                     case .error(let error): // log error
                         errorLog(error)
                     }
@@ -56,14 +61,14 @@ public struct TaskToDoService {
     }
 
     func refreshTasks() {
-        networkTasks().subscribe(onNext:{result in
-            switch result {
-            case .error(let error):
-                errorLog(error)
-            case .value(let taskList):
-                self.cachedTasks.onNext(Result.value(taskList.objects))
-            }
-        }).dispose()
+        _ = networkTasks()
+            .subscribe(onNext: { result in
+                guard case .value(let tasks) = result else {
+                    self.cachedTasks.onNext(Result.value([]))
+                    return
+                }
+                self.cachedTasks.onNext(Result.value(tasks.objects))
+                })
     }
 
     func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
