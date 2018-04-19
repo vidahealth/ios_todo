@@ -42,7 +42,6 @@ class FormViewModel {
     }
 
     func submitButtonClicked() {
-        // FIXME: This is not being called
         guard let title = latestValidData?.0, let _ = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }

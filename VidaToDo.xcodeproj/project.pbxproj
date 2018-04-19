@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		09D41613BF1FE6E01D479BE6 /* Pods_VidaToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AE8871E2953FB3ECEB70A9 /* Pods_VidaToDo.framework */; };
 		3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3598D15653B915BC044D4D /* EarlGrey.swift */; };
-		401A4C042086FC1C009158B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C032086FC1C009158B4 /* ViewController.swift */; };
 		401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C082086FC1E009158B4 /* Assets.xcassets */; };
 		401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */; };
 		401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */; };
@@ -181,7 +180,6 @@
 		35E63FE626ECB7EFE7649E40 /* Pods-VidaUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit.release.xcconfig"; sourceTree = "<group>"; };
 		38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A4BFE2086FC1C009158B4 /* VidaToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidaToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		401A4C032086FC1C009158B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		401A4C082086FC1E009158B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		401A4C0B2086FC1E009158B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		401A4C0D2086FC1E009158B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,7 +240,7 @@
 		85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
 		85CF7E622087F8DD0035FB9F /* GlobalURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURL.swift; sourceTree = "<group>"; };
-		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppViewController.swift; path = AppVVM/ViewContoller/AppViewController.swift; sourceTree = "<group>"; };
+		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		85CF7E67208802840035FB9F /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		977D71D42087E09B00135EC8 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -384,16 +382,8 @@
 		401A4C002086FC1C009158B4 /* VidaToDo */ = {
 			isa = PBXGroup;
 			children = (
-				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
-				40B01357208802A100633E0C /* Settings */,
-				ECD145D22087B9D1007E8239 /* Todo List */,
-				85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */,
-				85CF7E652087F9D90035FB9F /* AppViewController.swift */,
-				85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */,
-				401A4C032086FC1C009158B4 /* ViewController.swift */,
-				401A4C082086FC1E009158B4 /* Assets.xcassets */,
-				401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */,
-				401A4C0D2086FC1E009158B4 /* Info.plist */,
+				40B013712088509A00633E0C /* Features */,
+				40B01372208850A300633E0C /* App */,
 			);
 			path = VidaToDo;
 			sourceTree = "<group>";
@@ -513,8 +503,8 @@
 		4032C1602087B70400355B04 /* VidaFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				40B013532087F17300633E0C /* Networking */,
 				4032C1632087B70400355B04 /* Info.plist */,
+				40B013532087F17300633E0C /* Networking */,
 				85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */,
 				85CF7E67208802840035FB9F /* TestStorage.swift */,
 			);
@@ -588,6 +578,82 @@
 			path = SettingsPage;
 			sourceTree = "<group>";
 		};
+		40B0136B2088502800633E0C /* Todo List */ = {
+			isa = PBXGroup;
+			children = (
+				40B0136F2088507500633E0C /* Model */,
+				40B013702088507A00633E0C /* Interface */,
+			);
+			path = "Todo List";
+			sourceTree = "<group>";
+		};
+		40B0136C2088503600633E0C /* Todo Creation Form */ = {
+			isa = PBXGroup;
+			children = (
+				40B0136E2088506F00633E0C /* Model */,
+				40B0136D2088506800633E0C /* Interface */,
+			);
+			path = "Todo Creation Form";
+			sourceTree = "<group>";
+		};
+		40B0136D2088506800633E0C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				977D71D82087EF4000135EC8 /* TodoFormViewController.swift */,
+				977D71DF2088094800135EC8 /* FormFields.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		40B0136E2088506F00633E0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				977D71E12088296700135EC8 /* FormViewModel.swift */,
+				977D71E320882AA100135EC8 /* FormValidator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40B0136F2088507500633E0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40B013702088507A00633E0C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
+				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		40B013712088509A00633E0C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				40B01357208802A100633E0C /* Settings */,
+				ECD145D22087B9D1007E8239 /* Todos */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		40B01372208850A300633E0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				977D71D42087E09B00135EC8 /* MainTabViewController.swift */,
+				85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */,
+				85CF7E652087F9D90035FB9F /* AppViewController.swift */,
+				85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */,
+				401A4C082086FC1E009158B4 /* Assets.xcassets */,
+				401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */,
+				401A4C0D2086FC1E009158B4 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		5415F975DFAC364776B87EFF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,42 +695,13 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		977D71DE2088093700135EC8 /* Form */ = {
+		ECD145D22087B9D1007E8239 /* Todos */ = {
 			isa = PBXGroup;
 			children = (
-				977D71D82087EF4000135EC8 /* TodoFormViewController.swift */,
-				977D71DF2088094800135EC8 /* FormFields.swift */,
+				40B0136C2088503600633E0C /* Todo Creation Form */,
+				40B0136B2088502800633E0C /* Todo List */,
 			);
-			path = Form;
-			sourceTree = "<group>";
-		};
-		ECD145D22087B9D1007E8239 /* Todo List */ = {
-			isa = PBXGroup;
-			children = (
-				ECD145E62087E7D5007E8239 /* ViewModels */,
-				ECD145D42087B9FA007E8239 /* Views */,
-			);
-			path = "Todo List";
-			sourceTree = "<group>";
-		};
-		ECD145D42087B9FA007E8239 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
-				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
-				977D71DE2088093700135EC8 /* Form */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		ECD145E62087E7D5007E8239 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */,
-				977D71E12088296700135EC8 /* FormViewModel.swift */,
-				977D71E320882AA100135EC8 /* FormValidator.swift */,
-			);
-			path = ViewModels;
+			path = Todos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1315,12 +1352,9 @@
 			files = (
 				977D71E420882AA100135EC8 /* FormValidator.swift in Sources */,
 				977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */,
-				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
-				40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */,
 				977D71E22088296700135EC8 /* FormViewModel.swift in Sources */,
 				977D71E02088094800135EC8 /* FormFields.swift in Sources */,
-				977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */,
 				85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */,
 				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
 				85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */,
@@ -1378,7 +1412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4032C1622087B70400355B04 /* VidaFoundationTests.swift in Sources */,
 				85CF7E68208802840035FB9F /* TestStorage.swift in Sources */,
 				85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */,
 				40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */,
