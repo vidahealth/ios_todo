@@ -15,6 +15,7 @@ import VidaFoundation
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
     let viewModel: TodoListTableViewModel
+    let todoDataSource = Variable<[ToDoTask]>([])
     let bag = DisposeBag()
 
     let tableView = UITableView()
@@ -43,22 +44,18 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupView() {
-        setupNavBar()
+        // Setup Navigation Bar
+        title = "Todo List"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
 
+        // Setup TableView
         view.addSubview(tableView)
         tableView.fillSuperview()
         tableView.rowHeight = 44;
-
         tableView.register(TodoCardTableViewCell.self, forCellReuseIdentifier: "todoCard")
-
         tableView
             .rx.setDelegate(self)
             .disposed(by: bag)
-    }
-
-    private func setupNavBar() {
-        title = "Todo List"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
     }
 
     @objc func addButtonClicked() {
@@ -66,13 +63,21 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupSubscriptions() {
-        // cellForRow
+
         TaskToDoService().tasks()
             .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
                 guard case .value(let tasks) = result else { return [] }
 
                 return tasks.objects
-        })
+            })
+            .subscribe(onNext: { [todoDataSource] (list: [ToDoTask]) in
+                todoDataSource.value = list
+            })
+            .disposed(by: bag)
+
+        /// cellForRow
+        todoDataSource
+            .asObservable()
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)
@@ -89,6 +94,13 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
                 tableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: bag)
+
+        // didDeleteRow
+        tableView.rx.itemDeleted
+            .subscribe(onNext: { [viewModel, todoDataSource] indexPath in
+                todoDataSource.value.remove(at: indexPath.row)
+            })
+            .disposed(by: bag)
     }
 }
 
@@ -97,4 +109,3 @@ extension TodoListTableViewController: TodoListTableViewPresentable {
         return tableView.rx.itemSelected
     }
 }
-
