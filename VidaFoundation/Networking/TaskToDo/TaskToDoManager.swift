@@ -17,15 +17,15 @@ public struct TaskToDoManager {
 
     public func tasks() -> Observable<[ToDoTask]> {
         return service.tasks().map({ (result) -> [ToDoTask] in
-            guard case .value(let taskResponse) = result else {
+            guard case .value(let tasks) = result else {
                 return []
             }
 
-            return self.utility.sortByPriority(tasks: taskResponse.objects)
+            return self.utility.sortByPriority(tasks: tasks)
         })
     }
 
-    func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
+    public func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
         return service.createTask(task)
     }
 

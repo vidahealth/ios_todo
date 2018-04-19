@@ -12,14 +12,34 @@ public struct ToDoTaskResponse: Codable {
     public let objects: [ToDoTask]
 }
 
-public struct ToDoTask: Codable {
+public class LocalToDoTask: Codable {
+    public let group: String?
+    public let title: String
+    public let description: String?
+    public let priority: ToDoTask.Priority
+    public let done: Bool
+
+    public init(group: String?,
+                title: String,
+                description: String?,
+                priority: ToDoTask.Priority,
+                done: Bool) {
+        self.group = group
+        self.title = title
+        self.description = description
+        self.priority = priority
+        self.done = done
+    }
+}
+
+public class ToDoTask: Codable {
     public let id: Int
     public let group: String?
     public let title: String
     public let description: String?
     public let priority: Priority
     public let done: Bool
-    
+
     public init(id: Int,
                 group: String?,
                 title: String,
@@ -59,5 +79,4 @@ public struct ToDoTask: Codable {
             }
         }
     }
-
 }

@@ -34,7 +34,7 @@ internal struct TaskToDoService {
         })
     }
 
-    internal func tasks() -> Observable<Result<[ToDoTask]>> {
+    func tasks() -> Observable<Result<[ToDoTask]>> {
             return cachedTasks
                 .do(onNext: { result in
                     switch result {

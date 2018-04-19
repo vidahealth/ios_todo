@@ -7,16 +7,15 @@
 //
 
 import Foundation
-import VidaFoundation
 
 struct TaskToDoListUtility {
-    func sortByPriority(tasks: [ToDoTask]) -> [ToDoTask] {
+    func sortByPriority<T: ToDoTask>(tasks: [T]) -> [T] {
         return tasks.sorted(by: { (left, right) -> Bool in
             return left.priority > right.priority
         })
     }
 
-    func filterByDone(tasks: [ToDoTask], priority: ToDoTask.Priority) -> [ToDoTask] {
+    func filterByDone<T: ToDoTask>(tasks: [T], priority: ToDoTask.Priority) -> [T] {
         return tasks.filter { $0.done }
     }
 } 

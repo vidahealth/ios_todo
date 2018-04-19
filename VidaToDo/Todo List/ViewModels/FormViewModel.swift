@@ -45,7 +45,7 @@ class FormViewModel {
         guard let title = latestValidData?.0, let due = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }
-        let todoItem = ToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
+        let todoItem = LocalToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
         manager.createTask(todoItem) // todo: get result of network call
         _hasSubmitted.value = true
     }
