@@ -9,34 +9,66 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import VidaFoundation
 
-struct CellSwitchPressedType {
-    let index: Int
-    let isOn: Bool
-}
-
-protocol TodoCardTableViewCellPresentable {
-    var cellSwitchPressed: ControlEvent<CellSwitchPressedType> { get }
-}
-
-protocol TodoListTableViewPresentable {
-    var cellPressed: ControlEvent<IndexPath> { get }
+extension ToDoTask.Priority {
+    func text() -> String {
+        switch self {
+        case .high:
+            return "High:"
+        case .medium:
+            return "Medium:"
+        case .low:
+            return "Low:"
+        }
+    }
 }
 
 class TodoListTableViewModel {
+    let taskToDoManager = TaskToDoManager()
     let bag = DisposeBag()
 
-    func bind(todoListTable: TodoListTableViewController) {
-        todoListTable.cellPressed.bind { indexPath in
-            print("Cell pressed at index: \(indexPath.row)")
-        }
-        .disposed(by: bag)
+    var tasks: Observable<[TodoCardTableViewData]> {
+        return taskToDoManager.tasks().map({ (tasks) -> [TodoCardTableViewData] in
+            return tasks.map {
+                return TodoCardTableViewData(taskID: $0.id, priorityText: $0.priority.text(), taskTitle: $0.title, isDone: $0.done)
+            }
+        })
     }
 
-    func bind(cell: TodoCardTableViewCell) {
-        cell.cellSwitchPressed.bind { cellSwitchEvent in
-            print("CellSwitch Pressed at index: \(cellSwitchEvent.index) and isOn: \(cellSwitchEvent.isOn)")
-        }
-        .disposed(by: bag)
+    func watchTaskIsDone(observable: Observable<(id: Int, isDone: Bool)>) {
+        observable.withLatestFrom(taskToDoManager.tasks()) { (taskIsDoneTuple, tasks) -> (ToDoTask?, Bool) in
+                let (taskID, isDone) = taskIsDoneTuple
+                return (tasks.filter({$0.id == taskID}).first, isDone)
+            }.flatMap({ (task, isDone) -> Observable<Result<Bool>> in
+                guard let task = task else {
+                    let error = NetworkError(type: .invalidUrl, message: "unable to find task that is done for task")
+                    errorLog(error)
+                    return Observable.just(Result.error(error))
+                }
+                return self.taskToDoManager.updateTask(ToDoTask(id: task.id, group: task.group, title: task.title, description: task.description, priority: task.priority, done: isDone))
+            }).subscribe(onNext: { (result) in
+                guard case .value(_) = result else {
+                    errorLog("unable to update task for isDone")
+                    return
+                }
+                return
+            }).disposed(by: bag)
     }
+
+    func watchTaskIsSelected(observable: Observable<String>) {
+
+    }
+
+//    func bind(todoListTable: TodoListTableViewController) {
+//        todoListTable.cellPressed.bind { indexPath in
+//            print("Cell pressed at index: \(indexPath.row)")
+//        }
+//    }
+//
+//    func bind(cell: TodoCardTableViewCell) {
+//        cell.cellSwitchPressed.bind { cellSwitchEvent in
+//            print("CellSwitch Pressed at index: \(cellSwitchEvent.index) and isOn: \(cellSwitchEvent.isOn)")
+//        }
+//    }
 }

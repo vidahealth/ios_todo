@@ -29,7 +29,7 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
 
-        viewModel.bind(todoListTable: self)
+        //viewModel.bind(todoListTable: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -66,19 +66,12 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupSubscriptions() {
-        // cellForRow
-        TaskToDoService().tasks()
-            .map({ (result: Result<[ToDoTask]>) -> [ToDoTask] in
-                guard case .value(let tasks) = result else { return [] }
-
-                return tasks
-        })
+        viewModel.tasks
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)
                 cell.tag = row
-                viewModel.bind(cell: cell)
-
+                viewModel.watchTaskIsDone(observable: cell.cardIsDone)
                 return cell
             }
             .disposed(by: bag)
@@ -87,14 +80,9 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
         tableView.rx.itemSelected
             .subscribe(onNext: { [tableView] indexPath in
                 tableView.deselectRow(at: indexPath, animated: true)
+                // attach observer
             })
             .disposed(by: bag)
-    }
-}
-
-extension TodoListTableViewController: TodoListTableViewPresentable {
-    var cellPressed: ControlEvent<IndexPath> {
-        return tableView.rx.itemSelected
     }
 }
 

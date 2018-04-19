@@ -13,17 +13,20 @@ public struct ToDoTaskResponse: Codable {
 }
 
 public struct ToDoTask: Codable {
+    public let id: Int
     public let group: String?
     public let title: String
     public let description: String?
     public let priority: Priority
     public let done: Bool
-
-    public init(group: String?,
+    
+    public init(id: Int,
+                group: String?,
                 title: String,
                 description: String?,
                 priority: Priority,
                 done: Bool) {
+        self.id = id
         self.group = group
         self.title = title
         self.description = description

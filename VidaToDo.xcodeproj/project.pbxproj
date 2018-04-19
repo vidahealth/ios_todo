@@ -12,7 +12,6 @@
 		401A4C042086FC1C009158B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C032086FC1C009158B4 /* ViewController.swift */; };
 		401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C082086FC1E009158B4 /* Assets.xcassets */; };
 		401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */; };
-		401A4C172086FC1E009158B4 /* TaskToDoListUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */; };
 		401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */; };
 		4032C15B2087B70400355B04 /* VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032C1522087B70300355B04 /* VidaFoundation.framework */; };
 		4032C1642087B70400355B04 /* VidaFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4032C1542087B70400355B04 /* VidaFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,7 +39,6 @@
 		4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042F16B2087C259003EA408 /* ToDoTask.swift */; };
 		40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134C2087D7D200633E0C /* NetworkDecoder.swift */; };
 		40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */; };
-		40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013512087EF6500633E0C /* TaskToDoListUtility.swift */; };
 		40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013552087F18800633E0C /* ToDoTaskTests.swift */; };
 		40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01358208803B100633E0C /* SettingsViewModel.swift */; };
 		40B0135B2088044100633E0C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0135A2088044100633E0C /* SettingsViewController.storyboard */; };
@@ -49,6 +47,8 @@
 		40B01365208807BA00633E0C /* UIViewController+create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01363208807BA00633E0C /* UIViewController+create.swift */; };
 		40B01366208807BA00633E0C /* UIView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01364208807BA00633E0C /* UIView+Create.swift */; };
 		40B01368208810A900633E0C /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B01367208810A900633E0C /* Collection+safe.swift */; };
+		40B01369208815B000633E0C /* TaskToDoListUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013512087EF6500633E0C /* TaskToDoListUtility.swift */; };
+		40B0136A208815C000633E0C /* TaskToDoListUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */; };
 		602461B0159AC2FC050DF7C6 /* Pods_VidaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F8955192C39190F7AC858D /* Pods_VidaUIKit.framework */; };
 		7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */; };
 		7E8B9FB044C7177E1981C087 /* Pods_VidaUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */; };
@@ -401,7 +401,6 @@
 		401A4C152086FC1E009158B4 /* VidaToDoTests */ = {
 			isa = PBXGroup;
 			children = (
-				401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */,
 				401A4C182086FC1E009158B4 /* Info.plist */,
 			);
 			path = VidaToDoTests;
@@ -545,6 +544,7 @@
 		40B0134E2087EC2900633E0C /* TaskToDo */ = {
 			isa = PBXGroup;
 			children = (
+				40B013512087EF6500633E0C /* TaskToDoListUtility.swift */,
 				40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */,
 				4032C1A02087B9A600355B04 /* TaskToDoService.swift */,
 				4042F16B2087C259003EA408 /* ToDoTask.swift */,
@@ -563,6 +563,7 @@
 		40B013542087F17C00633E0C /* TaskToDo */ = {
 			isa = PBXGroup;
 			children = (
+				401A4C162086FC1E009158B4 /* TaskToDoListUtilityTests.swift */,
 				40B013552087F18800633E0C /* ToDoTaskTests.swift */,
 			);
 			path = TaskToDo;
@@ -642,7 +643,6 @@
 			children = (
 				ECD145E62087E7D5007E8239 /* ViewModels */,
 				ECD145D42087B9FA007E8239 /* Views */,
-				40B013512087EF6500633E0C /* TaskToDoListUtility.swift */,
 			);
 			path = "Todo List";
 			sourceTree = "<group>";
@@ -1320,6 +1320,7 @@
 				40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */,
 				977D71E22088296700135EC8 /* FormViewModel.swift in Sources */,
 				977D71E02088094800135EC8 /* FormFields.swift in Sources */,
+				977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */,
 				85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */,
 				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
 				85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */,
@@ -1335,7 +1336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401A4C172086FC1E009158B4 /* TaskToDoListUtilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1356,6 +1356,7 @@
 				4032C1A12087B9A600355B04 /* TaskToDoService.swift in Sources */,
 				4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */,
 				4032C1982087B76E00355B04 /* NetworkError.swift in Sources */,
+				40B01369208815B000633E0C /* TaskToDoListUtility.swift in Sources */,
 				85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */,
 				40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */,
 				4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */,
@@ -1381,6 +1382,7 @@
 				85CF7E68208802840035FB9F /* TestStorage.swift in Sources */,
 				85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */,
 				40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */,
+				40B0136A208815C000633E0C /* TaskToDoListUtilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
