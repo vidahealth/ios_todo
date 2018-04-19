@@ -64,16 +64,16 @@ class TodoFormViewController: UIViewController {
         
         view.addSubview(formFields)
         formFields.left(10).top(100).right(10)
-        view.backgroundColor = .blue
 
         viewModel.bind(title: formFields.title, due: formFields.due, priority: formFields.priority)
 
-        viewModel.isValid?.subscribe(onNext: { isValid in
-            print(isValid)
+        viewModel.isValid?.subscribe(onNext: { [weak self] isValid in
+            self?.setButton(isEnabled: isValid)
         }).disposed(by: disposeBag)
 
         closeButton.setTitle("X", for: .normal)
         closeButton.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
+        closeButton.setTitleColor(.black, for: .normal)
         view.addSubview(closeButton)
 
         closeButton.right().top(12)
@@ -83,20 +83,6 @@ class TodoFormViewController: UIViewController {
         view.addSubview(addButton)
 
         addButton.right().left().bottom()
-
-
-//        formFields.priority.subscribe(onNext: { element in
-//            print(element)
-//        }).disposed(by: disposeBag)
-//
-//        formFields.due.subscribe(onNext: { element in
-//            print(element)
-//        }).disposed(by: disposeBag)
-//
-//        formFields.title.subscribe(onNext: { element in
-//            print(element)
-//        }).disposed(by: disposeBag)
-
     }
 
     @objc func closeButtonClicked() {
@@ -104,9 +90,18 @@ class TodoFormViewController: UIViewController {
     }
 
     @objc func addButtonClicked() {
-
+        print("Submitting")
     }
-    
+
+    func setButton(isEnabled: Bool) {
+        if isEnabled {
+            addButton.isEnabled = true
+            addButton.setTitleColor(.black, for: .normal)
+        } else {
+            addButton.isEnabled = false
+            addButton.setTitleColor(.gray, for: .normal)
+        }
+    }
 
 }
 
