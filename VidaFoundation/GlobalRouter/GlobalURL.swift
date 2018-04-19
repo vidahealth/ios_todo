@@ -13,6 +13,7 @@ public enum GlobalURL: CustomStringConvertible {
     case tab
     case toDoList
     case settings
+    case todoForm
 //    case newFeature
 
     public func moduleURL() -> URL? {
@@ -37,6 +38,7 @@ extension GlobalURL: Path {
         case .tab: return "/tab"
         case .toDoList: return "/toDoList"
         case .settings: return "/settings"
+        case .todoForm: return "/todoForm"
 //        case .newFeature: return "/newFeature"
         }
     }

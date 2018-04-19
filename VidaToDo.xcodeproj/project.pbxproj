@@ -59,7 +59,10 @@
 		85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E622087F8DD0035FB9F /* GlobalURL.swift */; };
 		85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E652087F9D90035FB9F /* AppViewController.swift */; };
 		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
-		977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D62087E44700135EC8 /* SettingsViewController.swift */; };
+		977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D82087EF4000135EC8 /* TodoFormViewController.swift */; };
+		977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DA2087F8C400135EC8 /* TodoTextField.swift */; };
+		977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DC2088013300135EC8 /* PriorityPicker.swift */; };
+		977D71E02088094800135EC8 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DF2088094800135EC8 /* FormFields.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
 		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
@@ -239,7 +242,10 @@
 		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppViewController.swift; path = AppVVM/ViewContoller/AppViewController.swift; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		977D71D42087E09B00135EC8 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
-		977D71D62087E44700135EC8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		977D71D82087EF4000135EC8 /* TodoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFormViewController.swift; sourceTree = "<group>"; };
+		977D71DA2087F8C400135EC8 /* TodoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTextField.swift; sourceTree = "<group>"; };
+		977D71DC2088013300135EC8 /* PriorityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPicker.swift; sourceTree = "<group>"; };
+		977D71DF2088094800135EC8 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
 		A668DDBA25C8CDA3794900E6 /* Pods-VidaFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EBEE833B9CC1A6EDF05C83 /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
 		BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoEGTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -445,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				4032C1412087016F00355B04 /* VidaAlert */,
+				977D71DA2087F8C400135EC8 /* TodoTextField.swift */,
+				977D71DC2088013300135EC8 /* PriorityPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -557,7 +565,6 @@
 			isa = PBXGroup;
 			children = (
 				40B01358208803B100633E0C /* SettingsViewModel.swift */,
-				977D71D62087E44700135EC8 /* SettingsViewController.swift */,
 				40B0135A2088044100633E0C /* SettingsViewController.storyboard */,
 				40B013602088054B00633E0C /* SettingsPage */,
 			);
@@ -614,6 +621,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		977D71DE2088093700135EC8 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				977D71D82087EF4000135EC8 /* TodoFormViewController.swift */,
+				977D71DF2088094800135EC8 /* FormFields.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
 		ECD145D22087B9D1007E8239 /* Todo List */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +645,7 @@
 			children = (
 				ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */,
 				ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */,
+				977D71DE2088093700135EC8 /* Form */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1287,10 +1304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */,
 				401A4C042086FC1C009158B4 /* ViewController.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
 				40B013522087EF6500633E0C /* TaskToDoListUtility.swift in Sources */,
-				977D71D72087E44700135EC8 /* SettingsViewController.swift in Sources */,
+				977D71E02088094800135EC8 /* FormFields.swift in Sources */,
 				85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */,
 				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
 				85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */,
@@ -1360,6 +1378,8 @@
 				40B01365208807BA00633E0C /* UIViewController+create.swift in Sources */,
 				4032C1942087B75700355B04 /* UIViewController+TopController.swift in Sources */,
 				40B01366208807BA00633E0C /* UIView+Create.swift in Sources */,
+				977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */,
+				977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */,
 				4032C1932087B75000355B04 /* VidaAlertBuilder.swift in Sources */,
 				ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */,
 				4032C1922087B75000355B04 /* VidaAlert.swift in Sources */,
