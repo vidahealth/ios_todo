@@ -94,7 +94,6 @@ struct NetworkManager {
                     return
                 }
 
-                // TODO: Do an auto-serialization
                 observer.onNext(Result.value(json))
                 return 
             }

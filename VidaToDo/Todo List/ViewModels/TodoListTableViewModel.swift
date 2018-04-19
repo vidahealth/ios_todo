@@ -61,7 +61,7 @@ class TodoListTableViewModel {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskID, tasks) -> ToDoTask? in
             return tasks.filter({$0.id == taskID}).first
             }.subscribe(onNext: { (task: ToDoTask?) in
-                guard let task = task else {
+                guard let _ = task else {
                     errorLog("unable to find task")
                     return
                 }

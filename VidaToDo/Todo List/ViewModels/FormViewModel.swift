@@ -43,17 +43,17 @@ class FormViewModel {
 
     func submitButtonClicked() {
         // FIXME: This is not being called
-        guard let title = latestValidData?.0, let due = latestValidData?.1, let priority = latestValidData?.2 else {
+        guard let title = latestValidData?.0, let _ = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }
         let todoItem = LocalToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
         manager.createTask(todoItem).subscribe(onNext:  { (result) in
-            guard case .value(let didSucceed) = result else {
+            guard case .value(_) = result else {
                 errorLog("failed creation")
                 return
             }
+            self._hasSubmitted.value = true
             return
-        })
-        _hasSubmitted.value = true
+        }).disposed(by: disposeBag)
     }
 }
