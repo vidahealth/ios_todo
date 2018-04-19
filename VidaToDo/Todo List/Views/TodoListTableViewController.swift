@@ -58,7 +58,11 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
     private func setupNavBar() {
         title = "Todo List"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
+    }
+
+    @objc func addButtonClicked() {
+        present(TodoFormViewController(), animated: true, completion: nil)
     }
 
     private func setupSubscriptions() {
