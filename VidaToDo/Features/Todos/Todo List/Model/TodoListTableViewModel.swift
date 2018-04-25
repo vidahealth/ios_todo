@@ -25,7 +25,9 @@ class TodoListTableViewModel {
     let taskToDoManager = TaskToDoManager()
     let bag = DisposeBag()
 
+    // TODO: Define a pattern for using distinctUntilChanged to only update the UI if view data has changed.
     var tasks: Observable<[TodoCardTableViewData]> {
+        // TODO: Define a suite of patterns for cacheOnly (take(1)?), networkOnly (skip(1)?) type things
         return taskToDoManager.tasks().map({ (tasks) -> [TodoCardTableViewData] in
             return tasks.map {
                 return TodoCardTableViewData(taskID: $0.id, priorityText: $0.priority.text(), taskTitle: $0.title, isDone: $0.done)
