@@ -77,7 +77,7 @@ struct NetworkManager {
 
                 // check for statusCode errors
                 if let error = NetworkError(responseCode: responseCode, message: "response code error") {
-                    errorLog("Server reports issue (\(responseCode)) for: \(String(describing: response.response?.url))")
+                    errorLog("Server reports issue (\(responseCode)) for: \(String(describing: response.response?.url))\n result:\n\(String(describing: response.result))")
                     observer.onNext(Result.error(error))
                     return
                 }
@@ -94,7 +94,6 @@ struct NetworkManager {
                     return
                 }
 
-                // TODO: Do an auto-serialization
                 observer.onNext(Result.value(json))
                 return 
             }

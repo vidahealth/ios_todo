@@ -6,9 +6,7 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import VidaFoundation
 
 struct SettingsPageViewData {
     let text: String

@@ -4,8 +4,6 @@
 
 import UIKit
 import VidaUIKit
-import VidaFoundation
-import RxSwift
 
 class TodoFormViewController: UIViewController {
     

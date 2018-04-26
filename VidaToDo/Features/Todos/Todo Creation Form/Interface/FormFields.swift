@@ -4,9 +4,7 @@
 
 import UIKit
 import VidaUIKit
-import VidaFoundation
 import RxCocoa
-import RxSwift
 
 class FormFields: UIStackView {
     

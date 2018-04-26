@@ -6,10 +6,6 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
-import VidaFoundation
-import RxSwift
-
 class FormViewModel {
 
     private let disposeBag = DisposeBag()
@@ -42,11 +38,17 @@ class FormViewModel {
     }
 
     func submitButtonClicked() {
-        guard let title = latestValidData?.0, let due = latestValidData?.1, let priority = latestValidData?.2 else {
+        guard let title = latestValidData?.0, let _ = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }
-        let todoItem = ToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
-        manager.createTask(todoItem) // todo: get result of network call
-        _hasSubmitted.value = true
+        let todoItem = LocalToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
+        manager.createTask(todoItem).subscribe(onNext:  { (result) in
+            guard case .value(_) = result else {
+                errorLog("failed creation")
+                return
+            }
+            self._hasSubmitted.value = true
+            return
+        }).disposed(by: disposeBag)
     }
 }

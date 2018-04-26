@@ -11,14 +11,21 @@ import RxSwift
 
 public struct TaskToDoManager {
     let service = TaskToDoService()
+    let utility = TaskToDoListUtility()
 
-    public init() { }
+    public init() {}
 
-    public func tasks() -> Observable<Result<ToDoTaskResponse>> {
-        return service.tasks()
+    public func tasks() -> Observable<[ToDoTask]> {
+        return service.tasks().map({ (result) -> [ToDoTask] in
+            guard case .value(let tasks) = result else {
+                return []
+            }
+
+            return self.utility.sortByPriority(tasks: tasks)
+        })
     }
 
-    public func createTask(_ task: ToDoTask) -> Observable<Result<Bool>> {
+    public func createTask(_ task: LocalToDoTask) -> Observable<Result<Bool>> {
         return service.createTask(task)
     }
 

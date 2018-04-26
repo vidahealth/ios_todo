@@ -6,9 +6,6 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
-import VidaFoundation
-
 // register all renderers here
 
 extension AppDelegate {

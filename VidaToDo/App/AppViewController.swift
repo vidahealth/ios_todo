@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import VidaFoundation
 
 class AppViewController: UIViewController {
 
