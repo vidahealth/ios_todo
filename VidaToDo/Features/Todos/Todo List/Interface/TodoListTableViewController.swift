@@ -8,14 +8,13 @@
 
 import UIKit
 import RxCocoa
-import RxSwift
 import VidaUIKit
-import VidaFoundation
 
 class TodoListTableViewController: UIViewController, UITableViewDelegate {
 
+    let taskSelectedSubject = PublishSubject<Int>()
     let viewModel: TodoListTableViewModel
-    let todoDataSource = Variable<[ToDoTask]>([])
+    let todoDataSource = Variable<[TodoCardTableViewData]>([])
     let bag = DisposeBag()
 
     let tableView = UITableView()
@@ -29,8 +28,6 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     init(viewModel: TodoListTableViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-
-        viewModel.bind(todoListTable: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,18 +41,23 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupView() {
-        // Setup Navigation Bar
-        title = "Todo List"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
+        setupNavBar()
 
         // Setup TableView
         view.addSubview(tableView)
         tableView.fillSuperview()
         tableView.rowHeight = 44;
+
         tableView.register(TodoCardTableViewCell.self, forCellReuseIdentifier: "todoCard")
+
         tableView
             .rx.setDelegate(self)
             .disposed(by: bag)
+    }
+
+    private func setupNavBar() {
+        title = "Todo List"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
     }
 
     @objc func addButtonClicked() {
@@ -63,50 +65,39 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setupSubscriptions() {
+        viewModel.watchTaskIsSelected(observable: taskSelectedSubject)
 
-        // Setup data source
-        TaskToDoService().tasks()
-            .map({ (result: Result<ToDoTaskResponse>) -> [ToDoTask] in
-                guard case .value(let tasks) = result else { return [] }
-
-                return tasks.objects
-            })
-            .subscribe(onNext: { [todoDataSource] (list: [ToDoTask]) in
-                todoDataSource.value = list
-            })
-            .disposed(by: bag)
-
-        /// cellForRow
         todoDataSource
             .asObservable()
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)
                 cell.tag = row
-                viewModel.bind(cell: cell)
-
+                viewModel.watchTaskIsDone(observable: cell.cardIsDone)
                 return cell
             }
+            .disposed(by: bag)
+        
+        viewModel.tasks
+            .subscribe(onNext: { [todoDataSource] (viewData: [TodoCardTableViewData]) in
+                todoDataSource.value += viewData
+            })
             .disposed(by: bag)
 
         // didSelectRow
         tableView.rx.itemSelected
-            .subscribe(onNext: { [tableView] indexPath in
+            .subscribe(onNext: { [tableView, viewModel] indexPath in
                 tableView.deselectRow(at: indexPath, animated: true)
+                //FIXME: need to get taskID and send to view model
+                // viewModel.selectedRow(at: indexPath.row)
             })
             .disposed(by: bag)
 
         // didDeleteRow
         tableView.rx.itemDeleted
-            .subscribe(onNext: { [viewModel, todoDataSource] indexPath in
-                todoDataSource.value.remove(at: indexPath.row)
+            .subscribe(onNext: { [viewModel] indexPath in
+                viewModel.removeTask(at: indexPath.row)
             })
             .disposed(by: bag)
-    }
-}
-
-extension TodoListTableViewController: TodoListTableViewPresentable {
-    var cellPressed: ControlEvent<IndexPath> {
-        return tableView.rx.itemSelected
     }
 }

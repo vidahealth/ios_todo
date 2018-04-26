@@ -6,10 +6,15 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
 import VidaUIKit
-import VidaFoundation
+
+struct TodoCardTableViewData {
+    let taskID: Int
+    let priorityText: String
+    let taskTitle: String
+    let isDone: Bool
+}
 
 class TodoCardTableViewCell: UITableViewCell {
 
@@ -17,6 +22,13 @@ class TodoCardTableViewCell: UITableViewCell {
     let taskTitle = UILabel()
     let dueDate = UILabel()
     let priority = UILabel()
+
+    private var data: TodoCardTableViewData?
+    private let cardIsDoneSubject = PublishSubject<(id: Int, isDone: Bool)>()
+
+    var cardIsDone: Observable<(id: Int, isDone: Bool)> {
+        return cardIsDoneSubject
+    }
 
     var bag = DisposeBag()
 
@@ -27,6 +39,7 @@ class TodoCardTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
+        setupSubjects()
     }
 
     private func setupView() {
@@ -51,27 +64,27 @@ class TodoCardTableViewCell: UITableViewCell {
         dueDate.centerVertically()
     }
 
+    func setupSubjects() {
+        switchView.rx.value.subscribe(onNext: { (isOn) in
+            guard let id = self.data?.taskID else { return }
+            self.cardIsDoneSubject.onNext((id: id, isDone: isOn))
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: bag)
+    }
+
     private func clearConfiguration() {
         taskTitle.text = ""
         dueDate.text = ""
         priority.text = ""
     }
 
-    func configure(with viewData: ToDoTask) {
+    func configure(with data: TodoCardTableViewData) {
         clearConfiguration()
+        self.data = data
 
-        switchView.isOn = viewData.done
+        switchView.isOn = data.isDone
+        priority.text = data.priorityText
+        taskTitle.text = data.taskTitle
 
-        switch viewData.priority {
-        case .high:
-            priority.text = "High:"
-        case .medium:
-            priority.text = "Medium:"
-        case .low:
-            priority.text = "Low:"
-        }
-
-        taskTitle.text = viewData.title
 
 //        let formatter = DateFormatter()
 //        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -81,24 +94,4 @@ class TodoCardTableViewCell: UITableViewCell {
 //        let myStringaFD = formatter.string(from: yourDate!)
 //        dueDate.text = myStringaFD
     }
-
-    var switchPressedStream = PublishSubject<CellSwitchPressedType>()
-}
-
-extension TodoCardTableViewCell: TodoCardTableViewCellPresentable {
-    
-    var cellSwitchPressed: ControlEvent<CellSwitchPressedType> {
-        let source = switchView.rx.value
-            .map { [weak self] (isOn: Bool) -> CellSwitchPressedType in
-            return CellSwitchPressedType(index: self?.tag ?? -1, isOn: isOn)
-        }
-            .filter { (cellSwitch: CellSwitchPressedType) -> Bool in
-                cellSwitch.index != -1
-        }
-            .skip(1)
-        
-        return ControlEvent(events: source)
-    }
-
-
 }

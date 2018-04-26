@@ -2,15 +2,9 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-import Foundation
-import VidaFoundation
-
 class FormValidator {
     static func isValid(title: String?, due: Date, priority: ToDoTask.Priority) -> Bool {
-        guard
-            let title = title, title.count > 0,
-            due > Date()
-            else {
+        guard let title = title, title.count > 0 else {
                 return false
         }
         return true

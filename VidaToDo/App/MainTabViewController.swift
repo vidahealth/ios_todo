@@ -5,7 +5,6 @@
 import UIKit
 import VidaUIKit
 import RxCocoa
-import VidaFoundation
 
 class MainTabViewController: UITabBarController {
     
