@@ -38,6 +38,7 @@ extension Storing {
     }
 }
 
+// BRICE: Typically like base protocols different places than things like global storage
 class GlobalStorage: Storing {
 
     struct Keys {
@@ -47,9 +48,12 @@ class GlobalStorage: Storing {
     private var filePath: String {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        // TODO: Remove bang
         return (url!.appendingPathComponent("Data").path)
     }
 
+    // "//" escapes slash
+    //
     func set<T>(_ object: T, forKey key: String) {
         NSKeyedArchiver.archiveRootObject(object, toFile: filePath.appending("\\" + key))
     }
@@ -66,7 +70,7 @@ class GlobalStorage: Storing {
         }
 
         guard let dataObject = object as? Data else {
-            errorLog("Could not obtain data for object at key \(key)")
+            fatalLog("Could not obtain data for object at key \(key)")
             return nil
         }
 
@@ -74,7 +78,7 @@ class GlobalStorage: Storing {
             let decodedObject = try JSONDecoder().decode(T.self, from: dataObject)
             return decodedObject
         } catch {
-            errorLog("Could not decode data for key \(key)")
+            fatalLog("Could not decode data for key \(key)")
             return nil
         }
     }

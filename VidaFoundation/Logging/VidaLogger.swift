@@ -29,6 +29,7 @@ enum LogEvent: String {
     }
 }
 
+// TODO: some way at runtime to change this (dev settings? in profile)
 struct VidaLogger {
     public static let shared = VidaLogger()
     private let currentLogLevel = LogEvent.debug

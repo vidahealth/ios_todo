@@ -8,11 +8,14 @@
 
 import Foundation
 
+// TODO: Look at the existing Result type and Reactive (or rxSwift) for naming conflict
 public enum Result<T> {
     case error(Error)
     case value(T)
 }
 
+// HTTPRequestMethod
+// rename file to HRTTPURLObjects
 enum UrlRequestMethod: String {
     case post   = "POST"
     case get    = "GET"

@@ -12,6 +12,7 @@ struct SettingsPageViewData {
     let text: String
 }
 
+// BRICE: Do I have to give up this model of storyboard?
 class SettingsPageViewController: UIViewController {
     @IBOutlet weak var mainTextView: UITextView!
 

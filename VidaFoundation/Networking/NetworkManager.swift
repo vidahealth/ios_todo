@@ -61,6 +61,7 @@ struct NetworkManager {
         return nil
     }
 
+    // it is subscribint to this that causes the request to send out
     func request(_ request: NSMutableURLRequest) -> Observable<Result<[AnyHashable: Any]>> {
         return Observable.create { observer in
             SessionManager.default.request(AlamofireRequest(request: request)).responseData { response in

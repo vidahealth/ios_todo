@@ -8,25 +8,28 @@
 
 import UIKit
 
-public var SharedGlobalRouter: Router {
-    struct Singleton {
-        static let instance = GlobalRouter()
-    }
-    return Singleton.instance
-}
+// Brice: Needs documentation
+// TODO: think about hame conflict with Vida App
+// TODO: Move to UIKit
 
 public protocol Router {
 
     // Register consumers for URLs
+
+    // TODO GlobalURL
     func registerViewControllerClass(_ consumer: AnyClass, URLPath: String)
 
     func viewControllerForURLPath(_ URLPath: String) -> UIViewController?
 
 }
 
+// BRICE: Technically belongs in VidaUIKit since refrences UIViewCOntroler
 class GlobalRouter: Router {
+    static let shared = GlobalRouter()
 
     fileprivate var viewControllerURLMap = [String: AnyClass]() // URL -> rendererClass
+
+    fileprivate init() {}
 
     func registerViewControllerClass(_ viewControllerClass: AnyClass, URLPath: String) {
         viewControllerURLMap[URLPath] = viewControllerClass
@@ -37,6 +40,11 @@ class GlobalRouter: Router {
             errorLog("Unable find view controller for URL: \(URLPath)")
             return nil
         }
+
+        // Brice: I think we need a custom protocol init method that takes in the url to properly innitialize this and return a satisfied VC
+
+        // makeWithURL initialization
+
 
         return viewControllerClass.init()
     }

@@ -9,11 +9,14 @@
 import Foundation
 import RxSwift
 
+// TODO: How do we handle local changes and keep the app working while server is unavailable (Need proposal)
+//  - could: save locally to cache, retry calls when network, if failure, invalidate cache and pull from network 
 internal struct TaskToDoService {
     private let networkManager = NetworkManager()
     private let storage = GlobalStorage()
 
     public init() {
+        // TODO> THink about what to send in no cache, first time.
         if let tasks: [ToDoTask] = storage.object(forKey: GlobalStorage.Keys.tasks) {
             cachedTasks = BehaviorSubject.init(value: Result.value(tasks))
             return
@@ -25,6 +28,7 @@ internal struct TaskToDoService {
     var cachedTasks: BehaviorSubject<Result<[ToDoTask]>>
 
     private func networkTasks() -> Observable<Result<ToDoTaskResponse>> {
+        
         guard let url = NSMutableURLRequest(endpoint: .todos, version: .v1, type: .get) else {
             return Observable.just(Result.error(NetworkError(type: .invalidUrl, message: "Could not create url")))
         }
@@ -33,6 +37,7 @@ internal struct TaskToDoService {
         })
     }
 
+    // subscribing to this causes the network request to send.
     public func tasks() -> Observable<Result<[ToDoTask]>> {
         return networkTasks().map { (result) -> Result<[ToDoTask]> in
             switch result {
@@ -44,7 +49,7 @@ internal struct TaskToDoService {
         }
     }
 
-    // FIXME: This was hanging the app
+    // FIXME: Using the cache was hanging the app (Alex, one day)
 //    func tasks() -> Observable<Result<[ToDoTask]>> {
 //            return cachedTasks
 //                .do(onNext: { result in
@@ -71,7 +76,8 @@ internal struct TaskToDoService {
 //                }
 //    }
 
-    func refreshTasks() {
+    fileprivate func refreshTasks() {
+        // TOOD: Dispose of this
         _ = networkTasks()
             .subscribe(onNext: { result in
                 guard case .value(let tasks) = result else {

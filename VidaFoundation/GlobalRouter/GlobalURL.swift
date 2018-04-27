@@ -8,7 +8,7 @@
 import Foundation
 
 // When creating a new renderer, you have to create a case for it in the GlobalURL, and give it a string URL in the GLobalURL path.
-
+// TODO: How do we group these by feature to avoid a 60 strings in a file (Alex: Deep Linking Proposal)
 public enum GlobalURL: CustomStringConvertible {
     case tab
     case toDoList
@@ -28,24 +28,22 @@ public enum GlobalURL: CustomStringConvertible {
 
 // MARK: Define URLs
 
-public protocol Path {
-    var path : String { get }
-}
-
-extension GlobalURL: Path {
+// TODO: add documentation about path vs. routingPath
+extension GlobalURL {
     public var path: String {
         switch self {
-        case .tab: return "/tab"
-        case .toDoList: return "/toDoList"
-        case .settings: return "/settings"
-        case .todoForm: return "/todoForm"
-//        case .newFeature: return "/newFeature"
+        case .tab: return "tab"
+        case .toDoList: return "toDoList"
+        case .settings: return "settings"
+        case .todoForm: return "todoForm"
+//        case .newFeature: return "newFeature"
         }
     }
 }
 
 // MARK: Routing
 
+// BRICE: Documentation needed, don't know what routing path means
 extension GlobalURL {
     public var routingPath: String {
         return path

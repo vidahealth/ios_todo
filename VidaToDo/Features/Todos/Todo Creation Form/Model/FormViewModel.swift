@@ -6,6 +6,7 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
+// BRICE: Do we like this file structure?
 class FormViewModel {
 
     private let disposeBag = DisposeBag()

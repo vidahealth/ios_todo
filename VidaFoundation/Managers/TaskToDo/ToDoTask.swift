@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: Move to Codable for Server objects when we have Swift 4.0
 public struct ToDoTaskResponse: Codable {
     public let objects: [ToDoTask]
 }
@@ -59,6 +60,8 @@ public class ToDoTask: Codable {
         case medium = "med"
         case high = "high"
 
+
+        // BRICE: Does this belong here?
         public static func < (left: Priority, right: Priority) -> Bool {
             if left == right {
                 return false

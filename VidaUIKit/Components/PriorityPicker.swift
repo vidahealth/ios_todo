@@ -7,12 +7,14 @@ import VidaFoundation
 import RxCocoa
 import RxSwift
 
+// BRICE: Does TODO-specific things belong in VidaUIKit?
 public class PriorityPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     public var priority: Observable<ToDoTask.Priority> {
         return _priority.asObservable()
     }
-    
+
+    // TODO: bring in priority here.
     private let _priority: Variable<ToDoTask.Priority>
     
     private var priorities: [ToDoTask.Priority] = [.low, .medium, .high]

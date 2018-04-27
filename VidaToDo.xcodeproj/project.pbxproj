@@ -29,7 +29,6 @@
 		4032C1972087B76700355B04 /* Storing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C135208700D200355B04 /* Storing.swift */; };
 		4032C1982087B76E00355B04 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13F2087014800355B04 /* NetworkError.swift */; };
 		4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13D2087013200355B04 /* NetworkURLObjects.swift */; };
-		4032C19A2087B77300355B04 /* Constants+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C14B208701DA00355B04 /* Constants+Debug.swift */; };
 		4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C137208700F500355B04 /* URL+endpoint.swift */; };
 		4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */; };
 		4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13B2087011500355B04 /* Enum+Collection.swift */; };
@@ -200,7 +199,6 @@
 		4032C1432087017A00355B04 /* VidaAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaAlert.swift; sourceTree = "<group>"; };
 		4032C1462087019500355B04 /* UIAlertController+VidaAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+VidaAlert.swift"; sourceTree = "<group>"; };
 		4032C148208701A000355B04 /* UIViewController+TopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopController.swift"; sourceTree = "<group>"; };
-		4032C14B208701DA00355B04 /* Constants+Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constants+Debug.swift"; sourceTree = "<group>"; };
 		4032C1522087B70300355B04 /* VidaFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VidaFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4032C1542087B70400355B04 /* VidaFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VidaFoundation.h; sourceTree = "<group>"; };
 		4032C1552087B70400355B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -426,7 +424,6 @@
 				40B0134C2087D7D200633E0C /* NetworkDecoder.swift */,
 				4032C1A22087BBBE00355B04 /* NetworkManager.swift */,
 				4032C13F2087014800355B04 /* NetworkError.swift */,
-				40B0134E2087EC2900633E0C /* TaskToDo */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -481,7 +478,6 @@
 		4032C14A208701CD00355B04 /* Globals */ = {
 			isa = PBXGroup;
 			children = (
-				4032C14B208701DA00355B04 /* Constants+Debug.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -493,6 +489,7 @@
 				4032C12F2087008800355B04 /* Logging */,
 				4032C132208700B300355B04 /* Persistence */,
 				4032C12B2087005F00355B04 /* Networking */,
+				406631292093CC5F00FA33F8 /* Managers */,
 				4032C14A208701CD00355B04 /* Globals */,
 				4032C12A2087005900355B04 /* Extensions */,
 				4032C1542087B70400355B04 /* VidaFoundation.h */,
@@ -530,6 +527,14 @@
 				4032C1862087B71500355B04 /* Info.plist */,
 			);
 			path = VidaUIKitTests;
+			sourceTree = "<group>";
+		};
+		406631292093CC5F00FA33F8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				40B0134E2087EC2900633E0C /* TaskToDo */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		40B0134E2087EC2900633E0C /* TaskToDo */ = {
@@ -1406,7 +1411,6 @@
 				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,
 				85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */,
 				4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */,
-				4032C19A2087B77300355B04 /* Constants+Debug.swift in Sources */,
 				4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

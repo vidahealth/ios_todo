@@ -35,6 +35,7 @@ class TodoListTableViewModel {
         })
     }
 
+    // BRICE: Do we want this or bind?
     func watchTaskIsDone(observable: Observable<(id: Int, isDone: Bool)>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskIsDoneTuple, tasks) -> (ToDoTask?, Bool) in
                 let (taskID, isDone) = taskIsDoneTuple
