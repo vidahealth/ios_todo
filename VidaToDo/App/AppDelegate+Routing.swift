@@ -8,14 +8,16 @@
 
 // register all renderers here
 
+import VidaUIKit
+
 extension AppDelegate {
 
     func registerModuleURLs() {
-        SharedGlobalRouter.registerViewControllerClass(MainTabViewController.self, URLPath: GlobalURL.tab.routingPath)
-        SharedGlobalRouter.registerViewControllerClass(TodoListTableViewController.self, URLPath: GlobalURL.toDoList.routingPath)
-        SharedGlobalRouter.registerViewControllerClass(SettingsPageViewController.self, URLPath: GlobalURL.settings.routingPath)
-        SharedGlobalRouter.registerViewControllerClass(TodoFormViewController.self, URLPath: GlobalURL.todoForm.routingPath)
-//        SharedGlobalRouter.registerModuleClass(newFeatureViewController.self, URLPath: GlobalURL.newFeature.routingPath)
+        GlobalScreenRouter.shared.registerViewControllerClass(MainTabViewController.self, screenURL: GlobalScreenURL.tab)
+        GlobalScreenRouter.shared.registerViewControllerClass(TodoListTableViewController.self, screenURL: GlobalScreenURL.toDoList)
+        GlobalScreenRouter.shared.registerViewControllerClass(SettingsPageViewController.self, screenURL: GlobalScreenURL.settings)
+        GlobalScreenRouter.shared.registerViewControllerClass(TodoFormViewController.self, screenURL: GlobalScreenURL.todoForm)
+//        GlobalScreenRouter.shared.registerModuleClass(newFeatureViewController.self, screenURL: GlobalScreenURL.newFeature)
     }
     
 }

@@ -53,8 +53,8 @@
 		85464B1F2087C96500A2C34D /* TestGlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */; };
 		85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */; };
 		85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */; };
-		85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */; };
-		85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E622087F8DD0035FB9F /* GlobalURL.swift */; };
+		85CF7E632087F8DD0035FB9F /* GlobalScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E612087F8DD0035FB9F /* GlobalScreenRouter.swift */; };
+		85CF7E642087F8DD0035FB9F /* GlobalScreenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E622087F8DD0035FB9F /* GlobalScreenURL.swift */; };
 		85CF7E662087F9D90035FB9F /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E652087F9D90035FB9F /* AppViewController.swift */; };
 		85CF7E68208802840035FB9F /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E67208802840035FB9F /* TestStorage.swift */; };
 		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
@@ -237,8 +237,8 @@
 		85464B1E2087C96500A2C34D /* TestGlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGlobalRouter.swift; sourceTree = "<group>"; };
 		85CF7E5D2087F8C20035FB9F /* AppDelegate+Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Routing.swift"; sourceTree = "<group>"; };
 		85CF7E5E2087F8C20035FB9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
-		85CF7E622087F8DD0035FB9F /* GlobalURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalURL.swift; sourceTree = "<group>"; };
+		85CF7E612087F8DD0035FB9F /* GlobalScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalScreenRouter.swift; sourceTree = "<group>"; };
+		85CF7E622087F8DD0035FB9F /* GlobalScreenURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalScreenURL.swift; sourceTree = "<group>"; };
 		85CF7E652087F9D90035FB9F /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		85CF7E67208802840035FB9F /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		861ED892A03EEBAC90D9782F /* Pods-VidaUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -485,7 +485,6 @@
 		4032C1532087B70400355B04 /* VidaFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				85464B1B2087C59000A2C34D /* GlobalRouter */,
 				4032C12F2087008800355B04 /* Logging */,
 				4032C132208700B300355B04 /* Persistence */,
 				4032C12B2087005F00355B04 /* Networking */,
@@ -512,6 +511,7 @@
 		4032C1762087B71500355B04 /* VidaUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				85464B1B2087C59000A2C34D /* GlobalRouter */,
 				4032C12D2087006E00355B04 /* Components */,
 				4032C12C2087006500355B04 /* Extentions */,
 				4032C1772087B71500355B04 /* VidaUIKit.h */,
@@ -687,8 +687,8 @@
 		85464B1B2087C59000A2C34D /* GlobalRouter */ = {
 			isa = PBXGroup;
 			children = (
-				85CF7E612087F8DD0035FB9F /* GlobalRouter.swift */,
-				85CF7E622087F8DD0035FB9F /* GlobalURL.swift */,
+				85CF7E612087F8DD0035FB9F /* GlobalScreenRouter.swift */,
+				85CF7E622087F8DD0035FB9F /* GlobalScreenURL.swift */,
 			);
 			path = GlobalRouter;
 			sourceTree = "<group>";
@@ -1399,7 +1399,7 @@
 				4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */,
 				4032C1982087B76E00355B04 /* NetworkError.swift in Sources */,
 				40B01369208815B000633E0C /* TaskToDoListUtility.swift in Sources */,
-				85CF7E632087F8DD0035FB9F /* GlobalRouter.swift in Sources */,
+				85CF7E632087F8DD0035FB9F /* GlobalScreenRouter.swift in Sources */,
 				40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */,
 				4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */,
 				4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */,
@@ -1409,7 +1409,7 @@
 				40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */,
 				40B01368208810A900633E0C /* Collection+safe.swift in Sources */,
 				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,
-				85CF7E642087F8DD0035FB9F /* GlobalURL.swift in Sources */,
+				85CF7E642087F8DD0035FB9F /* GlobalScreenURL.swift in Sources */,
 				4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */,
 				4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */,
 			);

@@ -5,7 +5,7 @@
 import UIKit
 import VidaUIKit
 
-class TodoFormViewController: UIViewController {
+class TodoFormViewController: UIViewController, Routable {
     
     private let formFields = FormFields()
 
@@ -15,6 +15,14 @@ class TodoFormViewController: UIViewController {
     var addButton = UIButton()
 
     private let disposeBag = DisposeBag()
+
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .todoForm = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return TodoFormViewController()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
