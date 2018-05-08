@@ -28,7 +28,7 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate, Routab
         return TodoListTableViewController(viewModel: TodoListTableViewModel())
     }
 
-    init(viewModel: TodoListTableViewModel) {
+    fileprivate init(viewModel: TodoListTableViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
