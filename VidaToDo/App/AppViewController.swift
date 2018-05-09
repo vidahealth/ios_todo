@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import VidaUIKit
 
 class AppViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        guard let initialViewController = SharedGlobalRouter.viewControllerForURLPath(GlobalURL.tab.routingPath) else {
+        guard let initialViewController = GlobalScreenRouter.shared.viewControllerForURLPath(GlobalScreenURL.tab) else {
             errorLog("Could not load initial view controller.")
             return
         }

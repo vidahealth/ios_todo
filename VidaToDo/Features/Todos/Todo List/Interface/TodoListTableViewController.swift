@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import VidaUIKit
 
-class TodoListTableViewController: UIViewController, UITableViewDelegate {
+class TodoListTableViewController: UIViewController, UITableViewDelegate, Routable {
 
     let taskSelectedSubject = PublishSubject<Int>()
     let viewModel: TodoListTableViewModel
@@ -20,12 +20,15 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate {
     let tableView = UITableView()
     let navbar = UINavigationBar(frame: .zero)
 
-    convenience init() {
-        let viewModel = TodoListTableViewModel()
-        self.init(viewModel: viewModel)
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .toDoList = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return TodoListTableViewController(viewModel: TodoListTableViewModel())
     }
 
-    init(viewModel: TodoListTableViewModel) {
+    fileprivate init(viewModel: TodoListTableViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
