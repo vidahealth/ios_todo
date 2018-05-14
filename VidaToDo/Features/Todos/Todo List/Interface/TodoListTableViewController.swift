@@ -10,14 +10,15 @@ import UIKit
 import RxCocoa
 import VidaUIKit
 
+// TODO: Create extensions for protocols
 class TodoListTableViewController: UIViewController, UITableViewDelegate, Routable {
 
-    let taskSelectedSubject = PublishSubject<Int>()
-    let viewModel: TodoListTableViewModel
-    let todoDataSource = Variable<[TodoCardTableViewData]>([])
-    let bag = DisposeBag()
+    private let taskSelectedSubject = PublishSubject<Int>()
+    private let viewModel: TodoListTableViewModel
+    private let todoDataSource = Variable<[TodoCardTableViewData]>([])
+    private let bag = DisposeBag()
 
-    let tableView = UITableView()
+    private let tableView = UITableView()
     let navbar = UINavigationBar(frame: .zero)
 
     static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {

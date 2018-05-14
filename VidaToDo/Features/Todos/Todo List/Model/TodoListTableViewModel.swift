@@ -8,6 +8,8 @@
 
 import RxCocoa
 
+
+// TODO: Strings should be in a strings constant section
 extension ToDoTask.Priority {
     func text() -> String {
         switch self {
@@ -36,16 +38,21 @@ class TodoListTableViewModel {
     }
 
     // BRICE: Do we want this or bind?
+
+    // Potentially change in naming:
+    // TODO: func subscribeToTaskIsDoneObservable(_ observable:....)
     func watchTaskIsDone(observable: Observable<(id: Int, isDone: Bool)>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskIsDoneTuple, tasks) -> (ToDoTask?, Bool) in
                 let (taskID, isDone) = taskIsDoneTuple
                 return (tasks.filter({$0.id == taskID}).first, isDone)
             }.flatMap({ (task, isDone) -> Observable<Result<Bool>> in
                 guard let task = task else {
+                    // TODO: Should not be network errroe here, would require knowing impl. of manager
                     let error = NetworkError(type: .invalidUrl, message: "unable to find task that is done for task")
                     errorLog(error)
                     return Observable.just(Result.error(error))
                 }
+                // TODO: Investigate if we want network request to return Singles
                 return self.taskToDoManager.updateTask(ToDoTask(id: task.id, group: task.group, title: task.title, description: task.description, priority: task.priority, done: isDone))
             }).subscribe(onNext: { (result) in
                 guard case .value(_) = result else {
@@ -56,7 +63,8 @@ class TodoListTableViewModel {
                 return
             }).disposed(by: bag)
     }
-
+    // TODO: Update UI based on task selection
+    // TODO: Rename
     func watchTaskIsSelected(observable: Observable<Int>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskID, tasks) -> ToDoTask? in
             return tasks.filter({$0.id == taskID}).first

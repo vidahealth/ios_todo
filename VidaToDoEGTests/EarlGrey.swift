@@ -97,17 +97,9 @@ private func GREYWaitUntilIdle() {
 }
 
 open class EarlGrey: NSObject {
-  public static func selectElement(with matcher: GREYMatcher,
-                                   file: StaticString = #file,
-                                   line: UInt = #line) -> GREYInteraction {
-    return EarlGreyImpl.invoked(fromFile: file.description, lineNumber: line)
-             .selectElement(with: matcher)
-  }
-
-  @available(*, deprecated, renamed: "selectElement(with:)")
   open class func select(elementWithMatcher matcher:GREYMatcher,
-                         file: StaticString = #file,
-                         line: UInt = #line) -> GREYElementInteraction {
+                           file: StaticString = #file,
+                           line: UInt = #line) -> GREYElementInteraction {
     return EarlGreyImpl.invoked(fromFile: file.description, lineNumber: line)
              .selectElement(with: matcher)
   }
@@ -140,32 +132,12 @@ open class EarlGrey: NSObject {
 
 extension GREYInteraction {
   @discardableResult public func assert(_ matcher: @autoclosure () -> GREYMatcher) -> Self {
-    return self.__assert(with: matcher())
+    return self.assert(with:matcher())
   }
 
   @discardableResult public func assert(_ matcher: @autoclosure () -> GREYMatcher,
                                         error:UnsafeMutablePointer<NSError?>!) -> Self {
-    return self.__assert(with: matcher(), error: error)
-  }
-
-  @available(*, deprecated, renamed: "assert(_:)")
-  @discardableResult public func assert(with matcher: GREYMatcher!) -> Self {
-    return self.__assert(with: matcher)
-  }
-
-  @available(*, deprecated, renamed: "assert(_:error:)")
-  @discardableResult public func assert(with matcher: GREYMatcher!,
-                                        error:UnsafeMutablePointer<NSError?>!) -> Self {
-    return self.__assert(with: matcher, error: error)
-  }
-
-  @discardableResult public func perform(_ action: GREYAction!) -> Self {
-    return self.__perform(action)
-  }
-
-  @discardableResult public func perform(_ action: GREYAction!,
-                                         error:UnsafeMutablePointer<NSError?>!) -> Self {
-    return self.__perform(action, error: error)
+    return self.assert(with: matcher(), error: error)
   }
 
   @discardableResult public func using(searchAction: GREYAction,
