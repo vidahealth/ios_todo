@@ -48,7 +48,7 @@ class GlobalStorage: Storing {
     private var filePath: String {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-        // TODO Alex: Remove bang
+        // TODO: Remove bang
         return (url!.appendingPathComponent("Data").path)
     }
 
