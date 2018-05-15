@@ -16,7 +16,7 @@ internal struct TaskToDoService {
     private let storage = GlobalStorage()
 
     public init() {
-        // TODO> THink about what to send in no cache, first time.
+        // TODO Alex: Think about what to send in no cache, first time.
         if let tasks: [ToDoTask] = storage.object(forKey: GlobalStorage.Keys.tasks) {
             cachedTasks = BehaviorSubject.init(value: Result.value(tasks))
             return
@@ -49,7 +49,7 @@ internal struct TaskToDoService {
         }
     }
 
-    // FIXME: Using the cache was hanging the app (Alex, one day)
+    // FIXME Alex: Using the cache was hanging the app (Alex, one day)
 //    func tasks() -> Observable<Result<[ToDoTask]>> {
 //            return cachedTasks
 //                .do(onNext: { result in
@@ -77,7 +77,7 @@ internal struct TaskToDoService {
 //    }
 
     fileprivate func refreshTasks() {
-        // TOOD: Dispose of this
+        // TODO Alex: Dispose of this
         _ = networkTasks()
             .subscribe(onNext: { result in
                 guard case .value(let tasks) = result else {
