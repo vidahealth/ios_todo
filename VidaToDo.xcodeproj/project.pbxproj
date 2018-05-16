@@ -28,13 +28,16 @@
 		4032C1962087B76300355B04 /* VidaLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1302087009B00355B04 /* VidaLogger.swift */; };
 		4032C1972087B76700355B04 /* Storing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C135208700D200355B04 /* Storing.swift */; };
 		4032C1982087B76E00355B04 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13F2087014800355B04 /* NetworkError.swift */; };
-		4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13D2087013200355B04 /* NetworkURLObjects.swift */; };
+		4032C1992087B76E00355B04 /* HTTPURLObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13D2087013200355B04 /* HTTPURLObjects.swift */; };
 		4032C19B2087B77600355B04 /* URL+endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C137208700F500355B04 /* URL+endpoint.swift */; };
 		4032C19C2087B77600355B04 /* NSMutableURLRequest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */; };
 		4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C13B2087011500355B04 /* Enum+Collection.swift */; };
 		4032C1A12087B9A600355B04 /* TaskToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1A02087B9A600355B04 /* TaskToDoService.swift */; };
 		4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032C1A22087BBBE00355B04 /* NetworkManager.swift */; };
 		4042F16C2087C259003EA408 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042F16B2087C259003EA408 /* ToDoTask.swift */; };
+		409DC5B820ACB08000646378 /* TodoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DA2087F8C400135EC8 /* TodoTextField.swift */; };
+		409DC5B920ACB08000646378 /* PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DC2088013300135EC8 /* PriorityPicker.swift */; };
+		409DC5BD20ACB0C000646378 /* GlobalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409DC5BC20ACB0C000646378 /* GlobalStorage.swift */; };
 		40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134C2087D7D200633E0C /* NetworkDecoder.swift */; };
 		40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */; };
 		40B013562087F18800633E0C /* ToDoTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B013552087F18800633E0C /* ToDoTaskTests.swift */; };
@@ -59,8 +62,6 @@
 		85CF7E68208802840035FB9F /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CF7E67208802840035FB9F /* TestStorage.swift */; };
 		977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D42087E09B00135EC8 /* MainTabViewController.swift */; };
 		977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71D82087EF4000135EC8 /* TodoFormViewController.swift */; };
-		977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DA2087F8C400135EC8 /* TodoTextField.swift */; };
-		977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DC2088013300135EC8 /* PriorityPicker.swift */; };
 		977D71E02088094800135EC8 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71DF2088094800135EC8 /* FormFields.swift */; };
 		977D71E22088296700135EC8 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E12088296700135EC8 /* FormViewModel.swift */; };
 		977D71E420882AA100135EC8 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E320882AA100135EC8 /* FormValidator.swift */; };
@@ -193,7 +194,7 @@
 		4032C137208700F500355B04 /* URL+endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+endpoint.swift"; sourceTree = "<group>"; };
 		4032C1392087010C00355B04 /* NSMutableURLRequest+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+Convenience.swift"; sourceTree = "<group>"; };
 		4032C13B2087011500355B04 /* Enum+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enum+Collection.swift"; sourceTree = "<group>"; };
-		4032C13D2087013200355B04 /* NetworkURLObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURLObjects.swift; sourceTree = "<group>"; };
+		4032C13D2087013200355B04 /* HTTPURLObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPURLObjects.swift; sourceTree = "<group>"; };
 		4032C13F2087014800355B04 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4032C1422087017A00355B04 /* VidaAlertBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaAlertBuilder.swift; sourceTree = "<group>"; };
 		4032C1432087017A00355B04 /* VidaAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VidaAlert.swift; sourceTree = "<group>"; };
@@ -213,6 +214,7 @@
 		4032C1A02087B9A600355B04 /* TaskToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoService.swift; sourceTree = "<group>"; };
 		4032C1A22087BBBE00355B04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4042F16B2087C259003EA408 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
+		409DC5BC20ACB0C000646378 /* GlobalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStorage.swift; sourceTree = "<group>"; };
 		40B0134C2087D7D200633E0C /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
 		40B0134F2087EC3D00633E0C /* TaskToDoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoManager.swift; sourceTree = "<group>"; };
 		40B013512087EF6500633E0C /* TaskToDoListUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToDoListUtility.swift; sourceTree = "<group>"; };
@@ -420,7 +422,7 @@
 		4032C12B2087005F00355B04 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				4032C13D2087013200355B04 /* NetworkURLObjects.swift */,
+				4032C13D2087013200355B04 /* HTTPURLObjects.swift */,
 				40B0134C2087D7D200633E0C /* NetworkDecoder.swift */,
 				4032C1A22087BBBE00355B04 /* NetworkManager.swift */,
 				4032C13F2087014800355B04 /* NetworkError.swift */,
@@ -444,8 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				4032C1412087016F00355B04 /* VidaAlert */,
-				977D71DA2087F8C400135EC8 /* TodoTextField.swift */,
-				977D71DC2088013300135EC8 /* PriorityPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -462,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				4032C135208700D200355B04 /* Storing.swift */,
+				409DC5BC20ACB0C000646378 /* GlobalStorage.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -605,6 +606,8 @@
 		40B0136D2088506800633E0C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				977D71DA2087F8C400135EC8 /* TodoTextField.swift */,
+				977D71DC2088013300135EC8 /* PriorityPicker.swift */,
 				977D71D82087EF4000135EC8 /* TodoFormViewController.swift */,
 				977D71DF2088094800135EC8 /* FormFields.swift */,
 			);
@@ -1362,6 +1365,7 @@
 				977D71D92087EF4000135EC8 /* TodoFormViewController.swift in Sources */,
 				ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */,
 				977D71E22088296700135EC8 /* FormViewModel.swift in Sources */,
+				409DC5B920ACB08000646378 /* PriorityPicker.swift in Sources */,
 				977D71E02088094800135EC8 /* FormFields.swift in Sources */,
 				85CF7E602087F8C20035FB9F /* AppDelegate.swift in Sources */,
 				85CF7E5F2087F8C20035FB9F /* AppDelegate+Routing.swift in Sources */,
@@ -1369,6 +1373,7 @@
 				40B0135D2088053A00633E0C /* SettingsPageViewController.swift in Sources */,
 				40B01359208803B100633E0C /* SettingsViewModel.swift in Sources */,
 				ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */,
+				409DC5B820ACB08000646378 /* TodoTextField.swift in Sources */,
 				977D71D52087E09B00135EC8 /* MainTabViewController.swift in Sources */,
 				ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */,
 			);
@@ -1402,11 +1407,12 @@
 				85CF7E632087F8DD0035FB9F /* GlobalScreenRouter.swift in Sources */,
 				40B0134D2087D7D200633E0C /* NetworkDecoder.swift in Sources */,
 				4032C1A32087BBBE00355B04 /* NetworkManager.swift in Sources */,
-				4032C1992087B76E00355B04 /* NetworkURLObjects.swift in Sources */,
+				4032C1992087B76E00355B04 /* HTTPURLObjects.swift in Sources */,
 				4032C1972087B76700355B04 /* Storing.swift in Sources */,
 				ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */,
 				4032C1962087B76300355B04 /* VidaLogger.swift in Sources */,
 				40B013502087EC3D00633E0C /* TaskToDoManager.swift in Sources */,
+				409DC5BD20ACB0C000646378 /* GlobalStorage.swift in Sources */,
 				40B01368208810A900633E0C /* Collection+safe.swift in Sources */,
 				4032C19D2087B77600355B04 /* Enum+Collection.swift in Sources */,
 				85CF7E642087F8DD0035FB9F /* GlobalScreenURL.swift in Sources */,
@@ -1433,8 +1439,6 @@
 				40B01365208807BA00633E0C /* UIViewController+create.swift in Sources */,
 				4032C1942087B75700355B04 /* UIViewController+TopController.swift in Sources */,
 				40B01366208807BA00633E0C /* UIView+Create.swift in Sources */,
-				977D71DB2087F8C400135EC8 /* TodoTextField.swift in Sources */,
-				977D71DD2088013300135EC8 /* PriorityPicker.swift in Sources */,
 				4032C1932087B75000355B04 /* VidaAlertBuilder.swift in Sources */,
 				ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */,
 				4032C1922087B75000355B04 /* VidaAlert.swift in Sources */,

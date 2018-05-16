@@ -7,14 +7,16 @@ import VidaFoundation
 import RxCocoa
 import RxSwift
 
-// BRICE: Does TODO-specific things belong in VidaUIKit?
+/// This looks like it could be general and belong in VidaUIKit, however
+/// Since it uses ToDo specific things it belongs in the feature folder.
 public class PriorityPicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
+    // Public API
     public var priority: Observable<ToDoTask.Priority> {
         return _priority.asObservable()
     }
 
-    // TODO: bring in priority here.
+    // Private subjects
     private let _priority: Variable<ToDoTask.Priority>
     
     private var priorities: [ToDoTask.Priority] = [.low, .medium, .high]

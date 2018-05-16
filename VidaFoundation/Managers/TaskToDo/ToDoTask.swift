@@ -8,7 +8,7 @@
 
 import Foundation
 
-// TODO: Move to Codable for Server objects when we have Swift 4.0
+// TODO: Move to Codable for Server objects (in the main app) when we have Swift 4.0
 public struct ToDoTaskResponse: Codable {
     public let objects: [ToDoTask]
 }
@@ -61,7 +61,8 @@ public class ToDoTask: Codable {
         case high = "high"
 
 
-        // BRICE: Does this belong here?
+        // Equality methods are okay in the model, but not much other functionality since we want models to be regular dumb objects
+        // Additional model logic can be put into utility objects
         public static func < (left: Priority, right: Priority) -> Bool {
             if left == right {
                 return false

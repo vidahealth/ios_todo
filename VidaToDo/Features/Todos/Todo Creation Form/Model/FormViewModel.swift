@@ -6,39 +6,45 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-// BRICE: Do we like this file structure?
+struct ToDoFormSheetData {
+    let title: String
+    let due: Date
+    let priortiy: ToDoTask.Priority
+}
+
+// TODO: Do we like this file structure?
 class FormViewModel {
 
-    private let disposeBag = DisposeBag()
-
-    var isValid: Observable<Bool>?
-    var hasSubmitted: Observable<Bool>? {
+    // Public API
+    public var isValid: Observable<Bool> {
+        return _validData.asObservable().map({ (data) -> Bool in
+            return data != nil
+        })
+    }
+    public var hasSubmitted: Observable<Bool> {
         return _hasSubmitted.asObservable()
     }
 
+    // Subjects
+    public var _validData = Variable<ToDoFormSheetData?>(nil)
     private var _hasSubmitted = Variable<Bool>(false)
 
-    var latestValidData: (String?, Date, ToDoTask.Priority)?
+    // Private
+    private let bag = DisposeBag()
+    private var latestValidData: (String?, Date, ToDoTask.Priority)?
+    private let manager = TaskToDoManager()
 
-    let manager = TaskToDoManager()
-
-    func bind(title: Observable<String?>, due: Observable<Date>, priority: Observable<ToDoTask.Priority>) {
+    func subscribeToFormUpdateObservables(title: Observable<String?>, due: Observable<Date>, priority: Observable<ToDoTask.Priority>) {
         let combinedFormValues = Observable<(String?, Date, ToDoTask.Priority)>.combineLatest(title, due, priority, resultSelector: { (title: String?, due: Date, priority: ToDoTask.Priority) -> (String?, Date, ToDoTask.Priority) in
             return (title, due, priority)
         })
 
-        isValid = combinedFormValues.map { [weak self] values in
-            let isValid = FormValidator.isValid(title: values.0, due: values.1, priority: values.2)
-            if isValid {
-                self?.latestValidData = values
-                return true
-            } else {
-                return false
-            }
-        }
+        combinedFormValues.subscribe(onNext: { [weak self] (values) in
+            self?._validData.value = FormValidator.makeFormSheet(title: values.0, due: values.1, priority: values.2)
+        }).disposed(by: bag)
     }
 
-    func submitButtonClicked() {
+    func submitButtonSelected() {
         guard let title = latestValidData?.0, let _ = latestValidData?.1, let priority = latestValidData?.2 else {
             return
         }
@@ -50,6 +56,6 @@ class FormViewModel {
             }
             self._hasSubmitted.value = true
             return
-        }).disposed(by: disposeBag)
+        }).disposed(by: bag)
     }
 }

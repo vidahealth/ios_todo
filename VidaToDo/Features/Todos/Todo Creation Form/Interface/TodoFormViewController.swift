@@ -31,13 +31,13 @@ class TodoFormViewController: UIViewController, Routable {
         view.addSubview(formFields)
         formFields.left(10).top(100).right(10)
 
-        viewModel.bind(title: formFields.title, due: formFields.due, priority: formFields.priority)
+        viewModel.subscribeToFormUpdateObservables(title: formFields.title, due: formFields.due, priority: formFields.priority)
 
-        viewModel.isValid?.subscribe(onNext: { [weak self] isValid in
+        viewModel.isValid.subscribe(onNext: { [weak self] isValid in
             self?.setButton(isEnabled: isValid)
         }).disposed(by: disposeBag)
 
-        viewModel.hasSubmitted?.subscribe(onNext: { [weak self] isValid in
+        viewModel.hasSubmitted.subscribe(onNext: { [weak self] isValid in
             self?.dismiss()
         }).disposed(by: disposeBag)
 
@@ -60,7 +60,7 @@ class TodoFormViewController: UIViewController, Routable {
     }
 
     @objc func addButtonClicked() {
-        viewModel.submitButtonClicked()
+        viewModel.submitButtonSelected()
     }
 
     func setButton(isEnabled: Bool) {

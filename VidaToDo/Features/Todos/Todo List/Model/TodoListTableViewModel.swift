@@ -8,17 +8,21 @@
 
 import RxCocoa
 
-
-// TODO: Strings should be in a strings constant section
 extension ToDoTask.Priority {
+    struct Strings {
+        static let high = "High:"
+        static let medium = "Medium:"
+        static let low = "Low:"
+    }
+
     func text() -> String {
         switch self {
         case .high:
-            return "High:"
+            return Strings.high
         case .medium:
-            return "Medium:"
+            return Strings.medium
         case .low:
-            return "Low:"
+            return Strings.low
         }
     }
 }
@@ -37,11 +41,7 @@ class TodoListTableViewModel {
         })
     }
 
-    // BRICE: Do we want this or bind?
-
-    // Potentially change in naming:
-    // TODO: func subscribeToTaskIsDoneObservable(_ observable:....)
-    func watchTaskIsDone(observable: Observable<(id: Int, isDone: Bool)>) {
+    func subscribeToTaskIsDoneObservable(_ observable: Observable<(id: Int, isDone: Bool)>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskIsDoneTuple, tasks) -> (ToDoTask?, Bool) in
                 let (taskID, isDone) = taskIsDoneTuple
                 return (tasks.filter({$0.id == taskID}).first, isDone)
@@ -63,9 +63,9 @@ class TodoListTableViewModel {
                 return
             }).disposed(by: bag)
     }
+    
     // TODO: Update UI based on task selection
-    // TODO: Rename
-    func watchTaskIsSelected(observable: Observable<Int>) {
+    func subscribeToTaskIsSelectedObservable(_ observable: Observable<Int>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskID, tasks) -> ToDoTask? in
             return tasks.filter({$0.id == taskID}).first
             }.subscribe(onNext: { (task: ToDoTask?) in

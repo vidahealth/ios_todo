@@ -3,11 +3,11 @@
 //
 
 class FormValidator {
-    static func isValid(title: String?, due: Date, priority: ToDoTask.Priority) -> Bool {
+    static func makeFormSheet(title: String?, due: Date, priority: ToDoTask.Priority) -> ToDoFormSheetData? {
         guard let title = title, title.count > 0 else {
-                return false
+            return nil
         }
-        return true
+        return ToDoFormSheetData(title: title, due: due, priortiy: priority)
     }
 }
 

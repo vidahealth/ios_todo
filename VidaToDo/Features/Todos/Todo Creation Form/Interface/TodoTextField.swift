@@ -4,7 +4,6 @@
 
 import UIKit
 
-// BRICE: Move back into feature
 public class TodoTextField: UITextField {
     public init(text: String? = nil, placeholderText: String? = nil) {
         super.init(frame: CGRect.zero)
