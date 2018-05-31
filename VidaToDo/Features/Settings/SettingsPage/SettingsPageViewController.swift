@@ -12,7 +12,7 @@ struct SettingsPageViewData {
     let text: String
 }
 
-class SettingsPageViewController: UIViewController, Routable {
+class SettingsPageViewController: UIViewController {
     @IBOutlet weak var mainTextView: UITextView!
 
     var viewData: SettingsPageViewData?

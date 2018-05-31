@@ -5,25 +5,18 @@
 import UIKit
 import VidaUIKit
 
-class TodoFormViewController: UIViewController, Routable {
-    
+
+class TodoFormViewController: UIViewController {
+    // UI
+    private let closeButton = UIButton()
+    private let addButton = UIButton()
     private let formFields = FormFields()
 
-    let viewModel = FormViewModel()
+    // private
+    private let viewModel = FormViewModel()
+    private let bag = DisposeBag()
 
-    var closeButton = UIButton()
-    var addButton = UIButton()
-
-    private let disposeBag = DisposeBag()
-
-    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
-        guard case .todoForm = screenURL else {
-            fatalLog("Invalid URL passed to view controller: \(self)")
-            return nil
-        }
-        return TodoFormViewController()
-    }
-
+    // MARK: Config
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -31,37 +24,38 @@ class TodoFormViewController: UIViewController, Routable {
         view.addSubview(formFields)
         formFields.left(10).top(100).right(10)
 
-        viewModel.subscribeToFormUpdateObservables(title: formFields.title, due: formFields.due, priority: formFields.priority)
-
-        viewModel.isValid.subscribe(onNext: { [weak self] isValid in
-            self?.setButton(isEnabled: isValid)
-        }).disposed(by: disposeBag)
-
-        viewModel.hasSubmitted.subscribe(onNext: { [weak self] isValid in
-            self?.dismiss()
-        }).disposed(by: disposeBag)
-
         closeButton.setTitle("X", for: .normal)
-        closeButton.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
         closeButton.setTitleColor(.black, for: .normal)
         view.addSubview(closeButton)
 
         closeButton.right().top(12)
 
         addButton.setTitle("Add", for: .normal)
-        addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
         view.addSubview(addButton)
 
         addButton.right().left().bottom()
+
+        subscribeTheViewModel(viewModel)
+        subscribeToViewModel(viewModel)
     }
 
-    @objc func closeButtonClicked() {
-        dismiss()
+    func subscribeTheViewModel(_ viewModel: FormViewModel) {
+        viewModel.subscribeToFormUpdateObservables(title: formFields.title, due: formFields.due, priority: formFields.priority)
+        viewModel.subscribeToSubmitRequestedObservable(addButton.rx.tap.asObservable())
+        viewModel.subscribeToDismissRequestedObservable(closeButton.rx.tap.asObservable())
     }
 
-    @objc func addButtonClicked() {
-        viewModel.submitButtonSelected()
+    func subscribeToViewModel(_ viewModel: FormViewModel) {
+        viewModel.isValid.subscribe(onNext: { [weak self] isValid in
+            self?.setButton(isEnabled: isValid)
+        }).disposed(by: bag)
+
+        viewModel.dismiss.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }).disposed(by: bag)
     }
+
+    // MARK: private
 
     func setButton(isEnabled: Bool) {
         if isEnabled {
@@ -72,9 +66,14 @@ class TodoFormViewController: UIViewController, Routable {
             addButton.setTitleColor(.gray, for: .normal)
         }
     }
+}
 
-    func dismiss() {
-        dismiss(animated: true, completion: nil)
+extension TodoFormViewController: Routable {
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .todoForm = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return TodoFormViewController()
     }
-
 }

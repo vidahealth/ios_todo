@@ -31,15 +31,17 @@ class TodoListTableViewModel {
     let taskToDoManager = TaskToDoManager()
     let bag = DisposeBag()
 
-    // TODO: Define a pattern for using distinctUntilChanged to only update the UI if view data has changed.
-    var tasks: Observable<[TodoCardTableViewData]> {
-        // TODO: Define a suite of patterns for cacheOnly (take(1)?), networkOnly (skip(1)?) type things
-        return taskToDoManager.tasks().map({ (tasks) -> [TodoCardTableViewData] in
-            return tasks.map {
-                return TodoCardTableViewData(taskID: $0.id, priorityText: $0.priority.text(), taskTitle: $0.title, isDone: $0.done)
-            }
-        })
+    // MARK: Observables
+    private let tasksViewDataSubject = BehaviorSubject<[TodoCardTableViewData]>(value: [])
+    var tasksViewData: Observable<[TodoCardTableViewData]> {
+        return tasksViewDataSubject
     }
+
+    init() {
+        updateTasks()
+    }
+
+    // MARK: Public Subscriptions
 
     func subscribeToTaskIsDoneObservable(_ observable: Observable<(id: Int, isDone: Bool)>) {
         observable.withLatestFrom(taskToDoManager.tasks()) { (taskIsDoneTuple, tasks) -> (ToDoTask?, Bool) in
@@ -63,22 +65,46 @@ class TodoListTableViewModel {
                 return
             }).disposed(by: bag)
     }
-    
+
+    // MARK: Public
     // TODO: Update UI based on task selection
-    func subscribeToTaskIsSelectedObservable(_ observable: Observable<Int>) {
-        observable.withLatestFrom(taskToDoManager.tasks()) { (taskID, tasks) -> ToDoTask? in
-            return tasks.filter({$0.id == taskID}).first
-            }.subscribe(onNext: { (task: ToDoTask?) in
-                guard let _ = task else {
-                    errorLog("unable to find task")
-                    return
-                }
-                // TODO: Do something with the task selection
+    func taskIsSelected(taskID: Int) {
+        Observable.just(taskID).withLatestFrom(taskToDoManager.tasks()).subscribe(onNext: { (tasks) in
+            guard let task = tasks.filter({ $0.id == taskID}).first else {
+                errorLog("unable to find task")
                 return
-            }).disposed(by: bag)
+            }
+            // TODO: Do something with the task selection
+            return
+        }).disposed(by: bag)
     }
 
-    func removeTask(at index: Int) {
-        
+    func removeTaskWithID(_ taskID: Int) {
+        Observable.just(taskID).withLatestFrom(taskToDoManager.tasks()).subscribe(onNext: { (tasks) in
+            guard let task = tasks.filter({ $0.id == taskID}).first else {
+                errorLog("unable to find task")
+                return
+            }
+            // TODO: Remove the task
+            return
+        }).disposed(by: bag)
+    }
+
+    func viewDidAppear() {
+        updateTasks()
+    }
+
+    // MARK: Private
+
+    // TODO: Define a suite of patterns for cacheOnly (take(1)?), networkOnly (skip(1)?) type things
+    // TODO: Define a pattern for using distinctUntilChanged to only update the UI if view data has changed.
+    func updateTasks() {
+        taskToDoManager.tasks().map({ (tasks)  in
+            tasks.map {
+                return TodoCardTableViewData(taskID: $0.id, priorityText: $0.priority.text(), taskTitle: $0.title, isDone: $0.done)
+            }
+        }).subscribe(onNext: { [weak self] (taskViewDataList) in
+            self?.tasksViewDataSubject.onNext(taskViewDataList)
+        }).disposed(by: bag)
     }
 }

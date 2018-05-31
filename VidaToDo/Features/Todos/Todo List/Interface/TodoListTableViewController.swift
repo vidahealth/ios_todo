@@ -12,10 +12,10 @@ import VidaUIKit
 
 class TodoListTableViewController: UIViewController {
 
-    private let taskSelectedSubject = PublishSubject<Int>()
     private let viewModel: TodoListTableViewModel
-    private let todoDataSource = Variable<[TodoCardTableViewData]>([])
     private let bag = DisposeBag()
+
+    private let taskSelectedSubject = PublishSubject<Int>()
 
     private let tableView = UITableView()
     let navbar = UINavigationBar(frame: .zero)
@@ -32,7 +32,13 @@ class TodoListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupSubscriptions()
+        subscribeTheViewModel(viewModel)
+        subscribeToViewModel(viewModel)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
 
     private func setupView() {
@@ -59,11 +65,12 @@ class TodoListTableViewController: UIViewController {
         present(TodoFormViewController(), animated: true, completion: nil)
     }
 
-    private func setupSubscriptions() {
-        viewModel.subscribeToTaskIsSelectedObservable(taskSelectedSubject)
+    private func subscribeTheViewModel(_ viewModel: TodoListTableViewModel) {
+        // empty
+    }
 
-        todoDataSource
-            .asObservable()
+    private func subscribeToViewModel(_ viewModel: TodoListTableViewModel) {
+        viewModel.tasksViewData
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)
@@ -72,26 +79,22 @@ class TodoListTableViewController: UIViewController {
                 return cell
             }
             .disposed(by: bag)
-        
-        viewModel.tasks
-            .subscribe(onNext: { [todoDataSource] (viewData: [TodoCardTableViewData]) in
-                todoDataSource.value += viewData
-            })
-            .disposed(by: bag)
 
         // didSelectRow
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak tableView] indexPath in
+        Observable.combineLatest(tableView.rx.itemSelected.asObservable(), viewModel.tasksViewData)
+            .subscribe(onNext: { [weak tableView, weak self] (indexPath, tasks) in
                 tableView?.deselectRow(at: indexPath, animated: true)
-                //FIXME: need to get taskID and send to view model
-                // viewModel.selectedRow(at: indexPath.row)
+
+                guard let taskID = tasks[safe: indexPath.row]?.taskID else { return }
+                self?.viewModel.taskIsSelected(taskID: taskID)
             })
             .disposed(by: bag)
 
         // didDeleteRow
-        tableView.rx.itemDeleted
-            .subscribe(onNext: { [viewModel] indexPath in
-                viewModel.removeTask(at: indexPath.row)
+        Observable.combineLatest(tableView.rx.itemDeleted.asObservable(), viewModel.tasksViewData)
+            .subscribe(onNext: { [weak self] (indexPath, tasks) in
+                guard let taskID = tasks[safe: indexPath.row]?.taskID else { return }
+                self?.viewModel.removeTaskWithID(taskID)
             })
             .disposed(by: bag)
     }
