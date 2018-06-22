@@ -6,50 +6,79 @@
 //  Copyright © 2018 Vida Health. All rights reserved.
 //
 
-// BRICE: Do we like this file structure?
+struct ValidToDoFormData {
+    let title: String
+    let due: Date
+    let priority: ToDoTask.Priority
+}
+
+struct ToDoFormSheetData {
+    let title: String?
+    let due: Date
+    let priority: ToDoTask.Priority
+}
+
+// TODO: Do we like this file structure?
 class FormViewModel {
 
-    private let disposeBag = DisposeBag()
-
-    var isValid: Observable<Bool>?
-    var hasSubmitted: Observable<Bool>? {
-        return _hasSubmitted.asObservable()
+    // Subjects / Observables
+    private let formDataSubject = BehaviorSubject<ToDoFormSheetData?>(value: nil)
+    private var validDataSubject: Observable<ValidToDoFormData?> {
+        return formDataSubject.map { (currentForm) in
+            return FormValidator.validateFormData(currentForm)
+        }
+    }
+    public var isValid: Observable<Bool> {
+        return validDataSubject.map({ (data) -> Bool in
+            return data != nil
+        })
     }
 
-    private var _hasSubmitted = Variable<Bool>(false)
+    private let hasSubmittedSubject = BehaviorSubject<Bool>(value: false)
+    public var hasSubmitted: Observable<Bool> {
+        return hasSubmittedSubject
+    }
 
-    var latestValidData: (String?, Date, ToDoTask.Priority)?
+    private let dismissSubject = PublishSubject<Void>()
+    public var dismiss: Observable<Void> {
+        return dismissSubject
+    }
 
-    let manager = TaskToDoManager()
+    // Private
+    private let bag = DisposeBag()
+    private let manager = TaskToDoManager()
 
-    func bind(title: Observable<String?>, due: Observable<Date>, priority: Observable<ToDoTask.Priority>) {
-        let combinedFormValues = Observable<(String?, Date, ToDoTask.Priority)>.combineLatest(title, due, priority, resultSelector: { (title: String?, due: Date, priority: ToDoTask.Priority) -> (String?, Date, ToDoTask.Priority) in
-            return (title, due, priority)
+    // MARK: Public subscriptions
+    func subscribeToFormUpdateObservables(title: Observable<String?>, due: Observable<Date>, priority: Observable<ToDoTask.Priority>) {
+        let combinedFormValues = Observable.combineLatest(title, due, priority, resultSelector: { (title: String?, due: Date, priority: ToDoTask.Priority) in
+            return ToDoFormSheetData(title: title, due: due, priority: priority)
         })
 
-        isValid = combinedFormValues.map { [weak self] values in
-            let isValid = FormValidator.isValid(title: values.0, due: values.1, priority: values.2)
-            if isValid {
-                self?.latestValidData = values
-                return true
-            } else {
-                return false
-            }
-        }
+        combinedFormValues.subscribe(onNext: { [weak self] (data) in
+            self?.formDataSubject.onNext(data)
+        }).disposed(by: bag)
     }
 
-    func submitButtonClicked() {
-        guard let title = latestValidData?.0, let _ = latestValidData?.1, let priority = latestValidData?.2 else {
-            return
-        }
-        let todoItem = LocalToDoTask(group: nil, title: title, description: nil, priority: priority, done: false)
-        manager.createTask(todoItem).subscribe(onNext:  { (result) in
-            guard case .value(_) = result else {
-                errorLog("failed creation")
+    func subscribeToDismissRequestedObservable(_ observable: Observable<Void>) {
+        observable.subscribe(onNext: { [weak self] in
+            self?.dismissSubject.onNext(())
+        }).disposed(by: bag)
+    }
+
+    func subscribeToSubmitRequestedObservable(_ observable: Observable<Void>) {
+        observable.withLatestFrom(validDataSubject).subscribe(onNext: { [weak self] (form) in
+            guard let strongSelf = self else { return }
+            guard let form = form else { return }
+
+            let todoItem = LocalToDoTask(group: nil, title: form.title, description: nil, priority: form.priority, done: false)
+            strongSelf.manager.createTask(todoItem).subscribe(onNext: { [weak self] (result) in
+                guard case .value(_) = result else {
+                    errorLog("failed creation")
+                    return
+                }
+                self?.dismissSubject.onNext(())
                 return
-            }
-            self._hasSubmitted.value = true
-            return
-        }).disposed(by: disposeBag)
+            }).disposed(by: strongSelf.bag)
+        }).disposed(by: bag)
     }
 }

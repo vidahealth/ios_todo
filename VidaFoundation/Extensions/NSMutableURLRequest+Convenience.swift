@@ -5,7 +5,7 @@
 import Foundation
 
 extension NSMutableURLRequest {
-    convenience init?(endpoint: VidaEndpoint, version: EndpointVersion, type: UrlRequestMethod, data: Data? = nil) {
+    convenience init?(endpoint: VidaEndpoint, version: EndpointVersion, type: HTTPRequestMethod, data: Data? = nil) {
 
         guard let url = URL(endpoint: endpoint, version: version) else {
             return nil

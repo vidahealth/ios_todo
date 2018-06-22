@@ -10,24 +10,15 @@ import UIKit
 import RxCocoa
 import VidaUIKit
 
-// TODO: Create extensions for protocols
-class TodoListTableViewController: UIViewController, UITableViewDelegate, Routable {
+class TodoListTableViewController: UIViewController {
+
+    private let viewModel: TodoListTableViewModel
+    private let bag = DisposeBag()
 
     private let taskSelectedSubject = PublishSubject<Int>()
-    private let viewModel: TodoListTableViewModel
-    private let todoDataSource = Variable<[TodoCardTableViewData]>([])
-    private let bag = DisposeBag()
 
     private let tableView = UITableView()
     let navbar = UINavigationBar(frame: .zero)
-
-    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
-        guard case .toDoList = screenURL else {
-            fatalLog("Invalid URL passed to view controller: \(self)")
-            return nil
-        }
-        return TodoListTableViewController(viewModel: TodoListTableViewModel())
-    }
 
     fileprivate init(viewModel: TodoListTableViewModel) {
         self.viewModel = viewModel
@@ -41,7 +32,13 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate, Routab
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupSubscriptions()
+        subscribeTheViewModel(viewModel)
+        subscribeToViewModel(viewModel)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
 
     private func setupView() {
@@ -68,40 +65,50 @@ class TodoListTableViewController: UIViewController, UITableViewDelegate, Routab
         present(TodoFormViewController(), animated: true, completion: nil)
     }
 
-    private func setupSubscriptions() {
-        viewModel.watchTaskIsSelected(observable: taskSelectedSubject)
+    private func subscribeTheViewModel(_ viewModel: TodoListTableViewModel) {
+        // empty
+    }
 
-        todoDataSource
-            .asObservable()
+    private func subscribeToViewModel(_ viewModel: TodoListTableViewModel) {
+        viewModel.tasksViewData
             .bind(to: tableView.rx.items) { [viewModel] (tableView, row, viewData) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "todoCard") as! TodoCardTableViewCell
                 cell.configure(with: viewData)
                 cell.tag = row
-                viewModel.watchTaskIsDone(observable: cell.cardIsDone)
+                viewModel.subscribeToTaskIsDoneObservable(cell.cardIsDone)
                 return cell
             }
             .disposed(by: bag)
-        
-        viewModel.tasks
-            .subscribe(onNext: { [todoDataSource] (viewData: [TodoCardTableViewData]) in
-                todoDataSource.value += viewData
-            })
-            .disposed(by: bag)
 
         // didSelectRow
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [tableView, viewModel] indexPath in
-                tableView.deselectRow(at: indexPath, animated: true)
-                //FIXME: need to get taskID and send to view model
-                // viewModel.selectedRow(at: indexPath.row)
+        Observable.combineLatest(tableView.rx.itemSelected.asObservable(), viewModel.tasksViewData)
+            .subscribe(onNext: { [weak tableView, weak self] (indexPath, tasks) in
+                tableView?.deselectRow(at: indexPath, animated: true)
+
+                guard let taskID = tasks[safe: indexPath.row]?.taskID else { return }
+                self?.viewModel.taskIsSelected(taskID: taskID)
             })
             .disposed(by: bag)
 
         // didDeleteRow
-        tableView.rx.itemDeleted
-            .subscribe(onNext: { [viewModel] indexPath in
-                viewModel.removeTask(at: indexPath.row)
+        Observable.combineLatest(tableView.rx.itemDeleted.asObservable(), viewModel.tasksViewData)
+            .subscribe(onNext: { [weak self] (indexPath, tasks) in
+                guard let taskID = tasks[safe: indexPath.row]?.taskID else { return }
+                self?.viewModel.removeTaskWithID(taskID)
             })
             .disposed(by: bag)
     }
 }
+
+extension TodoListTableViewController: Routable {
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .toDoList = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return TodoListTableViewController(viewModel: TodoListTableViewModel())
+    }
+}
+
+/// Empty because we use the Rx methods
+extension TodoListTableViewController: UITableViewDelegate { }

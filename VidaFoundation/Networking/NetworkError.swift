@@ -8,7 +8,7 @@
 
 import Foundation
 
-// BRICE: Do we like these types?
+/// We are 'okay' with these types, would like to refactor them in the future.
 public enum NetworkErrorType: Int {
     case error = 800 // general network catchall
     case connection

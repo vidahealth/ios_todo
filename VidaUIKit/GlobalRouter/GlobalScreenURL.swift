@@ -8,7 +8,6 @@
 import Foundation
 
 // When creating a new renderer, you have to create a case for it in the GlobalURL, and give it a string URL in the GLobalURL path.
-// TODO: How do we group these by feature to avoid a 60 strings in a file (Alex: Deep Linking Proposal)
 public enum GlobalScreenURL: CustomStringConvertible {
     case tab
     case toDoList

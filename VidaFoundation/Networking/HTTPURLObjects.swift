@@ -7,16 +7,16 @@
 //
 
 import Foundation
+import RxSwift
 
-// TODO: Look at the existing Result type and Reactive (or rxSwift) for naming conflict
+/// AlamoFire has a well defined Result type similar to our definition here, however,
+/// Brice thinks its better not to expose AlamoFire everywhere in the app so using our own is preferable.
 public enum Result<T> {
     case error(Error)
     case value(T)
 }
 
-// HTTPRequestMethod
-// rename file to HRTTPURLObjects
-enum UrlRequestMethod: String {
+enum HTTPRequestMethod: String {
     case post   = "POST"
     case get    = "GET"
     case patch  = "PATCH"

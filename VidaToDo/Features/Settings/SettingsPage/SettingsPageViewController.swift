@@ -12,19 +12,10 @@ struct SettingsPageViewData {
     let text: String
 }
 
-// BRICE: Do I have to give up this model of storyboard?
-class SettingsPageViewController: UIViewController, Routable {
+class SettingsPageViewController: UIViewController {
     @IBOutlet weak var mainTextView: UITextView!
 
     var viewData: SettingsPageViewData?
-
-    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
-        guard case .settings = screenURL else {
-            fatalLog("Invalid URL passed to view controller: \(self)")
-            return nil
-        }
-        return SettingsPageViewController()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +30,15 @@ class SettingsPageViewController: UIViewController, Routable {
         self.viewData = data
         guard isViewLoaded else { return }
         mainTextView.text = data.text
+    }
+}
+
+extension SettingsPageViewController: Routable {
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .settings = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return SettingsPageViewController()
     }
 }
