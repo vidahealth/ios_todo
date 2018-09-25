@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D41613BF1FE6E01D479BE6 /* Pods_VidaToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AE8871E2953FB3ECEB70A9 /* Pods_VidaToDo.framework */; };
-		3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3598D15653B915BC044D4D /* EarlGrey.swift */; };
+		37F3B232215AB8ED0090DE00 /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419237F77E78F1896C83C0D3 /* EarlGrey.swift */; };
 		401A4C092086FC1E009158B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C082086FC1E009158B4 /* Assets.xcassets */; };
 		401A4C0C2086FC1E009158B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A4C0A2086FC1E009158B4 /* LaunchScreen.storyboard */; };
 		401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A4C352086FDAC009158B4 /* VidaToDoEGTests.swift */; };
@@ -74,7 +74,6 @@
 		ECD145E32087C519007E8239 /* UIView+NSLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DC2087C093007E8239 /* UIView+NSLayoutConstraints.swift */; };
 		ECD145E52087CCE5007E8239 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E42087CCE5007E8239 /* Date+Utility.swift */; };
 		ECD145E82087E7ED007E8239 /* TodoListTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145E72087E7ED007E8239 /* TodoListTableViewModel.swift */; };
-		F1DE9EA70721B9DADA28F015 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -746,7 +745,6 @@
 				401A4BFC2086FC1C009158B4 /* Resources */,
 				706DD4FC154A059E7F2ACF3E /* [CP] Embed Pods Frameworks */,
 				4032C16C2087B70400355B04 /* Embed Frameworks */,
-				FFD237F863843E3FA951629D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -767,8 +765,6 @@
 				401A4C0E2086FC1E009158B4 /* Sources */,
 				401A4C0F2086FC1E009158B4 /* Frameworks */,
 				401A4C102086FC1E009158B4 /* Resources */,
-				2F1A110ADC7F7734831A9097 /* [CP] Embed Pods Frameworks */,
-				B22C5B4B4B66F29663F0672C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -790,7 +786,6 @@
 				401A4C312086FDAC009158B4 /* Resources */,
 				AB6BFF8FCE0534571F2633D7 /* [CP] Embed Pods Frameworks */,
 				11D37B96E93DBCEA56EBDB64 /* EarlGrey Copy Files */,
-				0483EB33C61D65CBCF319C5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -811,7 +806,6 @@
 				4032C14E2087B70300355B04 /* Frameworks */,
 				4032C14F2087B70300355B04 /* Headers */,
 				4032C1502087B70300355B04 /* Resources */,
-				A8BF52F24AFBB924163C7B34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -831,7 +825,6 @@
 				4032C1572087B70400355B04 /* Frameworks */,
 				4032C1582087B70400355B04 /* Resources */,
 				14AD763DCBDAF9867F641555 /* [CP] Embed Pods Frameworks */,
-				CA91B38CA518458B8527045A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -853,7 +846,6 @@
 				4032C1712087B71500355B04 /* Frameworks */,
 				4032C1722087B71500355B04 /* Headers */,
 				4032C1732087B71500355B04 /* Resources */,
-				A319A4E177C9B170444D3067 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -874,7 +866,6 @@
 				4032C17A2087B71500355B04 /* Frameworks */,
 				4032C17B2087B71500355B04 /* Resources */,
 				0E531F9BE7782846B090FD3F /* [CP] Embed Pods Frameworks */,
-				61E0D92761355AA626FB0C6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1006,21 +997,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0483EB33C61D65CBCF319C5D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoEGTests/Pods-VidaToDoEGTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0E531F9BE7782846B090FD3F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1089,21 +1065,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2F1A110ADC7F7734831A9097 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4E48C228E1DBC12086F5A385 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1138,21 +1099,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61E0D92761355AA626FB0C6A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKitTests/Pods-VidaUIKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		706DD4FC154A059E7F2ACF3E /* [CP] Embed Pods Frameworks */ = {
@@ -1217,36 +1163,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A319A4E177C9B170444D3067 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8BF52F24AFBB924163C7B34 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundation/Pods-VidaFoundation-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AB6BFF8FCE0534571F2633D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1291,21 +1207,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B22C5B4B4B66F29663F0672C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDoTests/Pods-VidaToDoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B3784609056D0C806D756E2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1322,36 +1223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA91B38CA518458B8527045A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFD237F863843E3FA951629D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VidaToDo/Pods-VidaToDo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1390,9 +1261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F3B232215AB8ED0090DE00 /* EarlGrey.swift in Sources */,
 				401A4C362086FDAC009158B4 /* VidaToDoEGTests.swift in Sources */,
-				F1DE9EA70721B9DADA28F015 /* (null) in Sources */,
-				3AA0832E3884E3E0486FC8DC /* EarlGrey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
