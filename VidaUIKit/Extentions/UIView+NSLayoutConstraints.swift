@@ -37,8 +37,8 @@ extension LayoutConstraintWrapper {
 
     @discardableResult
     public func align(
-        _ ownAttribute: NSLayoutAttribute,
-        to otherAttribute: NSLayoutAttribute,
+        _ ownAttribute: NSLayoutConstraint.Attribute,
+        to otherAttribute: NSLayoutConstraint.Attribute,
         of other: UIView,
         withPadding constant: Double = 0.0
         ) -> NSLayoutConstraint {
@@ -49,8 +49,8 @@ extension LayoutConstraintWrapper {
 
     @discardableResult
     public func scale(
-        _ ownAttribute: NSLayoutAttribute,
-        to otherAttribute: NSLayoutAttribute,
+        _ ownAttribute: NSLayoutConstraint.Attribute,
+        to otherAttribute: NSLayoutConstraint.Attribute,
         of other: UIView,
         withMultiplier multiplier: Double,
         withPadding constant: Double = 0.0
@@ -75,8 +75,8 @@ extension LayoutConstraintWrapper {
     }
 
     public func getConstraintToAlign(
-        _ ownAttribute: NSLayoutAttribute,
-        to otherAttribute: NSLayoutAttribute,
+        _ ownAttribute: NSLayoutConstraint.Attribute,
+        to otherAttribute: NSLayoutConstraint.Attribute,
         of other: UIView,
         withPadding constant: Double = 0.0
         ) -> NSLayoutConstraint {
@@ -93,8 +93,8 @@ extension LayoutConstraintWrapper {
     }
 
     public func getConstraintToScale(
-        _ ownAttribute: NSLayoutAttribute,
-        to otherAttribute: NSLayoutAttribute,
+        _ ownAttribute: NSLayoutConstraint.Attribute,
+        to otherAttribute: NSLayoutConstraint.Attribute,
         of other: UIView,
         withMultiplier multiplier: Double,
         withPadding constant: Double = 0.0
@@ -221,7 +221,7 @@ extension LayoutConstraintWrapper {
         if #available(iOS 11.0, *) {
             view.translatesAutoresizingMaskIntoConstraints = false
             let topAnchor = superview.safeAreaLayoutGuide.topAnchor
-            let topConstraint = view.topAnchor.constraintEqualToSystemSpacingBelow(topAnchor, multiplier: 1.0)
+            let topConstraint = view.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1.0)
             topConstraint.constant = CGFloat(padding)
             NSLayoutConstraint.activate([topConstraint])
         } else {
@@ -245,7 +245,7 @@ extension LayoutConstraintWrapper {
         if #available(iOS 11.0, *) {
             view.translatesAutoresizingMaskIntoConstraints = false
             let bottomAnchor = superview.safeAreaLayoutGuide.bottomAnchor
-            let bottomConstraint = view.bottomAnchor.constraintEqualToSystemSpacingBelow(bottomAnchor, multiplier: 1.0)
+            let bottomConstraint = view.bottomAnchor.constraint(equalToSystemSpacingBelow: bottomAnchor, multiplier: 1.0)
             bottomConstraint.constant = CGFloat(padding)
             NSLayoutConstraint.activate([bottomConstraint])
         } else {
@@ -433,12 +433,12 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static public func setEqual(layoutAttribute: NSLayoutAttribute, for views: UIView...) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttribute: NSLayoutConstraint.Attribute, for views: UIView...) -> [NSLayoutConstraint] {
         return setEqual(layoutAttribute: layoutAttribute, for: views)
     }
 
     @discardableResult
-    static public func setEqual(layoutAttribute: NSLayoutAttribute, for views: [UIView]) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttribute: NSLayoutConstraint.Attribute, for views: [UIView]) -> [NSLayoutConstraint] {
         guard let first = views.first else { return [] }
         var constraints: [NSLayoutConstraint] = []
         var previous = first
@@ -451,7 +451,7 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static public func setEqual(layoutAttributes: [NSLayoutAttribute], for views: [UIView]) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttributes: [NSLayoutConstraint.Attribute], for views: [UIView]) -> [NSLayoutConstraint] {
         var constraints: [NSLayoutConstraint] = []
         for layoutAttribute in layoutAttributes {
             constraints += setEqual(layoutAttribute: layoutAttribute, for: views)
@@ -460,7 +460,7 @@ extension LayoutConstraintWrapper {
     }
 
     @discardableResult
-    static public func setEqual(layoutAttributes: [NSLayoutAttribute], for views: UIView...) -> [NSLayoutConstraint] {
+    static public func setEqual(layoutAttributes: [NSLayoutConstraint.Attribute], for views: UIView...) -> [NSLayoutConstraint] {
         return setEqual(layoutAttributes: layoutAttributes, for: views)
     }
 

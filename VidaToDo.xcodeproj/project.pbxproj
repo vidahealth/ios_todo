@@ -67,7 +67,6 @@
 		977D71E420882AA100135EC8 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E320882AA100135EC8 /* FormValidator.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
-		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
 		DBD2CC39AEDC957121D36FAD /* Pods_VidaToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */; };
 		ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */; };
 		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
@@ -229,8 +228,6 @@
 		419237F77E78F1896C83C0D3 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		5D509CF29FC166852E2C7417 /* Pods-VidaFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaFoundationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaFoundationTests/Pods-VidaFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6025C97EC4E51D091F07D14F /* Pods-VidaToDoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoUITests/Pods-VidaToDoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6178DFE370560F288EDA7746 /* Pods-VidaToDoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaToDoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaToDoUITests/Pods-VidaToDoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7D4947A08F2A70CB2AE12C /* Pods-VidaUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VidaUIKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VidaUIKit/Pods-VidaUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		7C86BF2AAD63343531A59A0C /* Pods_VidaToDoEGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaToDoEGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF33CF63A29192CD7ACB538 /* Pods_VidaUIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VidaUIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,7 +288,6 @@
 			files = (
 				F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */,
 				7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */,
-				D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,13 +471,6 @@
 			path = VidaAlert;
 			sourceTree = "<group>";
 		};
-		4032C14A208701CD00355B04 /* Globals */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Globals;
-			sourceTree = "<group>";
-		};
 		4032C1532087B70400355B04 /* VidaFoundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,7 +478,6 @@
 				4032C132208700B300355B04 /* Persistence */,
 				4032C12B2087005F00355B04 /* Networking */,
 				406631292093CC5F00FA33F8 /* Managers */,
-				4032C14A208701CD00355B04 /* Globals */,
 				4032C12A2087005900355B04 /* Extensions */,
 				4032C1542087B70400355B04 /* VidaFoundation.h */,
 				4032C1552087B70400355B04 /* Info.plist */,
@@ -670,8 +658,6 @@
 				01B30C33F3E213B4E908DAC3 /* Pods-VidaToDo.release.xcconfig */,
 				F8928114B1BA0C690855A812 /* Pods-VidaToDoTests.debug.xcconfig */,
 				80E4AFD3943B1C8A7C077335 /* Pods-VidaToDoTests.release.xcconfig */,
-				6178DFE370560F288EDA7746 /* Pods-VidaToDoUITests.debug.xcconfig */,
-				6025C97EC4E51D091F07D14F /* Pods-VidaToDoUITests.release.xcconfig */,
 				C969E7B7B05A3266B1C2C650 /* Pods-VidaToDoEGTests.debug.xcconfig */,
 				BD8C63085B11DCEA52EEF70E /* Pods-VidaToDoEGTests.release.xcconfig */,
 				0066B3808E97BA98D5D3CD27 /* Pods-VidaFoundation.debug.xcconfig */,
@@ -885,12 +871,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Vida Health";
 				TargetAttributes = {
 					401A4BFD2086FC1C009158B4 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 					401A4C112086FC1E009158B4 = {
 						CreatedOnToolsVersion = 9.3;
@@ -898,20 +884,25 @@
 					};
 					401A4C322086FDAC009158B4 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 					4032C1512087B70300355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					4032C1592087B70400355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 					4032C1742087B71500355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					4032C17C2087B71500355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 				};
@@ -1517,7 +1508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VidaToDo/App/VidaToDo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1538,7 +1529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VidaToDo/App/VidaToDo-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1600,7 +1591,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1621,7 +1612,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1649,7 +1640,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1678,7 +1669,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1699,7 +1690,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1719,7 +1710,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1747,7 +1738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1776,7 +1767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1797,7 +1788,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1817,7 +1808,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
