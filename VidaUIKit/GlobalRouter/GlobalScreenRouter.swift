@@ -30,7 +30,7 @@ public class GlobalScreenRouter: ScreenRouter {
 
     fileprivate var viewControllerURLMap = [GlobalScreenURL: AnyClass]() // URL -> rendererClass
 
-    fileprivate init() {}
+    internal init() {}
 
     public func registerViewControllerClass(_ viewControllerClass: AnyClass, screenURL: GlobalScreenURL) {
         viewControllerURLMap[screenURL] = viewControllerClass
