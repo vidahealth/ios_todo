@@ -11,12 +11,12 @@ public class TodoTextField: UITextField {
         self.text = text
         placeholder = placeholderText
         font = UIFont.systemFont(ofSize: 15)
-        borderStyle = UITextBorderStyle.roundedRect
+        borderStyle = UITextField.BorderStyle.roundedRect
         autocorrectionType = UITextAutocorrectionType.no
         keyboardType = UIKeyboardType.default
         returnKeyType = UIReturnKeyType.done
-        clearButtonMode = UITextFieldViewMode.whileEditing;
-        contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        clearButtonMode = UITextField.ViewMode.whileEditing;
+        contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
     }
     
     public required init?(coder aDecoder: NSCoder) {

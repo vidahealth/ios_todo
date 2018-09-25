@@ -890,7 +890,7 @@
 				TargetAttributes = {
 					401A4BFD2086FC1C009158B4 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 					401A4C112086FC1E009158B4 = {
 						CreatedOnToolsVersion = 9.3;
@@ -898,20 +898,25 @@
 					};
 					401A4C322086FDAC009158B4 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 					4032C1512087B70300355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					4032C1592087B70400355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 					4032C1742087B71500355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					4032C17C2087B71500355B04 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 401A4BFD2086FC1C009158B4;
 					};
 				};
@@ -1517,7 +1522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VidaToDo/App/VidaToDo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1538,7 +1543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VidaToDo/App/VidaToDo-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1600,7 +1605,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1621,7 +1626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaToDoEGTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1649,7 +1654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1678,7 +1683,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1699,7 +1704,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1719,7 +1724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1747,7 +1752,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1776,7 +1781,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1797,7 +1802,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};
@@ -1817,7 +1822,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vida.VidaUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VidaToDo.app/VidaToDo";
 			};

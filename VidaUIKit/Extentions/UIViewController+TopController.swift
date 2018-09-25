@@ -20,7 +20,7 @@ extension UIViewController {
 
     fileprivate func topViewController(from rootViewController: UIViewController?) -> UIViewController? {
 
-        if let childViewController = rootViewController?.childViewControllers.first {
+        if let childViewController = rootViewController?.children.first {
             return topViewController(from:childViewController)
         }
         else {

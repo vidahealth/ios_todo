@@ -59,7 +59,7 @@ class VidaAlertBuilder: NSObject {
     // :title - parameter will be used as a title of alert.
     // :message - parameter will be used as a message of alert.
     // :style - define a style of altert.
-    class func makeBuilder(with title: String?, message: String?, style: UIAlertControllerStyle) -> VidaAlertBuilder {
+    class func makeBuilder(with title: String?, message: String?, style: UIAlertController.Style) -> VidaAlertBuilder {
 
         let internalAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
         return VidaAlertBuilder(alertController: internalAlertController)
