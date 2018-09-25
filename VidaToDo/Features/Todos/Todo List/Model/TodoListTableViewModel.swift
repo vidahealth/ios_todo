@@ -70,7 +70,7 @@ class TodoListTableViewModel {
     // TODO: Update UI based on task selection
     func taskIsSelected(taskID: Int) {
         Observable.just(taskID).withLatestFrom(taskToDoManager.tasks()).subscribe(onNext: { (tasks) in
-            guard let task = tasks.filter({ $0.id == taskID}).first else {
+            guard tasks.filter({ $0.id == taskID}).first != nil else {
                 errorLog("unable to find task")
                 return
             }
@@ -81,7 +81,7 @@ class TodoListTableViewModel {
 
     func removeTaskWithID(_ taskID: Int) {
         Observable.just(taskID).withLatestFrom(taskToDoManager.tasks()).subscribe(onNext: { (tasks) in
-            guard let task = tasks.filter({ $0.id == taskID}).first else {
+            guard tasks.filter({ $0.id == taskID}).first != nil else {
                 errorLog("unable to find task")
                 return
             }
