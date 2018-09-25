@@ -67,7 +67,6 @@
 		977D71E420882AA100135EC8 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D71E320882AA100135EC8 /* FormValidator.swift */; };
 		A304FE85DF2D268DF235C0C8 /* Pods_VidaFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8B40DE688D7A3CCA16B4A8 /* Pods_VidaFoundationTests.framework */; };
 		B87F0163BA3EC6B524BBBC57 /* Pods_VidaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3A8CD11063F13AE2EFED3 /* Pods_VidaFoundation.framework */; };
-		D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA472DAC047A07352406992 /* EarlGrey.framework */; };
 		DBD2CC39AEDC957121D36FAD /* Pods_VidaToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FE8CFEC211D7D7F71AAD00 /* Pods_VidaToDoTests.framework */; };
 		ECD145E02087C4D1007E8239 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145DE2087C19F007E8239 /* TodoListTableViewController.swift */; };
 		ECD145E12087C4DF007E8239 /* TodoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD145D72087BB3B007E8239 /* TodoCardTableViewCell.swift */; };
@@ -291,7 +290,6 @@
 			files = (
 				F781B75FD33219D1EEE20DE0 /* Pods_VidaToDoEGTests.framework in Frameworks */,
 				7C0021B47E298A154DB4B486 /* EarlGrey.framework in Frameworks */,
-				D0E384905C52D1EB760A4706 /* EarlGrey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,7 +883,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Vida Health";
 				TargetAttributes = {
 					401A4BFD2086FC1C009158B4 = {
