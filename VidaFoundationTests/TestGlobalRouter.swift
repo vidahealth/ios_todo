@@ -9,33 +9,44 @@
 import XCTest
 @testable import VidaFoundation
 
+class MockTabViewController: UITabBarController, Routable {
+    
+    static func makeWithURL(_ screenURL: GlobalScreenURL) -> UIViewController? {
+        guard case .tab = screenURL else {
+            fatalLog("Invalid URL passed to view controller: \(self)")
+            return nil
+        }
+        return MockTabViewController()
+    }
+}
+
 class TestGlobalRouter: XCTestCase {
 
-    var globalRouter: GlobalRouter!
+    var router: GlobalScreenRouter!
 
     override func setUp() {
         super.setUp()
-        globalRouter = GlobalRouter()
-        globalRouter.registerViewControllerClass(UIViewController.self, URLPath: "foo")
-        globalRouter.registerViewControllerClass(UIView.self, URLPath: "snaf")
+        router = GlobalScreenRouter()
+        router.registerViewControllerClass(MockTabViewController.self, screenURL: .tab)
+        router.registerViewControllerClass(UIView.self, screenURL: .toDoList)
 
     }
 
     override func tearDown() {
         super.tearDown()
-        globalRouter = nil
+        router = nil
     }
     
     func testRendererForURLPath_doesNotExist() {
-        XCTAssertNil(globalRouter.viewControllerForURLPath("bar"))
+        XCTAssertNil(router.viewControllerForURLPath(.settings))
     }
 
     func testRendererForURLPath_notAViewController() {
-        XCTAssertNil(globalRouter.viewControllerForURLPath("snaf"))
+        XCTAssertNil(router.viewControllerForURLPath(.toDoList))
     }
 
     func testRendererForURLPath_exists() {
-        XCTAssertNotNil(globalRouter.viewControllerForURLPath("foo"))
+        XCTAssertNotNil(router.viewControllerForURLPath(.tab))
     }
     
 }

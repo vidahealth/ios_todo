@@ -36,7 +36,8 @@ class TestStorage: XCTestCase {
     }
 
     func testStorage_createToDoList() {
-        let foo:ToDoTask = ToDoTask(group: "bar",
+        let foo:ToDoTask = ToDoTask(id: 1,
+                           group: "bar",
                            title: "foo",
                            description: "poo",
                            priority: .low,

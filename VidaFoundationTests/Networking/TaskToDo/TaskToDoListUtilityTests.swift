@@ -7,14 +7,13 @@
 //
 
 import XCTest
-import VidaFoundation
-@testable import VidaToDo
+@testable import VidaFoundation
 
 class TaskToDoListUtilityTests: XCTestCase {
     let utility = TaskToDoListUtility()
 
     func createTask(title: String, priority: ToDoTask.Priority = .low, isDone: Bool = false) -> ToDoTask {
-        return ToDoTask(group: nil, title: title, description: nil, priority: priority, done: isDone)
+        return ToDoTask(id: 0, group: nil, title: title, description: nil, priority: priority, done: isDone)
     }
 
     // MARK: sortByPriority
