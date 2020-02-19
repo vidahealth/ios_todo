@@ -2,9 +2,8 @@
 # platform :ios, '9.0'
 
 def shared_dependencies
-  pod 'RxSwift', '= 4.3.1'
-  pod 'RxOptional', '= 3.3.0'
-  pod 'RxSwiftExt', '= 3.0.0'
+  pod 'RxOptional', '= 4.1.0'
+  pod 'RxSwiftExt', '= 5.1.1'
 end
 
 platform :ios, '11.3'
